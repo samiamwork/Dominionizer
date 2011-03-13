@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E0506FB1329FBCB008378A5 /* cardlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E0506FA1329FBCB008378A5 /* cardlist.plist */; };
+		3E05070B132C101A008378A5 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05070A132C101A008378A5 /* CardCell.m */; };
+		3E26016A1329E50800DC895B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2601691329E50800DC895B /* UIKit.framework */; };
+		3E26016C1329E50800DC895B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E26016B1329E50800DC895B /* Foundation.framework */; };
+		3E26016E1329E50800DC895B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E26016D1329E50800DC895B /* CoreGraphics.framework */; };
+		3E2601741329E50800DC895B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601721329E50800DC895B /* InfoPlist.strings */; };
+		3E2601771329E50800DC895B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2601761329E50800DC895B /* main.m */; };
+		3E26017A1329E50800DC895B /* DominionatorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2601791329E50800DC895B /* DominionatorAppDelegate.m */; };
+		3E26017D1329E50800DC895B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E26017B1329E50800DC895B /* MainWindow.xib */; };
+		3E2601801329E50800DC895B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E26017F1329E50800DC895B /* FirstViewController.m */; };
+		3E2601831329E50800DC895B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2601821329E50800DC895B /* SecondViewController.m */; };
+		3E2601861329E50800DC895B /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601841329E50800DC895B /* FirstView.xib */; };
+		3E2601891329E50800DC895B /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601871329E50800DC895B /* SecondView.xib */; };
+		3E2601901329E50800DC895B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2601691329E50800DC895B /* UIKit.framework */; };
+		3E2601911329E50800DC895B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E26016B1329E50800DC895B /* Foundation.framework */; };
+		3E2601921329E50800DC895B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E26016D1329E50800DC895B /* CoreGraphics.framework */; };
+		3E26019A1329E50800DC895B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601981329E50800DC895B /* InfoPlist.strings */; };
+		3E26019D1329E50800DC895B /* DominionatorTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 3E26019C1329E50800DC895B /* DominionatorTests.h */; };
+		3E26019F1329E50800DC895B /* DominionatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E26019E1329E50800DC895B /* DominionatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E2601931329E50800DC895B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E26015C1329E50800DC895B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E2601641329E50800DC895B;
+			remoteInfo = Dominionator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E0506FA1329FBCB008378A5 /* cardlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = cardlist.plist; path = ../../cardlist.plist; sourceTree = "<group>"; };
+		3E050709132C101A008378A5 /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCell.h; sourceTree = "<group>"; };
+		3E05070A132C101A008378A5 /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
+		3E2601651329E50800DC895B /* Dominionator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dominionator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2601691329E50800DC895B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3E26016B1329E50800DC895B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3E26016D1329E50800DC895B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3E2601711329E50800DC895B /* Dominionator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dominionator-Info.plist"; sourceTree = "<group>"; };
+		3E2601731329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E2601751329E50800DC895B /* Dominionator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dominionator-Prefix.pch"; sourceTree = "<group>"; };
+		3E2601761329E50800DC895B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E2601781329E50800DC895B /* DominionatorAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominionatorAppDelegate.h; sourceTree = "<group>"; };
+		3E2601791329E50800DC895B /* DominionatorAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DominionatorAppDelegate.m; sourceTree = "<group>"; };
+		3E26017C1329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		3E26017E1329E50800DC895B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		3E26017F1329E50800DC895B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		3E2601811329E50800DC895B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3E2601821329E50800DC895B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3E2601851329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
+		3E2601881329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		3E26018F1329E50800DC895B /* DominionatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DominionatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2601971329E50800DC895B /* DominionatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DominionatorTests-Info.plist"; sourceTree = "<group>"; };
+		3E2601991329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E26019B1329E50800DC895B /* DominionatorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DominionatorTests-Prefix.pch"; sourceTree = "<group>"; };
+		3E26019C1329E50800DC895B /* DominionatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominionatorTests.h; sourceTree = "<group>"; };
+		3E26019E1329E50800DC895B /* DominionatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DominionatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E2601621329E50800DC895B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E26016A1329E50800DC895B /* UIKit.framework in Frameworks */,
+				3E26016C1329E50800DC895B /* Foundation.framework in Frameworks */,
+				3E26016E1329E50800DC895B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E26018B1329E50800DC895B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2601901329E50800DC895B /* UIKit.framework in Frameworks */,
+				3E2601911329E50800DC895B /* Foundation.framework in Frameworks */,
+				3E2601921329E50800DC895B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E26015A1329E50800DC895B = {
+			isa = PBXGroup;
+			children = (
+				3E26016F1329E50800DC895B /* Dominionator */,
+				3E2601951329E50800DC895B /* DominionatorTests */,
+				3E2601681329E50800DC895B /* Frameworks */,
+				3E2601661329E50800DC895B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E2601661329E50800DC895B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E2601651329E50800DC895B /* Dominionator.app */,
+				3E26018F1329E50800DC895B /* DominionatorTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E2601681329E50800DC895B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E2601691329E50800DC895B /* UIKit.framework */,
+				3E26016B1329E50800DC895B /* Foundation.framework */,
+				3E26016D1329E50800DC895B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E26016F1329E50800DC895B /* Dominionator */ = {
+			isa = PBXGroup;
+			children = (
+				3E0506FA1329FBCB008378A5 /* cardlist.plist */,
+				3E2601781329E50800DC895B /* DominionatorAppDelegate.h */,
+				3E2601791329E50800DC895B /* DominionatorAppDelegate.m */,
+				3E26017B1329E50800DC895B /* MainWindow.xib */,
+				3E26017E1329E50800DC895B /* FirstViewController.h */,
+				3E26017F1329E50800DC895B /* FirstViewController.m */,
+				3E2601811329E50800DC895B /* SecondViewController.h */,
+				3E2601821329E50800DC895B /* SecondViewController.m */,
+				3E2601841329E50800DC895B /* FirstView.xib */,
+				3E2601871329E50800DC895B /* SecondView.xib */,
+				3E2601701329E50800DC895B /* Supporting Files */,
+				3E050709132C101A008378A5 /* CardCell.h */,
+				3E05070A132C101A008378A5 /* CardCell.m */,
+			);
+			path = Dominionator;
+			sourceTree = "<group>";
+		};
+		3E2601701329E50800DC895B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E2601711329E50800DC895B /* Dominionator-Info.plist */,
+				3E2601721329E50800DC895B /* InfoPlist.strings */,
+				3E2601751329E50800DC895B /* Dominionator-Prefix.pch */,
+				3E2601761329E50800DC895B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E2601951329E50800DC895B /* DominionatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E26019C1329E50800DC895B /* DominionatorTests.h */,
+				3E26019E1329E50800DC895B /* DominionatorTests.m */,
+				3E2601961329E50800DC895B /* Supporting Files */,
+			);
+			path = DominionatorTests;
+			sourceTree = "<group>";
+		};
+		3E2601961329E50800DC895B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E2601971329E50800DC895B /* DominionatorTests-Info.plist */,
+				3E2601981329E50800DC895B /* InfoPlist.strings */,
+				3E26019B1329E50800DC895B /* DominionatorTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E2601641329E50800DC895B /* Dominionator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E2601A21329E50800DC895B /* Build configuration list for PBXNativeTarget "Dominionator" */;
+			buildPhases = (
+				3E2601611329E50800DC895B /* Sources */,
+				3E2601621329E50800DC895B /* Frameworks */,
+				3E2601631329E50800DC895B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dominionator;
+			productName = Dominionator;
+			productReference = 3E2601651329E50800DC895B /* Dominionator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3E26018E1329E50800DC895B /* DominionatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E2601A51329E50800DC895B /* Build configuration list for PBXNativeTarget "DominionatorTests" */;
+			buildPhases = (
+				3E26018A1329E50800DC895B /* Sources */,
+				3E26018B1329E50800DC895B /* Frameworks */,
+				3E26018C1329E50800DC895B /* Resources */,
+				3E26018D1329E50800DC895B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E2601941329E50800DC895B /* PBXTargetDependency */,
+			);
+			name = DominionatorTests;
+			productName = DominionatorTests;
+			productReference = 3E26018F1329E50800DC895B /* DominionatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E26015C1329E50800DC895B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3E26015F1329E50800DC895B /* Build configuration list for PBXProject "Dominionator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3E26015A1329E50800DC895B;
+			productRefGroup = 3E2601661329E50800DC895B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E2601641329E50800DC895B /* Dominionator */,
+				3E26018E1329E50800DC895B /* DominionatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E2601631329E50800DC895B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2601741329E50800DC895B /* InfoPlist.strings in Resources */,
+				3E26017D1329E50800DC895B /* MainWindow.xib in Resources */,
+				3E2601861329E50800DC895B /* FirstView.xib in Resources */,
+				3E2601891329E50800DC895B /* SecondView.xib in Resources */,
+				3E0506FB1329FBCB008378A5 /* cardlist.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E26018C1329E50800DC895B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E26019A1329E50800DC895B /* InfoPlist.strings in Resources */,
+				3E26019D1329E50800DC895B /* DominionatorTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E26018D1329E50800DC895B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E2601611329E50800DC895B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2601771329E50800DC895B /* main.m in Sources */,
+				3E26017A1329E50800DC895B /* DominionatorAppDelegate.m in Sources */,
+				3E2601801329E50800DC895B /* FirstViewController.m in Sources */,
+				3E2601831329E50800DC895B /* SecondViewController.m in Sources */,
+				3E05070B132C101A008378A5 /* CardCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E26018A1329E50800DC895B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E26019F1329E50800DC895B /* DominionatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E2601941329E50800DC895B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E2601641329E50800DC895B /* Dominionator */;
+			targetProxy = 3E2601931329E50800DC895B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E2601721329E50800DC895B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E2601731329E50800DC895B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3E26017B1329E50800DC895B /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E26017C1329E50800DC895B /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		3E2601841329E50800DC895B /* FirstView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E2601851329E50800DC895B /* en */,
+			);
+			name = FirstView.xib;
+			sourceTree = "<group>";
+		};
+		3E2601871329E50800DC895B /* SecondView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E2601881329E50800DC895B /* en */,
+			);
+			name = SecondView.xib;
+			sourceTree = "<group>";
+		};
+		3E2601981329E50800DC895B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E2601991329E50800DC895B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E2601A01329E50800DC895B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3E2601A11329E50800DC895B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		3E2601A31329E50800DC895B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dominionator/Dominionator-Prefix.pch";
+				INFOPLIST_FILE = "Dominionator/Dominionator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3E2601A41329E50800DC895B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dominionator/Dominionator-Prefix.pch";
+				INFOPLIST_FILE = "Dominionator/Dominionator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3E2601A61329E50800DC895B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dominionator.app/Dominionator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DominionatorTests/DominionatorTests-Prefix.pch";
+				INFOPLIST_FILE = "DominionatorTests/DominionatorTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		3E2601A71329E50800DC895B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dominionator.app/Dominionator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DominionatorTests/DominionatorTests-Prefix.pch";
+				INFOPLIST_FILE = "DominionatorTests/DominionatorTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E26015F1329E50800DC895B /* Build configuration list for PBXProject "Dominionator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2601A01329E50800DC895B /* Debug */,
+				3E2601A11329E50800DC895B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E2601A21329E50800DC895B /* Build configuration list for PBXNativeTarget "Dominionator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2601A31329E50800DC895B /* Debug */,
+				3E2601A41329E50800DC895B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E2601A51329E50800DC895B /* Build configuration list for PBXNativeTarget "DominionatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2601A61329E50800DC895B /* Debug */,
+				3E2601A71329E50800DC895B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E26015C1329E50800DC895B /* Project object */;
+}
