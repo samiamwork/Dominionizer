@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "CardCell.h"
+#import "CardDetailViewController.h"
 
 @implementation FirstViewController
 
@@ -125,6 +126,13 @@
 	[cell setProperties:aCard];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"selected %@", [[_cardPicks objectAtIndex:[indexPath row]] valueForKey:@"card"]);
+	CardDetailViewController* detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle]];
+	[self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

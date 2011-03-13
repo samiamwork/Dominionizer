@@ -26,6 +26,8 @@
 		3E26019A1329E50800DC895B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601981329E50800DC895B /* InfoPlist.strings */; };
 		3E26019D1329E50800DC895B /* DominionatorTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 3E26019C1329E50800DC895B /* DominionatorTests.h */; };
 		3E26019F1329E50800DC895B /* DominionatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E26019E1329E50800DC895B /* DominionatorTests.m */; };
+		3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */; };
+		3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		3E26019B1329E50800DC895B /* DominionatorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DominionatorTests-Prefix.pch"; sourceTree = "<group>"; };
 		3E26019C1329E50800DC895B /* DominionatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominionatorTests.h; sourceTree = "<group>"; };
 		3E26019E1329E50800DC895B /* DominionatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DominionatorTests.m; sourceTree = "<group>"; };
+		3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
+		3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
+		3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +141,9 @@
 				3E2601701329E50800DC895B /* Supporting Files */,
 				3E050709132C101A008378A5 /* CardCell.h */,
 				3E05070A132C101A008378A5 /* CardCell.m */,
+				3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */,
+				3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */,
+				3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */,
 			);
 			path = Dominionator;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 				3E2601861329E50800DC895B /* FirstView.xib in Resources */,
 				3E2601891329E50800DC895B /* SecondView.xib in Resources */,
 				3E0506FB1329FBCB008378A5 /* cardlist.plist in Resources */,
+				3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +292,7 @@
 				3E2601801329E50800DC895B /* FirstViewController.m in Sources */,
 				3E2601831329E50800DC895B /* SecondViewController.m in Sources */,
 				3E05070B132C101A008378A5 /* CardCell.m in Sources */,
+				3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
