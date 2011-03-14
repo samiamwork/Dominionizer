@@ -23,7 +23,7 @@
 	srandomdev();
 	[self pickNewCards:nil];
 
-	[self setTitle:NSLocalizedString(@"Random Cards", @"Title of Random Cards Navigation bar")];
+	[self setTitle:NSLocalizedString(@"Cards", @"Title of Random Cards Navigation bar")];
 	UIBarButtonItem* shuffleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pickNewCards:)];
 	self.navigationItem.rightBarButtonItem = shuffleButton;
 	[shuffleButton release];
