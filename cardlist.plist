@@ -697,7 +697,9 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+2 Actions, Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.\n\nYou may look at the cards on your mat at any time; return them to your deck at the end of the game.
+		<string>+2 Actions, Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.
+
+You may look at the cards on your mat at any time; return them to your deck at the end of the game.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -788,7 +790,8 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action\nAt the start of your next turn, +1 Card.
+		<string>+1 Card, +1 Action
+At the start of your next turn, +1 Card.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -814,7 +817,9 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Set aside this and another card from your hand. Return them to your deck at the end of the game.\n--------\n2 VP
+		<string>Set aside this and another card from your hand. Return them to your deck at the end of the game.
+--------
+2 VP
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -996,7 +1001,11 @@
 		<key>cost</key>
 		<string>$0 1P</string>
 		<key>rules</key>
-		<string>Trash a card from your hand.\nIf it is an...\nAction card, gain a Duchy\nTreasure card, gain a Transmute\nVictory card, gain a Gold
+		<string>Trash a card from your hand.
+If it is an...
+Action card, gain a Duchy
+Treasure card, gain a Transmute
+Victory card, gain a Gold
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1022,7 +1031,9 @@
 		<key>cost</key>
 		<string>$2 1P</string>
 		<key>rules</key>
-		<string>+1 Card\n+1 Action\nReveal the top 4 cards of your deck. Put the revealed Coppers and Potions into your hand. Put the other cards back on top in any order.
+		<string>+1 Card
++1 Action
+Reveal the top 4 cards of your deck. Put the revealed Coppers and Potions into your hand. Put the other cards back on top in any order.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1035,7 +1046,9 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+1 Buy\n+1 Coin\nWhen you discard this from play, you may put one of your Treasures from play on top of your deck.
+		<string>+1 Buy
++1 Coin
+When you discard this from play, you may put one of your Treasures from play on top of your deck.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1048,7 +1061,9 @@
 		<key>cost</key>
 		<string>$2 1P</string>
 		<key>rules</key>
-		<string>+1 Action\nEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then reveal cards from the top of your deck until revealing one that isn't an Action.\nPut all of your revealed cards into your hand.
+		<string>+1 Action
+Each player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then reveal cards from the top of your deck until revealing one that isn't an Action.
+Put all of your revealed cards into your hand.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1061,7 +1076,8 @@
 		<key>cost</key>
 		<string>$2 1P</string>
 		<key>rules</key>
-		<string>+2 Actions\nYou may gain an Action card costing up to 5 Coins.
+		<string>+2 Actions
+You may gain an Action card costing up to 5 Coins.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1074,7 +1090,9 @@
 		<key>cost</key>
 		<string>$3 1P</string>
 		<key>rules</key>
-		<string>+2 Cards\n+1 Action\nWhen you discard this from play, you may put this on top of your deck if you have a Potion in play.
+		<string>+2 Cards
++1 Action
+When you discard this from play, you may put this on top of your deck if you have a Potion in play.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1087,7 +1105,9 @@
 		<key>cost</key>
 		<string>$3 1P</string>
 		<key>rules</key>
-		<string>+1 Card\n+1 Action\nEach other player gains a curse.
+		<string>+1 Card
++1 Action
+Each other player gains a curse.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1100,7 +1120,8 @@
 		<key>cost</key>
 		<string>$3 1P</string>
 		<key>rules</key>
-		<string>When you play this, count your deck and discard pile.\nWorth 1 Coin per 5 cards total between them (rounded down).
+		<string>When you play this, count your deck and discard pile.
+Worth 1 Coin per 5 cards total between them (rounded down).
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1113,7 +1134,8 @@
 		<key>cost</key>
 		<string>$4 1P</string>
 		<key>rules</key>
-		<string>Reveal cards from your deck until you reveal 2 Action cards other than Golem Cards.\nDiscard the other cards, then play the Action cards in either order.
+		<string>Reveal cards from your deck until you reveal 2 Action cards other than Golem Cards.
+Discard the other cards, then play the Action cards in either order.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1126,7 +1148,10 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Action\nTrash a card from your hand.\n+1 Card per Coin it costs.\n+2 Cards if it has Potion in its cost.
+		<string>+1 Action
+Trash a card from your hand.
++1 Card per Coin it costs.
++2 Cards if it has Potion in its cost.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1139,7 +1164,8 @@
 		<key>cost</key>
 		<string>$6 1P</string>
 		<key>rules</key>
-		<string>The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him.\nAny cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at end of turn.
+		<string>The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him.
+Any cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at end of turn.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1152,7 +1178,8 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.\nWhen you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.
+		<string>Worth 1 Coin.
+When you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1165,7 +1192,11 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+1 Buy\n+$1 per token on the Trade Route mat.\nTrash a card from your hand.\n----------\nSetup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move the token to the Trade Route mat.
+		<string>+1 Buy
++$1 per token on the Trade Route mat.
+Trash a card from your hand.
+----------
+Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move the token to the Trade Route mat.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1178,7 +1209,9 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>Draw until you have 6 cards in hand.\n----------\nWhen you gain a card, you may reveal this from your hand. If you do, either trash that card, or put it on top of your deck.
+		<string>Draw until you have 6 cards in hand.
+----------
+When you gain a card, you may reveal this from your hand. If you do, either trash that card, or put it on top of your deck.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1191,7 +1224,10 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+$1\n+1 &lt;VP&gt;\nTrash a card from your hand. +&lt;VP&gt; equal to half its cost in coins, rounded down.\nEach other player may trash a card from his hand.
+		<string>+$1
++1 &lt;VP&gt;
+Trash a card from your hand. +&lt;VP&gt; equal to half its cost in coins, rounded down.
+Each other player may trash a card from his hand.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1217,7 +1253,9 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.\n----------\nWhile this is in play, Action cards cost $2 less, but not less than $0.
+		<string>Worth 1 Coin.
+----------
+While this is in play, Action cards cost $2 less, but not less than $0.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1230,7 +1268,9 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.\n----------\nWhile this is in play, when you buy a card costing $4 or less that is not a Victory card, gain a copy of it.
+		<string>Worth 1 Coin.
+----------
+While this is in play, when you buy a card costing $4 or less that is not a Victory card, gain a copy of it.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1243,7 +1283,9 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card\n+2 Actions\n+1 Buy
+		<string>+1 Card
++2 Actions
++1 Buy
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1256,7 +1298,9 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Card\n+2 Actions\nIf there are one or more empty Supply piles, +1 Card. If there are two or more, +$1 and +1 Buy.
+		<string>+1 Card
++2 Actions
+If there are one or more empty Supply piles, +1 Card. If there are two or more, +$1 and +1 Buy.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1269,7 +1313,9 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 3 Coins.\n+1 Buy\nWhen you play this, the player to your left names a card. You can't buy that card this turn.
+		<string>Worth 3 Coins.
++1 Buy
+When you play this, the player to your left names a card. You can't buy that card this turn.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1295,7 +1341,9 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>You may reveal a Treasure card from your hand. Gain a copy of it.\n----------\nWhen you buy this, trash all Treasures you have in play.
+		<string>You may reveal a Treasure card from your hand. Gain a copy of it.
+----------
+When you buy this, trash all Treasures you have in play.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1308,7 +1356,8 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Coins\nEach other player may discard a Curse. If he doesn't, he gains a Curse and a Copper.
+		<string>+2 Coins
+Each other player may discard a Curse. If he doesn't, he gains a Curse and a Copper.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1321,7 +1370,8 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+3 Cards\nEach other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.
+		<string>+3 Cards
+Each other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1334,7 +1384,9 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 2 Coins.\n----------\nWhile this is in play, when you gain a card, you may put that card on top of your deck.
+		<string>Worth 2 Coins.
+----------
+While this is in play, when you gain a card, you may put that card on top of your deck.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1347,7 +1399,9 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Cards \nDiscard any number of cards. +$1 per card discarded. \nEach other player may discard 2 cards. If he does, he draws a card.
+		<string>+2 Cards 
+Discard any number of cards. +$1 per card discarded. 
+Each other player may discard 2 cards. If he does, he draws a card.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1360,7 +1414,8 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.\nWhen you play this, reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure.
+		<string>Worth 1 Coin.
+When you play this, reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1373,7 +1428,11 @@
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>+1 Buy\n+$2\nEach other player discards down to 3 cards in hand.\n----------\nWhile this is in play, when you buy a card, +1 &lt;VP&gt;.
+		<string>+1 Buy
++$2
+Each other player discards down to 3 cards in hand.
+----------
+While this is in play, when you buy a card, +1 &lt;VP&gt;.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1386,7 +1445,12 @@
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>+1 Card\n+1 Action\n+1 Buy\n+$2\n----------\nYou can't buy this if you have any Copper in play.
+		<string>+1 Card
++1 Action
++1 Buy
++$2
+----------
+You can't buy this if you have any Copper in play.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1399,7 +1463,9 @@
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>Worth 2 Coins.\n----------\nWhile this is in play, when you buy a Victory card, gain a Gold.
+		<string>Worth 2 Coins.
+----------
+While this is in play, when you buy a Victory card, gain a Gold.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1412,7 +1478,8 @@
 		<key>cost</key>
 		<string>$7</string>
 		<key>rules</key>
-		<string>Worth ? Coins.\nWhen you play this, it`s worth $1 per Treasure card you have in play (counting this).
+		<string>Worth ? Coins.
+When you play this, it`s worth $1 per Treasure card you have in play (counting this).
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1464,7 +1531,9 @@
 		<key>cost</key>
 		<string>$8</string>
 		<key>rules</key>
-		<string>+1 Card; +1 Action; +2 Coin\n----------\nDuring your Buy phase, this costs $2 less per Action card you have in play, but not less than $0.
+		<string>+1 Card; +1 Action; +2 Coin
+----------
+During your Buy phase, this costs $2 less per Action card you have in play, but not less than $0.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1477,7 +1546,8 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. \n(Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.).
+		<string>+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. 
+(Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.).
 </string>
 		<key>set</key>
 		<string>Promo</string>

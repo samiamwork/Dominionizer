@@ -31,7 +31,12 @@ int main(int argc, char* argv[])
 		int headerIndex = 0;
 		for(word = strtok_r(buffer, "\t", &last); word; word = strtok_r(NULL, "\t", &last))
 		{
-			[card setValue:[NSString stringWithCString:word encoding:NSUTF8StringEncoding] forKey:headers[headerIndex]];
+			NSString* value = [NSString stringWithCString:word encoding:NSUTF8StringEncoding];
+			if([headers[headerIndex] isEqualToString:@"rules"])
+			{
+				value = [value stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"];
+			}
+			[card setValue:value forKey:headers[headerIndex]];
 			headerIndex++;
 		}
 		[rows addObject:card];
