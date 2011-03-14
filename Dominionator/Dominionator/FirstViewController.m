@@ -130,8 +130,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSLog(@"selected %@", [[_cardPicks objectAtIndex:[indexPath row]] valueForKey:@"card"]);
-	CardDetailViewController* detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle]];
+	//NSLog(@"selected %@", [[_cardPicks objectAtIndex:[indexPath row]] valueForKey:@"card"]);
+	NSDictionary* aCard = [_cardPicks objectAtIndex:[indexPath row]];
+	CardDetailViewController* detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle] properties:aCard];
 	[self.navigationController pushViewController:detailViewController animated:YES];
 }
 

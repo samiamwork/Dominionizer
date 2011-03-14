@@ -10,7 +10,12 @@
 
 
 @interface CardDetailViewController : UIViewController {
-    
+    NSDictionary* _properties;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel *cardNameLabel;
+@property (nonatomic, retain) IBOutlet UILabel *cardTypeLabel;
+@property (nonatomic, retain) IBOutlet UILabel *cardRulesLabel;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil properties:(NSDictionary*)properties;
 @end

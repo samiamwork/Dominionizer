@@ -11,17 +11,22 @@
 
 @implementation CardDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize cardNameLabel=_cardNameLabel;
+@synthesize cardTypeLabel=_cardTypeLabel;
+@synthesize cardRulesLabel=_cardRulesLabel;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil properties:(NSDictionary*)properties
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+		_properties = [properties retain];
     }
     return self;
 }
 
 - (void)dealloc
 {
+	[_properties release];
     [super dealloc];
 }
 
@@ -39,6 +44,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+	[self.cardRulesLabel setNumberOfLines:100];
+	self.cardNameLabel.text = [_properties valueForKey:@"card"];
+	self.cardRulesLabel.text = [_properties valueForKey:@"rules"];
+	self.cardTypeLabel.text = [_properties valueForKey:@"type"];
 }
 
 - (void)viewDidUnload
