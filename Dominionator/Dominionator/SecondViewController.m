@@ -9,7 +9,7 @@
 #import "SecondViewController.h"
 #import "ButtonCell.h"
 
-static NSString* g_setNames[] = {
+NSString* g_setNames[] = {
 	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", nil
 };
 

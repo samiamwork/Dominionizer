@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString* g_setNames[];
 
 @interface SecondViewController : UITableViewController {
     NSArray* _preferences;

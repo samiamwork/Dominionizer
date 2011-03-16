@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "CardCell.h"
 #import "CardDetailViewController.h"
+#import "SecondViewController.h"
 
 @implementation FirstViewController
 
@@ -39,11 +40,27 @@
 	}
 	// Pick Ten
 	[_cardPicks removeAllObjects];
+
+	// Make a set containing allowed card sets that we're allowed to pull from
+	NSMutableSet* usableSets = [NSMutableSet set];
+	for(NSInteger i = 0; i < 5; ++i)
+	{
+		NSString* setName = g_setNames[i];
+		if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
+		{
+			[usableSets addObject:setName];
+		}
+	}
+
 	BOOL hasAlchemy = NO;
 	NSUInteger alchemyCount = 0;
 	for(NSDictionary* aCard in _cards)
 	{
 		NSString* set = [aCard valueForKey:@"set"];
+		if(![usableSets containsObject:set])
+		{
+			continue;
+		}
 		// TODO: I think this should check for potion cost
 		if([set isEqualToString:@"Alchemy"])
 		{
