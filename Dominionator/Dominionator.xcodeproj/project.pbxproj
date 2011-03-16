@@ -29,6 +29,7 @@
 		3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */; };
 		3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */; };
 		3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B61132D583300AEE21A /* CardDetailView.m */; };
+		3EFE8B65132F238C00AEE21A /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B64132F238B00AEE21A /* ButtonCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
 		3EFE8B60132D583300AEE21A /* CardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailView.h; sourceTree = "<group>"; };
 		3EFE8B61132D583300AEE21A /* CardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailView.m; sourceTree = "<group>"; };
+		3EFE8B63132F238A00AEE21A /* ButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCell.h; sourceTree = "<group>"; };
+		3EFE8B64132F238B00AEE21A /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 				3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */,
 				3EFE8B60132D583300AEE21A /* CardDetailView.h */,
 				3EFE8B61132D583300AEE21A /* CardDetailView.m */,
+				3EFE8B63132F238A00AEE21A /* ButtonCell.h */,
+				3EFE8B64132F238B00AEE21A /* ButtonCell.m */,
 			);
 			path = Dominionator;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				3E05070B132C101A008378A5 /* CardCell.m in Sources */,
 				3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */,
 				3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */,
+				3EFE8B65132F238C00AEE21A /* ButtonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
