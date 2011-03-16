@@ -83,6 +83,25 @@ NSString* g_setNames[] = {
 {
 	NSInteger row = [theSwitch tag];
 	[[NSUserDefaults standardUserDefaults] setBool:[theSwitch isOn] forKey:[_preferences objectAtIndex:row]];
+	BOOL anyEnabled = NO;
+	for(NSString* aSet in _preferences)
+	{
+		if([[NSUserDefaults standardUserDefaults] boolForKey:aSet])
+		{
+			anyEnabled = YES;
+			break;
+		}
+	}
+	// If none are enabled set the base set enabled
+	if(!anyEnabled)
+	{
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:[_preferences objectAtIndex:0]];
+		NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+		NSArray* indexArray = [NSArray arrayWithObject:indexPath];
+		ButtonCell* theCell = (ButtonCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+		[theCell.button setOn:YES animated:YES];
+		[self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
