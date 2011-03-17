@@ -10,7 +10,7 @@
 #import "ButtonCell.h"
 
 NSString* g_setNames[] = {
-	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", nil
+	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Promo",
 };
 
 @implementation SecondViewController
@@ -22,13 +22,14 @@ NSString* g_setNames[] = {
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[2]];
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[3]];
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[4]];
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[5]];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	_preferences = [[NSArray alloc] initWithObjects:g_setNames[0], g_setNames[1], g_setNames[2], g_setNames[3], g_setNames[4], nil];
+	_preferences = [[NSArray alloc] initWithObjects:g_setNames count:sizeof(g_setNames)/sizeof(g_setNames[0])];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
