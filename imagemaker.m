@@ -2,19 +2,33 @@
 #include <stdlib.h>
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
+#import <string.h>
+
+CGImageRef openImage(const char* path)
+{
+	CFURLRef url = CFURLCreateFromFileSystemRepresentation(NULL,
+	                                                       (const UInt8*)path, strlen(path),
+	                                                       false);
+	CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
+	CGImageRef image = CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
+	CFRelease(imageSource);
+	CFRelease(url);
+
+	if(image == NULL)
+	{
+		printf("Could not open %s\n", path);
+	}
+	return image;
+}
 
 int main(int argc, char* argv[])
 {
 	printf("blarg\n");
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
-	NSURL* url = [NSURL fileURLWithPath:@"paperstrip_gray.png" isDirectory:NO];
-	CGImageSourceRef paper_source = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
-	CGImageRef paper_gray = CGImageSourceCreateImageAtIndex(paper_source, 0, NULL);
-	CFRelease(paper_source);
+	CGImageRef paper_gray = openImage("paperstrip_gray.png");
 	if(paper_gray == NULL)
 	{
-		printf("Could not open paperstrip image\n");
 		return 1;
 	}
 	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
