@@ -35,121 +35,149 @@
 {
 	[[UIColor whiteColor] setFill];
 	[[UIBezierPath bezierPathWithRect:rect] fill];
-	CGRect workingRect = CGRectInset([self bounds], 1.0, 1.0);
+	CGRect workingRect = [self bounds];
 
 	NSDictionary* properties = [_cell properties];
 	NSString* type = [properties valueForKey:@"type"];
 	
-	UIBezierPath* outline = [UIBezierPath bezierPathWithRoundedRect:workingRect cornerRadius:10.0];
+	//UIBezierPath* outline = [UIBezierPath bezierPathWithRoundedRect:workingRect cornerRadius:10.0];
+	[_cell.background drawAtPoint:CGPointZero];
+	UIBezierPath* outline = [UIBezierPath bezierPathWithRect:workingRect];
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+	CGContextSaveGState(ctx);
+	CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
+	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+	CGGradientRef gradient;
 	if([type isEqualToString:@"Action"] || [type isEqualToString:@"Action - Attack"])
 	{
-		[[UIColor colorWithRed:0.91 green:0.89 blue:0.78 alpha:1.0] setFill];
-		[outline fill];
+		CGFloat colors[] = {
+			0.80, 0.78, 0.67, 1.0,
+			0.91, 0.89, 0.78, 1.0, // Action
+			0.96, 0.94, 0.83, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.3,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 2);
 	}
 	else if([type isEqualToString:@"Treasure"])
 	{
-		//90 72 38 = Treasure
-		[[UIColor colorWithRed:0.90 green:0.87 blue:0.38 alpha:1.0] setFill];
-		[outline fill];
+		CGFloat colors[] = {
+			0.79, 0.61, 0.27, 1.0,
+			0.90, 0.72, 0.38, 1.0, // Treasure
+			0.95, 0.77, 0.43, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.3,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 2);
 	}
 	else if([type isEqualToString:@"Victory"])
 	{
-		//55 83 39 = victory
-		[[UIColor colorWithRed:0.55 green:0.83 blue:0.39 alpha:1.0] setFill];
-		[outline fill];
+		CGFloat colors[] = {
+			0.44, 0.72, 0.28, 1.0,
+			0.55, 0.83, 0.39, 1.0, // Victory
+			0.60, 0.88, 0.44, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.3,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 2);
 	}
 	else if([type isEqualToString:@"Action - Reaction"] || [type isEqualToString:@"Reaction"])
 	{
-		//44 62 82 = Action - Reaction
-		[[UIColor colorWithRed:0.44 green:0.66 blue:0.82 alpha:1.0] setFill];
-		[outline fill];
+		CGFloat colors[] = {
+			0.33, 0.51, 0.71, 1.0,
+			0.44, 0.62, 0.82, 1.0, // Action - Reaction
+			0.49, 0.67, 0.87, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.3,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 2);
 	}
 	else if([type isEqualToString:@"Action - Duration"])
 	{
-		//91 52 27 = Action - Duration
-		[[UIColor colorWithRed:0.91 green:0.52 blue:0.27 alpha:1.0] setFill];
-		[outline fill];
+		CGFloat colors[] = {
+			0.80, 0.41, 0.16, 1.0,
+			0.91, 0.52, 0.27, 1.0, // Action - Duration
+			0.96, 0.57, 0.32, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.3,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 2);
 	}
 	else if([type isEqualToString:@"Treasure - Victory"])
 	{
-		CGRect topRect;
-		CGRect bottomRect;
-		CGRectDivide(workingRect, &topRect, &bottomRect, workingRect.size.height/2.0, CGRectMaxYEdge);
-		topRect.origin.y -= 1.0;
-		topRect.size.height += 1.0;
-		bottomRect.size.height += 1.0;
-		// Treasure
-		[[UIColor colorWithRed:0.90 green:0.87 blue:0.38 alpha:1.0] setFill];
-		UIBezierPath* topPath = [UIBezierPath bezierPath];
-		[topPath moveToPoint:CGPointMake(CGMinX(topRect), CGMinY(topRect))];
-		[topPath addLineToPoint:CGPointMake(CGMaxX(topRect), CGMinY(topRect))];
-		[topPath addLineToPoint:CGPointMake(CGMaxX(topRect), CGMaxY(topRect)-10.0)];
-		[topPath addArcWithCenter:CGPointMake(CGMaxX(topRect)-10.0, CGMaxY(topRect)-10.0) radius:10.0 startAngle:0.0 endAngle:M_PI/2.0 clockwise:YES];
-		[topPath addLineToPoint:CGPointMake(CGMinX(topRect)+10.0, CGMaxY(topRect))];
-		[topPath addArcWithCenter:CGPointMake(CGMinX(topRect)+10.0, CGMaxY(topRect)-10.0) radius:10.0 startAngle:M_PI/2.0 endAngle:M_PI clockwise:YES];
-		[topPath closePath];
-		[topPath fill];
-		// Victory
-		[[UIColor colorWithRed:0.55 green:0.83 blue:0.39 alpha:1.0] setFill];
-		UIBezierPath* bottomPath = [UIBezierPath bezierPath];
-		[bottomPath moveToPoint:CGPointMake(CGMinX(bottomRect), CGMaxY(bottomRect))];
-		[bottomPath addLineToPoint:CGPointMake(CGMinX(bottomRect), CGMinY(bottomRect)-10.0)];
-		[bottomPath addArcWithCenter:CGPointMake(CGMinX(bottomRect)+10.0, CGMinY(bottomRect)+10.0)
-							  radius:10.0 startAngle:M_PI endAngle:3.0*M_PI/2.0 clockwise:YES];
-		[bottomPath addLineToPoint:CGPointMake(CGMaxX(bottomRect)-10.0, CGMinY(bottomRect))];
-		[bottomPath addArcWithCenter:CGPointMake(CGMaxX(bottomRect)-10.0, CGMinY(bottomRect)+10.0)
-							  radius:10.0 startAngle:3.0*M_PI/2.0 endAngle:2.0*M_PI clockwise:YES];
-		[bottomPath addLineToPoint:CGPointMake(CGMaxX(bottomRect), CGMaxY(bottomRect))];
-		[bottomPath closePath];
-		[bottomPath fill];
+		CGFloat colors[] = {
+			0.81, 0.78, 0.29, 1.0,
+			0.90, 0.87, 0.38, 1.0, // Treasure
+			0.55, 0.83, 0.39, 1.0, // Victory
+			0.60, 0.88, 0.44, 1.0
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.25,
+			0.75,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 4);
 	}
 	else if([type isEqualToString:@"Action - Victory"])
 	{
-		CGRect topRect;
-		CGRect bottomRect;
-		CGRectDivide(workingRect, &topRect, &bottomRect, workingRect.size.height/2.0, CGRectMaxYEdge);
-		topRect.origin.y -= 1.0;
-		topRect.size.height += 1.0;
-		bottomRect.size.height += 1.0;
-		// Action
-		[[UIColor colorWithRed:0.44 green:0.66 blue:0.82 alpha:1.0] setFill];
-		UIBezierPath* topPath = [UIBezierPath bezierPath];
-		[topPath moveToPoint:CGPointMake(CGMinX(topRect), CGMinY(topRect))];
-		[topPath addLineToPoint:CGPointMake(CGMaxX(topRect), CGMinY(topRect))];
-		[topPath addLineToPoint:CGPointMake(CGMaxX(topRect), CGMaxY(topRect)-10.0)];
-		[topPath addArcWithCenter:CGPointMake(CGMaxX(topRect)-10.0, CGMaxY(topRect)-10.0) radius:10.0 startAngle:0.0 endAngle:M_PI/2.0 clockwise:YES];
-		[topPath addLineToPoint:CGPointMake(CGMinX(topRect)+10.0, CGMaxY(topRect))];
-		[topPath addArcWithCenter:CGPointMake(CGMinX(topRect)+10.0, CGMaxY(topRect)-10.0) radius:10.0 startAngle:M_PI/2.0 endAngle:M_PI clockwise:YES];
-		[topPath closePath];
-		[topPath fill];
-		// Victory
-		[[UIColor colorWithRed:0.55 green:0.83 blue:0.39 alpha:1.0] setFill];
-		UIBezierPath* bottomPath = [UIBezierPath bezierPath];
-		[bottomPath moveToPoint:CGPointMake(CGMinX(bottomRect), CGMaxY(bottomRect))];
-		[bottomPath addLineToPoint:CGPointMake(CGMinX(bottomRect), CGMinY(bottomRect)-10.0)];
-		[bottomPath addArcWithCenter:CGPointMake(CGMinX(bottomRect)+10.0, CGMinY(bottomRect)+10.0)
-							  radius:10.0 startAngle:M_PI endAngle:3.0*M_PI/2.0 clockwise:YES];
-		[bottomPath addLineToPoint:CGPointMake(CGMaxX(bottomRect)-10.0, CGMinY(bottomRect))];
-		[bottomPath addArcWithCenter:CGPointMake(CGMaxX(bottomRect)-10.0, CGMinY(bottomRect)+10.0)
-							  radius:10.0 startAngle:3.0*M_PI/2.0 endAngle:2.0*M_PI clockwise:YES];
-		[bottomPath addLineToPoint:CGPointMake(CGMaxX(bottomRect), CGMaxY(bottomRect))];
-		[bottomPath closePath];
-		[bottomPath fill];
+		CGFloat colors[] = {
+			0.35, 0.57, 0.73, 1.0,
+			0.44, 0.66, 0.82, 1.0, // Action
+			0.55, 0.83, 0.39, 1.0, // Victory
+			0.60, 0.88, 0.44, 1.0
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.25,
+			0.75,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 4);
 	}
 	else
 	{
 		[[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0] setFill];
 		[outline fill];
 	}
-	
-	CGFloat labelXMargin = 20.0;
-	CGSize stringSize = [type sizeWithFont:[UIFont boldSystemFontOfSize:11.0]];
-	[[UIColor blackColor] setFill];
-	[type drawAtPoint:CGPointMake(labelXMargin, CGMaxY(workingRect)-stringSize.height-5.0) withFont:[UIFont boldSystemFontOfSize:11.0]];
+	CGContextDrawLinearGradient(ctx, gradient, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)), 0);
+	CFRelease(gradient);
+	CFRelease(rgbColorSpace);
+	CGContextRestoreGState(ctx);
 
-	NSString* cardName = [properties valueForKey:@"card"];
-	stringSize = [cardName sizeWithFont:[UIFont boldSystemFontOfSize:20.0]];
-	[cardName drawAtPoint:CGPointMake(labelXMargin, CGMaxY(workingRect)-stringSize.height-20.0) withFont:[UIFont boldSystemFontOfSize:20.0]];
+	// Draw gloss lines
+	{
+		CGColorSpaceRef whiteColorSpace = CGColorSpaceCreateDeviceGray();
+
+		CGFloat colorsWhite[] = {0.9, 0.6, 0.9, 0.0};
+		CGFloat locationsWhite[] = {0.0, 1.0};
+		CGGradientRef whiteGloss = CGGradientCreateWithColorComponents(whiteColorSpace, colorsWhite, locationsWhite, 2);
+		CGContextDrawLinearGradient(ctx, whiteGloss, CGPointMake(0.0, CGMinY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)+2.0), 0);
+		CFRelease(whiteGloss);
+
+		CGFloat colorsBlack[] = {0.2, 0.6, 0.2, 0.0};
+		CGFloat locationsBlack[] = {0.0, 1.0};
+		CGGradientRef blackGloss = CGGradientCreateWithColorComponents(whiteColorSpace, colorsBlack, locationsBlack, 2);
+		CGContextDrawLinearGradient(ctx, blackGloss, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMaxY(workingRect)-2.0), 0);
+		CFRelease(blackGloss);
+
+		CFRelease(whiteColorSpace);
+	}
 
 	NSString* cost = [properties valueForKey:@"cost"];
 	NSArray* costList = [cost componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -169,6 +197,29 @@
 
 	CGFloat coinOffset = 5.0;
 	CGFloat coinDiameter = 30.0;
+
+	// Draw Text
+	CGContextSaveGState(ctx);
+	{
+		CGRect textRect;
+		CGContextSetShadowWithColor(ctx, CGSizeMake(0.0, 1.0), 1.0, [[UIColor colorWithWhite:1.0 alpha:0.6] CGColor]);
+		CGFloat labelXMargin = 20.0;
+		CGFloat labelXMaxMargin = labelXMargin + coinDiameter + coinOffset + (potionCost == nil ? 0.0 : (coinDiameter+coinOffset));
+
+		UIFont* typeFont = [UIFont boldSystemFontOfSize:11.0];
+		CGSize stringSize = [type sizeWithFont:typeFont];
+		[[UIColor colorWithWhite:0.1 alpha:0.8] setFill];
+		textRect = CGRectMake(labelXMargin, CGMaxY(workingRect)-stringSize.height-5.0, workingRect.size.width - labelXMargin - labelXMaxMargin, stringSize.height);
+		[type drawInRect:textRect withFont:typeFont lineBreakMode:UILineBreakModeTailTruncation];
+
+		UIFont* nameFont = [UIFont boldSystemFontOfSize:21.0];
+		NSString* cardName = [properties valueForKey:@"card"];
+		stringSize = [cardName sizeWithFont:nameFont];
+		textRect = CGRectMake(labelXMargin, CGMaxY(workingRect)-stringSize.height-20.0, workingRect.size.width - labelXMargin - labelXMaxMargin, stringSize.height);
+		[cardName drawInRect:textRect withFont:nameFont lineBreakMode:UILineBreakModeTailTruncation];
+	}
+	CGContextRestoreGState(ctx);
+
 	if(potionCost != nil)
 	{
 		CGRect coinRect = CGRectMake(CGMaxX(workingRect)-coinDiameter-coinOffset, 10.0, coinDiameter, coinDiameter);
@@ -206,7 +257,7 @@
 		CGContextSetShadowWithColor(ctx, CGSizeMake(0.0, 1.0), 1.0, [[UIColor colorWithWhite:1.0 alpha:0.6] CGColor]);
 		[[UIColor colorWithWhite:0.4 alpha:1.0] setFill];
 		UIFont* font = [UIFont boldSystemFontOfSize:25.0];
-		stringSize = [coinCost sizeWithFont:font];
+		CGSize stringSize = [coinCost sizeWithFont:font];
 		[coinCost drawAtPoint:CGPointMake(coinRect.origin.x+(coinRect.size.width-stringSize.width)/2.0,
 										  coinRect.origin.y + (coinRect.size.height-stringSize.height)/2.0)
 					 withFont:font];
@@ -219,9 +270,15 @@
 @implementation CardCell
 
 @synthesize properties=_properties;
+@synthesize background=_background;
 
 - (void)setProperties:(NSDictionary*)newProperties;
 {
+	static NSString* backgroundImages[] = {
+		@"paperstrip_gray1",
+		@"paperstrip_gray2",
+		@"paperstrip_gray3"
+	};
 	if(newProperties == _properties)
 	{
 		return;
@@ -229,13 +286,14 @@
 	[_properties release];
 	_properties = [newProperties retain];
 	[_cardView setNeedsDisplay];
+	[self setBackground:[UIImage imageNamed:backgroundImages[random()%3]]];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-		_cardView = [[CardView alloc] initWithFrame:CGRectInset([[self contentView] bounds], 0.0, 1.0) cell:self];
+		_cardView = [[CardView alloc] initWithFrame:[[self contentView] bounds] cell:self];
 		[_cardView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 		[_cardView setContentMode:UIViewContentModeRedraw];
 		[self.contentView addSubview:_cardView];

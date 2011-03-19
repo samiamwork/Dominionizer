@@ -12,7 +12,9 @@
 @interface CardCell : UITableViewCell {
     UIView* _cardView;
 	NSDictionary* _properties;
+	UIImage* _background;
 }
 
 @property (nonatomic, retain) NSDictionary* properties;
+@property (nonatomic, retain) UIImage* background;
 @end
