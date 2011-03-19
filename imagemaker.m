@@ -21,6 +21,21 @@ CGImageRef openImage(const char* path)
 	return image;
 }
 
+CGContextRef createBitmapContext(size_t width, size_t height)
+{
+	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+	CGContextRef bitmapContext = CGBitmapContextCreate(NULL,
+	                                                   width,
+	                                                   height,
+	                                                   8,
+	                                                   4*width,
+	                                                   rgbColorSpace,
+	                                                   kCGImageAlphaPremultipliedLast);
+	CFRelease(rgbColorSpace);
+
+	return bitmapContext;
+}
+
 int main(int argc, char* argv[])
 {
 	printf("blarg\n");
@@ -31,14 +46,7 @@ int main(int argc, char* argv[])
 	{
 		return 1;
 	}
-	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-	CGContextRef bitmap = CGBitmapContextCreate(NULL,
-	                                            CGImageGetWidth(paper_gray),
-	                                            CGImageGetHeight(paper_gray),
-	                                            8,
-	                                            4*CGImageGetWidth(paper_gray),
-	                                            rgbColorSpace,
-	                                            kCGImageAlphaPremultipliedLast);
+	CGContextRef bitmap = createBitmapContext(CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray));
 	CGContextDrawImage(bitmap,
 	                   CGRectMake(0.0, 0.0, CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray)),
 	                   paper_gray);
