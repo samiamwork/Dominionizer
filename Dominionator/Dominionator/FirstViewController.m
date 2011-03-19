@@ -82,6 +82,23 @@
 	[[self tableView] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationMiddle];
 }
 
+- (void)replaceCardAtIndex:(NSIndexPath*)indexPath
+{
+	NSDictionary* theCardToReplace = [_cardPicks objectAtIndex:[indexPath row]];
+	NSDictionary* newCard = nil;
+	BOOL cardMustBeAlchemy = [[theCardToReplace valueForKey:@"set"] isEqualToString:@"Alchemy"];
+	do
+	{
+		NSUInteger newIndex = random() % [_cards count];
+		newCard = [_cards objectAtIndex:newIndex];
+	} while(newCard == theCardToReplace
+			|| [_cardPicks containsObject:newCard]
+			|| (cardMustBeAlchemy && ![[newCard valueForKey:@"set"] isEqualToString:@"Alchemy"]));
+
+	[_cardPicks replaceObjectAtIndex:[indexPath row] withObject:newCard];
+	[[self tableView] reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -152,6 +169,25 @@
 	NSDictionary* aCard = [_cardPicks objectAtIndex:[indexPath row]];
 	CardDetailViewController* detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle] properties:aCard];
 	[self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+#pragma mark Table view delegate
+
+-(void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if(editingStyle == UITableViewCellEditingStyleDelete)
+	{
+		[self replaceCardAtIndex:indexPath];
+	}
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return NSLocalizedString(@"Replace", @"Text for button to replace a card in the card list when swiping (instead of \"Delete\"");
 }
 
 @end
