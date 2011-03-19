@@ -43,7 +43,7 @@
 
 	// Make a set containing allowed card sets that we're allowed to pull from
 	NSMutableSet* usableSets = [NSMutableSet set];
-	for(NSInteger i = 0; i < 5; ++i)
+	for(NSInteger i = 0; i < 7; ++i)
 	{
 		NSString* setName = g_setNames[i];
 		if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
