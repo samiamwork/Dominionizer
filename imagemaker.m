@@ -7,7 +7,8 @@
 CGImageRef openImage(const char* path)
 {
 	CFURLRef url = CFURLCreateFromFileSystemRepresentation(NULL,
-	                                                       (const UInt8*)path, strlen(path),
+	                                                       (const UInt8*)path,
+	                                                       strlen(path),
 	                                                       false);
 	CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)url, NULL);
 	CGImageRef image = CGImageSourceCreateImageAtIndex(imageSource, 0, NULL);
@@ -36,6 +37,22 @@ CGContextRef createBitmapContext(size_t width, size_t height)
 	return bitmapContext;
 }
 
+void writeBitmapContext(CGContextRef theContext, const char* path)
+{
+	CFURLRef url = CFURLCreateFromFileSystemRepresentation(NULL,
+	                                                       (const UInt8*)path,
+	                                                       strlen(path),
+	                                                       false);
+	CGImageRef image = CGBitmapContextCreateImage(theContext);
+	CGImageDestinationRef imageDest = CGImageDestinationCreateWithURL(url, kUTTypePNG, 1, NULL);
+	CGImageDestinationAddImage(imageDest, image, NULL);
+	CGImageDestinationFinalize(imageDest);
+
+	CFRelease(imageDest);
+	CGImageRelease(image);
+	CFRelease(url);
+}
+
 int main(int argc, char* argv[])
 {
 	printf("blarg\n");
@@ -52,14 +69,7 @@ int main(int argc, char* argv[])
 	                   paper_gray);
 	CGImageRelease(paper_gray);
 
-	CGImageRef bitmap_image = CGBitmapContextCreateImage(bitmap);
-	NSURL* destURL = [NSURL fileURLWithPath:@"rowbackground.png" isDirectory:NO];
-	CGImageDestinationRef imageDest = CGImageDestinationCreateWithURL((CFURLRef)destURL, kUTTypePNG, 1, NULL);
-	CGImageDestinationAddImage(imageDest, bitmap_image, NULL);
-	CGImageDestinationFinalize(imageDest);
-	CFRelease(imageDest);
-	CGImageRelease(bitmap_image);
-
+	writeBitmapContext(bitmap, "rowbackground.png");
 	CGContextRelease(bitmap);
 
 	[pool release];
