@@ -1,10 +1,10 @@
-PRODUCT_NAME := cardlistmaker
+PRODUCT_NAME := imagemaker
 CONFIG ?= Debug
 PRODUCT_DIR = build/$(CONFIG)
 PRODUCT = $(PRODUCT_DIR)/$(PRODUCT_NAME)
-SRC = cardlistmaker.m
+SRC = imagemaker.m
 OBJ = $(addprefix $(PRODUCT_DIR)/,$(SRC:.m=.o))
-FRAMEWORKS = -framework Foundation 
+FRAMEWORKS = -framework Foundation -framework Quartz -framework ApplicationServices
 CFLAGS = -g -c -Wall -Wextra -Werror -Wno-unused-parameter
 LDFLAGS = $(FRAMEWORKS)
 CC = gcc
@@ -15,7 +15,7 @@ all: $(PRODUCT)
 .PHONY: all test clean
 
 test: $(PRODUCT)
-	./$(PRODUCT) cardlist.txt
+	./$(PRODUCT)
 
 clean:
 	rm -rf build
