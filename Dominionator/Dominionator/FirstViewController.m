@@ -57,7 +57,9 @@
 	for(NSDictionary* aCard in _cards)
 	{
 		NSString* set = [aCard valueForKey:@"set"];
-		if(![usableSets containsObject:set])
+		// Skip this card if it's not an allowed set
+		// or if it's from the Alchemy set and we don't have enough slots to pick enough Alchemy cards
+		if(![usableSets containsObject:set] || (!hasAlchemy && [set isEqualToString:@"Alchemy"] && (10-[_cardPicks count]) < 4))
 		{
 			continue;
 		}
