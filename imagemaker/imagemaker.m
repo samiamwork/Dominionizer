@@ -53,24 +53,58 @@ void writeBitmapContext(CGContextRef theContext, const char* path)
 	CFRelease(url);
 }
 
-int main(int argc, char* argv[])
+void makeBackground(void)
 {
-	printf("blarg\n");
-	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-
 	CGImageRef paper_gray = openImage("paperstrip_gray.png");
 	if(paper_gray == NULL)
 	{
-		return 1;
+		return;
 	}
 	CGContextRef bitmap = createBitmapContext(CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray));
 	CGContextDrawImage(bitmap,
 	                   CGRectMake(0.0, 0.0, CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray)),
 	                   paper_gray);
-	CGImageRelease(paper_gray);
 
+	NSRect bounds = NSMakeRect(0.0, 0.0, CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray));
+	NSGraphicsContext* graphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:bitmap flipped:NO];
+	[NSGraphicsContext setCurrentContext:graphicsContext];
+
+	CGContextSaveGState(bitmap);
+	CGContextSetBlendMode(bitmap, kCGBlendModeMultiply);
+	NSGradient* gradient = [[NSGradient alloc] initWithColorsAndLocations:
+	                           [NSColor colorWithDeviceRed:0.33 green:0.55 blue:0.70 alpha:1.0], 0.0,
+	                           [NSColor colorWithDeviceRed:0.44 green:0.66 blue:0.82 alpha:1.0], 0.3,
+	                           [NSColor colorWithDeviceRed:0.48 green:0.70 blue:0.86 alpha:1.0], 1.0,
+	                           nil];
+	[gradient drawInRect:bounds angle:90.0];
+	CGContextRestoreGState(bitmap);
+
+	// Bottom Line
+	CGContextMoveToPoint(bitmap, 0.0, 0.0);
+	CGContextAddLineToPoint(bitmap, bounds.size.width, 0.0);
+	[[NSColor colorWithDeviceWhite:0.8 alpha:0.5] setStroke];
+	CGContextSetLineWidth(bitmap, 4.0);
+	CGContextStrokePath(bitmap);
+
+	// Top Line
+	CGContextMoveToPoint(bitmap, 0.0, bounds.size.height);
+	CGContextAddLineToPoint(bitmap, bounds.size.width, bounds.size.height);
+	[[NSColor colorWithDeviceWhite:0.2 alpha:0.5] setStroke];
+	CGContextSetLineWidth(bitmap, 4.0);
+	CGContextStrokePath(bitmap);
+
+	[NSGraphicsContext restoreGraphicsState];
+	CGImageRelease(paper_gray);
 	writeBitmapContext(bitmap, "rowbackground.png");
 	CGContextRelease(bitmap);
+}
+
+int main(int argc, char* argv[])
+{
+	printf("blarg\n");
+	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+
+	makeBackground();
 
 	[pool release];
 	return 0;
