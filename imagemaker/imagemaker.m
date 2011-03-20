@@ -22,35 +22,80 @@ CGImageRef openImage(const char* path)
 	return image;
 }
 
-CGContextRef createBitmapContext(size_t width, size_t height)
+CGContextRef createBitmapContext(size_t width, size_t height, CGColorSpaceRef cs)
 {
-	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+	CGColorSpaceRef colorSpace;
+	if(cs == NULL)
+	{
+		colorSpace = CGColorSpaceCreateDeviceRGB();
+	}
+	else
+	{
+		colorSpace = cs;
+	}
+	// HACK: assuming single component color space doesn't want alpha
+	int components = CGColorSpaceGetNumberOfComponents(colorSpace);
+	if(components > 1)
+	{
+		components++;
+	}
 	CGContextRef bitmapContext = CGBitmapContextCreate(NULL,
 	                                                   width,
 	                                                   height,
 	                                                   8,
-	                                                   4*width,
-	                                                   rgbColorSpace,
-	                                                   kCGImageAlphaPremultipliedLast);
-	CFRelease(rgbColorSpace);
+	                                                   components*width,
+	                                                   colorSpace,
+	                                                   components > 1 ? kCGImageAlphaPremultipliedLast : 0);
+
+	if(cs == NULL)
+	{
+		CFRelease(colorSpace);
+	}
 
 	return bitmapContext;
 }
 
-void writeBitmapContext(CGContextRef theContext, const char* path)
+void writeImage(CGImageRef theImage, const char* path, CGColorSpaceRef cs)
 {
+	if(cs != NULL)
+	{
+		CGRect imageRect = CGRectMake(0.0, 0.0, CGImageGetWidth(theImage), CGImageGetHeight(theImage));
+		CGContextRef bitmapContext = createBitmapContext(imageRect.size.width,
+		                                                 imageRect.size.height,
+		                                                 cs);
+		CGContextDrawImage(bitmapContext,
+		                   imageRect,
+		                   theImage);
+		theImage = CGBitmapContextCreateImage(bitmapContext);
+		CFRelease(bitmapContext);
+		if(theImage == NULL)
+		{
+			printf("error converting image to color space\n");
+			return;
+		}
+	}
 	CFURLRef url = CFURLCreateFromFileSystemRepresentation(NULL,
 	                                                       (const UInt8*)path,
 	                                                       strlen(path),
 	                                                       false);
-	CGImageRef image = CGBitmapContextCreateImage(theContext);
 	CGImageDestinationRef imageDest = CGImageDestinationCreateWithURL(url, kUTTypePNG, 1, NULL);
-	CGImageDestinationAddImage(imageDest, image, NULL);
+	CGImageDestinationAddImage(imageDest, theImage, NULL);
 	CGImageDestinationFinalize(imageDest);
 
 	CFRelease(imageDest);
-	CGImageRelease(image);
 	CFRelease(url);
+
+	if(cs != NULL)
+	{
+		CGImageRelease(theImage);
+	}
+}
+
+void writeBitmapContext(CGContextRef theContext, const char* path)
+{
+	CGImageRef image = CGBitmapContextCreateImage(theContext);
+	writeImage(image, path, NULL);
+	CGImageRelease(image);
 }
 
 void makeBackground(void)
@@ -60,7 +105,7 @@ void makeBackground(void)
 	{
 		return;
 	}
-	CGContextRef bitmap = createBitmapContext(CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray));
+	CGContextRef bitmap = createBitmapContext(CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray), NULL);
 	CGContextDrawImage(bitmap,
 	                   CGRectMake(0.0, 0.0, CGImageGetWidth(paper_gray), CGImageGetHeight(paper_gray)),
 	                   paper_gray);
@@ -99,12 +144,43 @@ void makeBackground(void)
 	CGContextRelease(bitmap);
 }
 
+void convertImageToColorSpace(const char* path, CGColorSpaceRef cs)
+{
+	char fileName[100];
+	sprintf(fileName, "_%s", path);
+	printf("writing to \"%s\"\n", fileName);
+	CGImageRef theImage = openImage(path);
+	if(theImage == NULL)
+	{
+		return;
+	}
+	writeImage(theImage, fileName, cs);
+	CGImageRelease(theImage);
+}
+
+void makeGray(void)
+{
+	CGColorSpaceRef grayColorSpace = CGColorSpaceCreateDeviceGray();
+
+	convertImageToColorSpace("tear_mask1.png", grayColorSpace);
+	convertImageToColorSpace("tear_mask1@2x.png", grayColorSpace);
+	convertImageToColorSpace("tear_mask2.png", grayColorSpace);
+	convertImageToColorSpace("tear_mask2@2x.png", grayColorSpace);
+	convertImageToColorSpace("tear_mask3.png", grayColorSpace);
+	convertImageToColorSpace("tear_mask3@2x.png", grayColorSpace);
+	convertImageToColorSpace("tear_mask4.png", grayColorSpace);
+	convertImageToColorSpace("tear_mask4@2x.png", grayColorSpace);
+
+	CGColorSpaceRelease(grayColorSpace);
+}
+
 int main(int argc, char* argv[])
 {
 	printf("blarg\n");
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
-	makeBackground();
+	//makeBackground();
+	makeGray();
 
 	[pool release];
 	return 0;
