@@ -33,17 +33,30 @@
 
 - (void)drawRect:(CGRect)rect
 {
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	[[UIColor whiteColor] setFill];
 	[[UIBezierPath bezierPathWithRect:rect] fill];
 	CGRect workingRect = [self bounds];
+	CGImageRef mask = _cell.tearMask;
+	CGSize maskSize = CGSizeMake(CGImageGetWidth(mask), CGImageGetHeight(mask));
+	workingRect.size.width -= maskSize.width;
 
 	NSDictionary* properties = [_cell properties];
 	NSString* type = [properties valueForKey:@"type"];
-	
-	//UIBezierPath* outline = [UIBezierPath bezierPathWithRoundedRect:workingRect cornerRadius:10.0];
-	[_cell.background drawAtPoint:CGPointZero];
-	UIBezierPath* outline = [UIBezierPath bezierPathWithRect:workingRect];
-	CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+	CGRect maskRect = CGRectMake(CGMaxX(workingRect), 0.0, maskSize.width, maskSize.height);
+	CGContextSaveGState(ctx);
+	{
+		CGContextClipToRect(ctx, workingRect);
+		[_cell.background drawAtPoint:CGPointZero];
+	}
+	CGContextRestoreGState(ctx);
+	CGContextSaveGState(ctx);
+	{
+		CGContextClipToMask(ctx, maskRect, mask);
+		[_cell.background drawAtPoint:CGPointZero];
+	}
+	CGContextRestoreGState(ctx);
 	CGContextSaveGState(ctx);
 	CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
 	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
@@ -152,10 +165,23 @@
 	}
 	else
 	{
+		UIBezierPath* outline = [UIBezierPath bezierPathWithRect:workingRect];
 		[[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0] setFill];
 		[outline fill];
 	}
-	CGContextDrawLinearGradient(ctx, gradient, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)), 0);
+	CGContextSaveGState(ctx);
+	{
+		CGContextClipToRect(ctx, workingRect);
+		CGContextDrawLinearGradient(ctx, gradient, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)), 0);
+	}
+	CGContextRestoreGState(ctx);
+	CGContextSaveGState(ctx);
+	{
+		CGContextClipToMask(ctx, maskRect, mask);
+		CGContextDrawLinearGradient(ctx, gradient, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)), 0);
+	}
+	CGContextRestoreGState(ctx);
+
 	CFRelease(gradient);
 	CFRelease(rgbColorSpace);
 	CGContextRestoreGState(ctx);
@@ -271,6 +297,7 @@
 
 @synthesize properties=_properties;
 @synthesize background=_background;
+@synthesize tearMask=_tearMask;
 
 - (void)setProperties:(NSDictionary*)newProperties;
 {
@@ -278,6 +305,12 @@
 		@"paperstrip_gray1",
 		@"paperstrip_gray2",
 		@"paperstrip_gray3"
+	};
+	static NSString* tearMaskImages[] = {
+		@"tear_mask1",
+		@"tear_mask2",
+		@"tear_mask3",
+		@"tear_mask4",
 	};
 	if(newProperties == _properties)
 	{
@@ -287,6 +320,18 @@
 	_properties = [newProperties retain];
 	[_cardView setNeedsDisplay];
 	[self setBackground:[UIImage imageNamed:backgroundImages[random()%3]]];
+	UIImage* tearImage = [UIImage imageNamed:tearMaskImages[random()%4]];
+	CGImageRef tearCGImage = [tearImage CGImage];
+	CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(tearCGImage),
+										CGImageGetHeight(tearCGImage),
+										CGImageGetBitsPerComponent(tearCGImage),
+										CGImageGetBitsPerPixel(tearCGImage),
+										CGImageGetBytesPerRow(tearCGImage),
+										CGImageGetDataProvider(tearCGImage),
+										NULL,
+										true);
+	CGImageRelease(_tearMask);
+	_tearMask = mask;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

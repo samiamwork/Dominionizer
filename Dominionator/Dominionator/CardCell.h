@@ -13,8 +13,10 @@
     UIView* _cardView;
 	NSDictionary* _properties;
 	UIImage* _background;
+	CGImageRef _tearMask;
 }
 
 @property (nonatomic, retain) NSDictionary* properties;
 @property (nonatomic, retain) UIImage* background;
+@property (nonatomic) CGImageRef tearMask;
 @end
