@@ -40,6 +40,8 @@
 		3E7AAED413358704009AD73B /* tear_mask3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAECC13358702009AD73B /* tear_mask3@2x.png */; };
 		3E7AAED513358704009AD73B /* tear_mask4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAECD13358703009AD73B /* tear_mask4.png */; };
 		3E7AAED613358704009AD73B /* tear_mask4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAECE13358703009AD73B /* tear_mask4@2x.png */; };
+		3E7AAEE11335E0E5009AD73B /* detail_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAEDF1335E0E4009AD73B /* detail_background.png */; };
+		3E7AAEE21335E0E5009AD73B /* detail_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAEE01335E0E4009AD73B /* detail_background@2x.png */; };
 		3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */; };
 		3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */; };
 		3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B61132D583300AEE21A /* CardDetailView.m */; };
@@ -97,6 +99,8 @@
 		3E7AAECC13358702009AD73B /* tear_mask3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear_mask3@2x.png"; sourceTree = "<group>"; };
 		3E7AAECD13358703009AD73B /* tear_mask4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tear_mask4.png; sourceTree = "<group>"; };
 		3E7AAECE13358703009AD73B /* tear_mask4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tear_mask4@2x.png"; sourceTree = "<group>"; };
+		3E7AAEDF1335E0E4009AD73B /* detail_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail_background.png; sourceTree = "<group>"; };
+		3E7AAEE01335E0E4009AD73B /* detail_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_background@2x.png"; sourceTree = "<group>"; };
 		3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
 		3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
 		3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 		3E7AAED713358717009AD73B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E7AAEDF1335E0E4009AD73B /* detail_background.png */,
+				3E7AAEE01335E0E4009AD73B /* detail_background@2x.png */,
 				3E7AAEBA13354DA6009AD73B /* paperstrip_gray1.png */,
 				3E7AAEBB13354DA6009AD73B /* paperstrip_gray1@2x.png */,
 				3E7AAEBC13354DA6009AD73B /* paperstrip_gray2.png */,
@@ -326,6 +332,8 @@
 				3E7AAED413358704009AD73B /* tear_mask3@2x.png in Resources */,
 				3E7AAED513358704009AD73B /* tear_mask4.png in Resources */,
 				3E7AAED613358704009AD73B /* tear_mask4@2x.png in Resources */,
+				3E7AAEE11335E0E5009AD73B /* detail_background.png in Resources */,
+				3E7AAEE21335E0E5009AD73B /* detail_background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
