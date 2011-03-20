@@ -25,8 +25,7 @@
 	if((self = [super initWithFrame:frame]))
 	{
 		_cell = cell;
-		self.opaque = YES;
-        self.backgroundColor = _cell.backgroundColor;
+		self.opaque = NO;
 	}
 	return self;
 }
@@ -50,8 +49,6 @@
 - (void)drawRect:(CGRect)rect
 {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
-	[[UIColor whiteColor] setFill];
-	[[UIBezierPath bezierPathWithRect:rect] fill];
 	CGRect workingRect = [self bounds];
 	CGImageRef mask = _cell.tearMask;
 	CGSize maskSize = CGSizeMake(CGImageGetWidth(mask), CGImageGetHeight(mask));
@@ -339,7 +336,10 @@
 		_cardView = [[CardView alloc] initWithFrame:[[self contentView] bounds] cell:self];
 		[_cardView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 		[_cardView setContentMode:UIViewContentModeRedraw];
+		self.opaque = NO;
 		[self.contentView addSubview:_cardView];
+		self.backgroundColor = [UIColor clearColor];
+		self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
