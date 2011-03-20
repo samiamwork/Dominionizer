@@ -31,6 +31,22 @@
 	return self;
 }
 
+- (void)drawBackgroundWithGradient:(CGGradientRef)gradient whiteGloss:(CGGradientRef)whiteGloss blackGloss:(CGGradientRef)blackGloss
+{
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+	CGRect workingRect = self.bounds;
+	[_cell.background drawAtPoint:CGPointZero];
+	CGContextSaveGState(ctx);
+	{
+		CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
+		CGContextDrawLinearGradient(ctx, gradient, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)), 0);
+	}
+	CGContextRestoreGState(ctx);
+	CGContextDrawLinearGradient(ctx, whiteGloss, CGPointMake(0.0, CGMinY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)+2.0), 0);
+	CGContextDrawLinearGradient(ctx, blackGloss, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMaxY(workingRect)-2.0), 0);
+
+}
+
 - (void)drawRect:(CGRect)rect
 {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -44,21 +60,6 @@
 	NSDictionary* properties = [_cell properties];
 	NSString* type = [properties valueForKey:@"type"];
 
-	CGRect maskRect = CGRectMake(CGMaxX(workingRect), 0.0, maskSize.width, maskSize.height);
-	CGContextSaveGState(ctx);
-	{
-		CGContextClipToRect(ctx, workingRect);
-		[_cell.background drawAtPoint:CGPointZero];
-	}
-	CGContextRestoreGState(ctx);
-	CGContextSaveGState(ctx);
-	{
-		CGContextClipToMask(ctx, maskRect, mask);
-		[_cell.background drawAtPoint:CGPointZero];
-	}
-	CGContextRestoreGState(ctx);
-	CGContextSaveGState(ctx);
-	CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
 	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
 	CGGradientRef gradient;
 	if([type isEqualToString:@"Action"] || [type isEqualToString:@"Action - Attack"])
@@ -169,41 +170,36 @@
 		[[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0] setFill];
 		[outline fill];
 	}
+
+	// Gloss lines
+	CGColorSpaceRef whiteColorSpace = CGColorSpaceCreateDeviceGray();
+	CGFloat colorsWhite[] = {0.9, 0.6, 0.9, 0.0};
+	CGFloat locationsWhite[] = {0.0, 1.0};
+	CGGradientRef whiteGloss = CGGradientCreateWithColorComponents(whiteColorSpace, colorsWhite, locationsWhite, 2);
+
+	CGFloat colorsBlack[] = {0.2, 0.6, 0.2, 0.0};
+	CGFloat locationsBlack[] = {0.0, 1.0};
+	CGGradientRef blackGloss = CGGradientCreateWithColorComponents(whiteColorSpace, colorsBlack, locationsBlack, 2);
+
+	CGRect maskRect = CGRectMake(CGMaxX(workingRect), 0.0, maskSize.width, maskSize.height);
 	CGContextSaveGState(ctx);
 	{
 		CGContextClipToRect(ctx, workingRect);
-		CGContextDrawLinearGradient(ctx, gradient, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)), 0);
+		[self drawBackgroundWithGradient:gradient whiteGloss:whiteGloss blackGloss:blackGloss];
 	}
 	CGContextRestoreGState(ctx);
 	CGContextSaveGState(ctx);
 	{
 		CGContextClipToMask(ctx, maskRect, mask);
-		CGContextDrawLinearGradient(ctx, gradient, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)), 0);
+		[self drawBackgroundWithGradient:gradient whiteGloss:whiteGloss blackGloss:blackGloss];
 	}
 	CGContextRestoreGState(ctx);
 
+	CFRelease(whiteGloss);
+	CFRelease(blackGloss);
 	CFRelease(gradient);
 	CFRelease(rgbColorSpace);
-	CGContextRestoreGState(ctx);
-
-	// Draw gloss lines
-	{
-		CGColorSpaceRef whiteColorSpace = CGColorSpaceCreateDeviceGray();
-
-		CGFloat colorsWhite[] = {0.9, 0.6, 0.9, 0.0};
-		CGFloat locationsWhite[] = {0.0, 1.0};
-		CGGradientRef whiteGloss = CGGradientCreateWithColorComponents(whiteColorSpace, colorsWhite, locationsWhite, 2);
-		CGContextDrawLinearGradient(ctx, whiteGloss, CGPointMake(0.0, CGMinY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)+2.0), 0);
-		CFRelease(whiteGloss);
-
-		CGFloat colorsBlack[] = {0.2, 0.6, 0.2, 0.0};
-		CGFloat locationsBlack[] = {0.0, 1.0};
-		CGGradientRef blackGloss = CGGradientCreateWithColorComponents(whiteColorSpace, colorsBlack, locationsBlack, 2);
-		CGContextDrawLinearGradient(ctx, blackGloss, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMaxY(workingRect)-2.0), 0);
-		CFRelease(blackGloss);
-
-		CFRelease(whiteColorSpace);
-	}
+	CFRelease(whiteColorSpace);
 
 	NSString* cost = [properties valueForKey:@"cost"];
 	NSArray* costList = [cost componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
