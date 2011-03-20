@@ -28,6 +28,7 @@
 	UIBarButtonItem* shuffleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pickNewCards:)];
 	self.navigationItem.rightBarButtonItem = shuffleButton;
 	[shuffleButton release];
+	self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.658 green:0.442 blue:0.280 alpha:1.000];
 }
 
 - (IBAction)pickNewCards:(id)sender
