@@ -14,6 +14,8 @@
 @synthesize cardNameLabel=_cardNameLabel;
 @synthesize cardTypeLabel=_cardTypeLabel;
 @synthesize cardRulesLabel=_cardRulesLabel;
+@synthesize cardSetIconView=_cardSetIconView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil properties:(NSDictionary*)properties
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,6 +51,7 @@
 	self.cardNameLabel.text = [_properties valueForKey:@"card"];
 	self.cardRulesLabel.text = [_properties valueForKey:@"rules"];
 	self.cardTypeLabel.text = [_properties valueForKey:@"type"];
+	self.cardSetIconView.image = [UIImage imageNamed:[_properties valueForKey:@"set"]];
 }
 
 - (void)viewDidUnload
