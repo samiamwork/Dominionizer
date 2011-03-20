@@ -35,6 +35,7 @@
 	// Shuffle
 	for(NSInteger i = 0; i < [_cards count]; ++i)
 	{
+		// TODO: fix modulous bias
 		NSUInteger j = random() % [_cards count];
 		[_cards exchangeObjectAtIndex:i withObjectAtIndex:j];
 	}
