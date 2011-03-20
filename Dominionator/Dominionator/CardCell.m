@@ -201,6 +201,8 @@
 	CFRelease(rgbColorSpace);
 	CFRelease(whiteColorSpace);
 
+	// Now that we don't need the mask anymore lets extend our working rect to give us some more space
+	workingRect.size.width += ceil(maskSize.width/2.0);
 	NSString* cost = [properties valueForKey:@"cost"];
 	NSArray* costList = [cost componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 	NSString* coinCost = nil;
@@ -234,7 +236,7 @@
 		textRect = CGRectMake(labelXMargin, CGMaxY(workingRect)-stringSize.height-5.0, workingRect.size.width - labelXMargin - labelXMaxMargin, stringSize.height);
 		[type drawInRect:textRect withFont:typeFont lineBreakMode:UILineBreakModeTailTruncation];
 
-		UIFont* nameFont = [UIFont boldSystemFontOfSize:21.0];
+		UIFont* nameFont = [UIFont boldSystemFontOfSize:20.0];
 		NSString* cardName = [properties valueForKey:@"card"];
 		stringSize = [cardName sizeWithFont:nameFont];
 		textRect = CGRectMake(labelXMargin, CGMaxY(workingRect)-stringSize.height-20.0, workingRect.size.width - labelXMargin - labelXMaxMargin, stringSize.height);
