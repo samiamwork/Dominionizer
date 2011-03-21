@@ -156,21 +156,29 @@
 			|| ![allowedSets containsObject:newCardSet]
 			|| (cardMustBeAlchemy && ![newCardSet isEqualToString:@"Alchemy"]));
 
-	[[self tableView] beginUpdates];
-	// Delete old card
-	[oldSetArray removeObjectAtIndex:[indexPath row]];
-	[[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-
-	// Add new card
-	[_setOfCardsPicked removeObject:theCardToReplace];
-	[_setOfCardsPicked addObject:newCard];
 	NSString* newSetName = [newCard valueForKey:@"set"];
-	NSMutableArray* newSetArray = [_cardPicks valueForKey:newSetName];
-	[newSetArray addObject:newCard];
-	NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:[newSetArray count]-1 inSection:[_setNames indexOfObject:newSetName]];
-	[[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+	if([setName isEqualToString:newSetName])
+	{
+		[oldSetArray replaceObjectAtIndex:[indexPath row] withObject:newCard];
+		[[self tableView] reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+	}
+	else
+	{
+		[[self tableView] beginUpdates];
+		// Delete old card
+		[oldSetArray removeObjectAtIndex:[indexPath row]];
+		[[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 
-	[[self tableView] endUpdates];
+		// Add new card
+		[_setOfCardsPicked removeObject:theCardToReplace];
+		[_setOfCardsPicked addObject:newCard];
+		NSMutableArray* newSetArray = [_cardPicks valueForKey:newSetName];
+		[newSetArray addObject:newCard];
+		NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:[newSetArray count]-1 inSection:[_setNames indexOfObject:newSetName]];
+		[[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+
+		[[self tableView] endUpdates];
+	}
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
