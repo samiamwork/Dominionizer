@@ -11,7 +11,9 @@
 
 @interface FirstViewController : UITableViewController {
 	NSMutableArray* _cards;
-	NSMutableArray* _cardPicks;
+	NSMutableDictionary* _cardPicks;
+	NSMutableArray* _setNames;
+	NSMutableSet* _setOfCardsPicked;
 }
 
 - (IBAction)pickNewCards:(id)sender;

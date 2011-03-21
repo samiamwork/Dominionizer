@@ -20,7 +20,8 @@
 	[[self tableView] setRowHeight:55.0];
 	NSURL* cardListURL = [[NSBundle mainBundle] URLForResource:@"cardlist" withExtension:@"plist"];
 	_cards = [[NSMutableArray alloc] initWithContentsOfURL:cardListURL];
-	_cardPicks = [[NSMutableArray alloc] init];
+	_cardPicks = [[NSMutableDictionary alloc] init];
+	_setOfCardsPicked = [[NSMutableSet alloc] init];
 	srandomdev();
 	[self pickNewCards:nil];
 
@@ -29,6 +30,22 @@
 	self.navigationItem.rightBarButtonItem = shuffleButton;
 	[shuffleButton release];
 	self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.545 green:0.366 blue:0.232 alpha:1.000];
+}
+
+- (NSSet*)allowedSets
+{
+	// Make a set containing allowed card sets that we're allowed to pull from
+	NSMutableSet* usableSets = [NSMutableSet set];
+	for(NSInteger i = 0; i < 7; ++i)
+	{
+		NSString* setName = g_setNames[i];
+		if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
+		{
+			[usableSets addObject:setName];
+		}
+	}
+
+	return usableSets;
 }
 
 - (IBAction)pickNewCards:(id)sender
@@ -41,21 +58,12 @@
 		[_cards exchangeObjectAtIndex:i withObjectAtIndex:j];
 	}
 	// Pick Ten
-	[_cardPicks removeAllObjects];
 
-	// Make a set containing allowed card sets that we're allowed to pull from
-	NSMutableSet* usableSets = [NSMutableSet set];
-	for(NSInteger i = 0; i < 7; ++i)
-	{
-		NSString* setName = g_setNames[i];
-		if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
-		{
-			[usableSets addObject:setName];
-		}
-	}
+	NSSet* usableSets = [self allowedSets];
 
 	BOOL hasAlchemy = NO;
 	NSUInteger alchemyCount = 0;
+	[_setOfCardsPicked removeAllObjects];
 	for(NSDictionary* aCard in _cards)
 	{
 		NSString* set = [aCard valueForKey:@"set"];
@@ -76,31 +84,93 @@
 		{
 			continue;
 		}
-		[_cardPicks addObject:aCard];
-		if([_cardPicks count] == 10)
+		[_setOfCardsPicked addObject:aCard];
+		if([_setOfCardsPicked count] == 10)
 		{
 			break;
 		}
 	}
-	
-	[[self tableView] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationMiddle];
+
+	// Put cards into arrays by set
+	NSMutableDictionary* pickedCardsBySet = [[NSMutableDictionary alloc] init];
+	NSMutableArray* newSetNames = [[NSMutableArray alloc] init];
+	for(NSMutableDictionary* aCard in _setOfCardsPicked)
+	{
+		NSString* setName = [aCard valueForKey:@"set"];
+		NSMutableArray* setArray = [pickedCardsBySet valueForKey:setName];
+		if(setArray == nil)
+		{
+			setArray = [NSMutableArray array];
+			[pickedCardsBySet setValue:setArray forKey:setName];
+			[newSetNames addObject:setName];
+		}
+		[setArray addObject:aCard];
+	}
+
+	NSUInteger oldSetCount = [_setNames count];
+	NSUInteger newSetCount = [newSetNames count];
+	[_setNames release];
+	_setNames = newSetNames;
+	[_cardPicks release];
+	_cardPicks = pickedCardsBySet;
+
+	[[self tableView] beginUpdates];
+	if(oldSetCount == newSetCount)
+	{
+		[[self tableView] reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, oldSetCount)]
+						withRowAnimation:UITableViewRowAnimationMiddle];
+	}
+	else if(oldSetCount > newSetCount)
+	{
+		[[self tableView] reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newSetCount)]
+						withRowAnimation:UITableViewRowAnimationMiddle];
+		[[self tableView] deleteSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(newSetCount, oldSetCount-newSetCount)]
+						withRowAnimation:UITableViewRowAnimationMiddle];
+	}
+	else if(oldSetCount < newSetCount)
+	{
+		[[self tableView] reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, oldSetCount)]
+						withRowAnimation:UITableViewRowAnimationMiddle];
+		[[self tableView] insertSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(oldSetCount, newSetCount-oldSetCount)]
+						withRowAnimation:UITableViewRowAnimationMiddle];
+	}
+	[[self tableView] endUpdates];
 }
 
 - (void)replaceCardAtIndex:(NSIndexPath*)indexPath
 {
-	NSDictionary* theCardToReplace = [_cardPicks objectAtIndex:[indexPath row]];
+	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
+	NSMutableArray* oldSetArray = [_cardPicks valueForKey:setName];
+	NSDictionary* theCardToReplace = [oldSetArray objectAtIndex:[indexPath row]];
 	NSDictionary* newCard = nil;
+	NSSet* allowedSets = [self allowedSets];
+	NSString* newCardSet = nil;
 	BOOL cardMustBeAlchemy = [[theCardToReplace valueForKey:@"set"] isEqualToString:@"Alchemy"];
 	do
 	{
 		NSUInteger newIndex = random() % [_cards count];
 		newCard = [_cards objectAtIndex:newIndex];
+		newCardSet = [newCard valueForKey:@"set"];
 	} while(newCard == theCardToReplace
-			|| [_cardPicks containsObject:newCard]
-			|| (cardMustBeAlchemy && ![[newCard valueForKey:@"set"] isEqualToString:@"Alchemy"]));
+			|| [_setOfCardsPicked containsObject:newCard]
+			|| ![allowedSets containsObject:newCardSet]
+			|| (cardMustBeAlchemy && ![newCardSet isEqualToString:@"Alchemy"]));
 
-	[_cardPicks replaceObjectAtIndex:[indexPath row] withObject:newCard];
-	[[self tableView] reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+	[[self tableView] beginUpdates];
+	// Delete old card
+	[oldSetArray removeObjectAtIndex:[indexPath row]];
+	[[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+
+	// Add new card
+	[_setOfCardsPicked removeObject:theCardToReplace];
+	[_setOfCardsPicked addObject:newCard];
+	NSString* newSetName = [newCard valueForKey:@"set"];
+	NSMutableArray* newSetArray = [_cardPicks valueForKey:newSetName];
+	[newSetArray addObject:newCard];
+	NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:[newSetArray count]-1 inSection:[_setNames indexOfObject:newSetName]];
+	[[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+
+	[[self tableView] endUpdates];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -141,13 +211,20 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [_setNames count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+	NSString* setName = [_setNames objectAtIndex:section];
+	NSArray* setArray = [_cardPicks valueForKey:setName];
     // Return the number of rows in the section.
-    return [_cardPicks count];
+    return [setArray count];
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+	return [_setNames objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,7 +237,9 @@
     }
     
     // Configure the cell...
-	NSDictionary* aCard = [_cardPicks objectAtIndex:[indexPath row]];
+	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
+	NSArray* setArray = [_cardPicks valueForKey:setName];
+	NSDictionary* aCard = [setArray objectAtIndex:[indexPath row]];
 	//[[cell textLabel] setText:[aCard objectForKey:@"card"]];
 	[cell setProperties:aCard];
     
@@ -169,8 +248,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	//NSLog(@"selected %@", [[_cardPicks objectAtIndex:[indexPath row]] valueForKey:@"card"]);
-	NSDictionary* aCard = [_cardPicks objectAtIndex:[indexPath row]];
+	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
+	NSArray* setArray = [_cardPicks valueForKey:setName];
+	NSDictionary* aCard = [setArray objectAtIndex:[indexPath row]];
 	CardDetailViewController* detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle] properties:aCard];
 	[self.navigationController pushViewController:detailViewController animated:YES];
 }
