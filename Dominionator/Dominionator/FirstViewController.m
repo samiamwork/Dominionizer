@@ -203,6 +203,10 @@
 
 - (void)dealloc
 {
+	[_cards release];
+	[_cardPicks release];
+	[_setNames release];
+	[_setOfCardsPicked release];
     [super dealloc];
 }
 
