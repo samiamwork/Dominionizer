@@ -80,7 +80,7 @@
 			hasAlchemy = YES;
 		}
 		// Make sure that we pick the alchemy cards we need
-		else if(hasAlchemy && alchemyCount < 4 && (10-[_cardPicks count]) <= (4-alchemyCount))
+		else if(hasAlchemy && alchemyCount < 4 && (10-[_setOfCardsPicked count]) <= (4-alchemyCount))
 		{
 			continue;
 		}
