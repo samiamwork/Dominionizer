@@ -22,6 +22,7 @@
 	_cards = [[NSMutableArray alloc] initWithContentsOfURL:cardListURL];
 	_cardPicks = [[NSMutableDictionary alloc] init];
 	_setOfCardsPicked = [[NSMutableSet alloc] init];
+	_setHeaders = [[NSMutableArray alloc] init];
 	srandomdev();
 	[self pickNewCards:nil];
 
@@ -91,6 +92,7 @@
 		}
 	}
 
+	[_setHeaders removeAllObjects];
 	// Put cards into arrays by set
 	NSMutableDictionary* pickedCardsBySet = [[NSMutableDictionary alloc] init];
 	NSMutableArray* newSetNames = [[NSMutableArray alloc] init];
@@ -103,6 +105,17 @@
 			setArray = [NSMutableArray array];
 			[pickedCardsBySet setValue:setArray forKey:setName];
 			[newSetNames addObject:setName];
+			UITableViewCell* newHeaderView = [[UITableViewCell alloc] init];
+			newHeaderView.textLabel.text = setName;
+			newHeaderView.imageView.image = [UIImage imageNamed:setName];
+			newHeaderView.imageView.alpha = 0.7;
+			newHeaderView.opaque = YES;
+			newHeaderView.textLabel.textColor = [UIColor whiteColor];
+			newHeaderView.textLabel.shadowColor = [UIColor blackColor];
+			newHeaderView.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+			newHeaderView.backgroundColor = [UIColor lightGrayColor];
+			[_setHeaders addObject:newHeaderView];
+			[newHeaderView release];
 		}
 		[setArray addObject:aCard];
 	}
@@ -166,6 +179,7 @@
 	{
 		[[self tableView] beginUpdates];
 		// Delete old card
+		// TODO: if this is the last card in a section then just remove the whole section
 		[oldSetArray removeObjectAtIndex:[indexPath row]];
 		[[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 
@@ -179,6 +193,7 @@
 
 		[[self tableView] endUpdates];
 	}
+	// TODO: if set is new...
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -215,6 +230,7 @@
 	[_cardPicks release];
 	[_setNames release];
 	[_setOfCardsPicked release];
+	[_setHeaders release];
     [super dealloc];
 }
 
@@ -284,6 +300,16 @@
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	return NSLocalizedString(@"Replace", @"Text for button to replace a card in the card list when swiping (instead of \"Delete\"");
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	return [_setHeaders objectAtIndex:section];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 32.0;
 }
 
 @end

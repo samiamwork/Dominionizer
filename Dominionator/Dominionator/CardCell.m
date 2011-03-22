@@ -198,8 +198,6 @@
 	CFRelease(rgbColorSpace);
 	CFRelease(whiteColorSpace);
 
-	[_cell.icon drawAtPoint:CGPointMake(0.0, 10.0) blendMode:kCGBlendModeNormal alpha:0.7];
-
 	// Now that we don't need the mask anymore lets extend our working rect to give us some more space
 	workingRect.size.width += ceil(maskSize.width/2.0);
 	NSString* cost = [properties valueForKey:@"cost"];
@@ -226,7 +224,7 @@
 	{
 		CGRect textRect;
 		CGContextSetShadowWithColor(ctx, CGSizeMake(0.0, 1.0), 1.0, [[UIColor colorWithWhite:1.0 alpha:0.6] CGColor]);
-		CGFloat labelXMargin = 32.0;
+		CGFloat labelXMargin = 10.0;
 		CGFloat labelXMaxMargin = labelXMargin + coinDiameter + coinOffset + (potionCost == nil ? 0.0 : (coinDiameter+coinOffset));
 
 		UIFont* typeFont = [UIFont boldSystemFontOfSize:11.0];
@@ -294,7 +292,6 @@
 
 @synthesize properties=_properties;
 @synthesize background=_background;
-@synthesize icon=_icon;
 @synthesize tearMask=_tearMask;
 
 - (void)setProperties:(NSDictionary*)newProperties;
@@ -328,9 +325,6 @@
 										CGImageGetDataProvider(tearCGImage),
 										NULL,
 										true);
-	NSString* setName = [_properties valueForKey:@"set"];
-	UIImage* setImage = [UIImage imageNamed:setName];
-	[self setIcon:setImage];
 	CGImageRelease(_tearMask);
 	_tearMask = mask;
 }

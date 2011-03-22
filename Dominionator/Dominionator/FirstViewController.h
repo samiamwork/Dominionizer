@@ -14,6 +14,7 @@
 	NSMutableDictionary* _cardPicks;
 	NSMutableArray* _setNames;
 	NSMutableSet* _setOfCardsPicked;
+	NSMutableArray* _setHeaders;
 }
 
 - (IBAction)pickNewCards:(id)sender;
