@@ -184,9 +184,16 @@
 	{
 		[[self tableView] beginUpdates];
 		// Delete old card
-		// TODO: if this is the last card in a section then just remove the whole section
-		[oldSetArray removeObjectAtIndex:[indexPath row]];
-		[[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+		if([oldSetArray count] == 1)
+		{
+			[_cardPicks removeObjectForKey:setName];
+			[[self tableView] deleteSections:[NSIndexSet indexSetWithIndex:[indexPath section]] withRowAnimation:UITableViewRowAnimationMiddle];
+		}
+		else
+		{
+			[oldSetArray removeObjectAtIndex:[indexPath row]];
+			[[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+		}
 
 		// Add new card
 		[_setOfCardsPicked removeObject:theCardToReplace];
