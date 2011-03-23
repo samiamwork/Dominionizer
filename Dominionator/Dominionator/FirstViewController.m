@@ -49,6 +49,21 @@
 	return usableSets;
 }
 
+- (UIView*)newHeaderForSetNamed:(NSString*)setName
+{
+	UITableViewCell* newHeaderView = [[UITableViewCell alloc] init];
+	newHeaderView.textLabel.text = setName;
+	newHeaderView.imageView.image = [UIImage imageNamed:setName];
+	newHeaderView.imageView.alpha = 0.7;
+	newHeaderView.opaque = YES;
+	newHeaderView.textLabel.textColor = [UIColor whiteColor];
+	newHeaderView.textLabel.shadowColor = [UIColor blackColor];
+	newHeaderView.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+	newHeaderView.backgroundColor = [UIColor lightGrayColor];
+
+	return  [newHeaderView autorelease];
+}
+
 - (IBAction)pickNewCards:(id)sender
 {
 	// Shuffle
@@ -105,17 +120,7 @@
 			setArray = [NSMutableArray array];
 			[pickedCardsBySet setValue:setArray forKey:setName];
 			[newSetNames addObject:setName];
-			UITableViewCell* newHeaderView = [[UITableViewCell alloc] init];
-			newHeaderView.textLabel.text = setName;
-			newHeaderView.imageView.image = [UIImage imageNamed:setName];
-			newHeaderView.imageView.alpha = 0.7;
-			newHeaderView.opaque = YES;
-			newHeaderView.textLabel.textColor = [UIColor whiteColor];
-			newHeaderView.textLabel.shadowColor = [UIColor blackColor];
-			newHeaderView.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-			newHeaderView.backgroundColor = [UIColor lightGrayColor];
-			[_setHeaders addObject:newHeaderView];
-			[newHeaderView release];
+			[_setHeaders addObject:[self newHeaderForSetNamed:setName]];
 		}
 		[setArray addObject:aCard];
 	}
@@ -187,13 +192,24 @@
 		[_setOfCardsPicked removeObject:theCardToReplace];
 		[_setOfCardsPicked addObject:newCard];
 		NSMutableArray* newSetArray = [_cardPicks valueForKey:newSetName];
-		[newSetArray addObject:newCard];
-		NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:[newSetArray count]-1 inSection:[_setNames indexOfObject:newSetName]];
-		[[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+		if(newSetArray == nil)
+		{
+			// This is a new set
+			[_setNames addObject:newSetName];
+			[_setHeaders addObject:[self newHeaderForSetNamed:newSetName]];
+			NSMutableArray* newSetArray = [NSMutableArray arrayWithObject:newCard];
+			[_cardPicks setValue:newSetArray forKey:newSetName];
+			[[self tableView] insertSections:[NSIndexSet indexSetWithIndex:[_setNames count]-1] withRowAnimation:UITableViewRowAnimationMiddle];
+		}
+		else
+		{
+			[newSetArray addObject:newCard];
+			NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:[newSetArray count]-1 inSection:[_setNames indexOfObject:newSetName]];
+			[[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+		}
 
 		[[self tableView] endUpdates];
 	}
-	// TODO: if set is new...
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
