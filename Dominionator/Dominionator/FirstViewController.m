@@ -306,6 +306,7 @@
 	NSDictionary* aCard = [setArray objectAtIndex:[indexPath row]];
 	CardDetailViewController* detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle] properties:aCard];
 	[self.navigationController pushViewController:detailViewController animated:YES];
+	[detailViewController release];
 }
 
 #pragma mark Table view delegate
