@@ -187,6 +187,8 @@
 		if([oldSetArray count] == 1)
 		{
 			[_cardPicks removeObjectForKey:setName];
+			[_setNames removeObjectAtIndex:[indexPath section]];
+			[_setHeaders removeObjectAtIndex:[indexPath section]];
 			[[self tableView] deleteSections:[NSIndexSet indexSetWithIndex:[indexPath section]] withRowAnimation:UITableViewRowAnimationMiddle];
 		}
 		else
