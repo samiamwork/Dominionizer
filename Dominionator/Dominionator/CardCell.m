@@ -248,16 +248,10 @@
 		
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
 		CGContextSaveGState(ctx);
-		CGContextBeginTransparencyLayer(ctx, NULL);
-		CGContextSetShadowWithColor(ctx, CGSizeMake(0.0, 1.0), 1.0, [[UIColor colorWithWhite:1.0 alpha:0.6] CGColor]);
-		CGFloat bottomHeight = coinRect.size.height/2.0;
-		CGRect potionBottomRect = CGRectMake(coinRect.origin.x + (coinRect.size.width - bottomHeight)/2.0, CGMaxY(coinRect)-bottomHeight, bottomHeight, bottomHeight);
-		CGFloat topWidth = bottomHeight/2.0;
-		CGRect potionTopRect = CGRectMake(coinRect.origin.x + bottomHeight-topWidth/2.0, CGMinY(coinRect)+5.0, topWidth, bottomHeight);
-		[[UIColor colorWithRed:0.23 green:0.22 blue:0.93 alpha:1.0] setFill];
-		[[UIBezierPath bezierPathWithRoundedRect:potionTopRect cornerRadius:2.0] fill];
-		[[UIBezierPath bezierPathWithOvalInRect:potionBottomRect] fill];
-		CGContextEndTransparencyLayer(ctx);
+		{
+			CGContextSetShadowWithColor(ctx, CGSizeMake(0.0, 1.0), 1.0, [[UIColor colorWithWhite:1.0 alpha:0.6] CGColor]);
+			[_cell.potion drawAtPoint:coinRect.origin];
+		}
 		CGContextRestoreGState(ctx);
 
 		coinOffset += coinDiameter + 2.0;
@@ -292,6 +286,7 @@
 
 @synthesize properties=_properties;
 @synthesize background=_background;
+@synthesize potion=_potion;
 @synthesize tearMask=_tearMask;
 
 - (void)setProperties:(NSDictionary*)newProperties;
@@ -340,6 +335,7 @@
 		[self.contentView addSubview:_cardView];
 		self.backgroundColor = [UIColor clearColor];
 		self.selectionStyle = UITableViewCellSelectionStyleNone;
+		self.potion = [UIImage imageNamed:@"Potion"];
     }
     return self;
 }
@@ -365,6 +361,9 @@
 {
 	[_properties release];
 	[_cardView release];
+	[_background release];
+	[_potion release];
+	CGImageRelease(_tearMask);
     [super dealloc];
 }
 
