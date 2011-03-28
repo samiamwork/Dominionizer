@@ -246,7 +246,6 @@
 		CGRect coinRect = CGRectMake(CGMaxX(workingRect)-coinDiameter-coinOffset, 10.0, coinDiameter, coinDiameter);
 		coinRect.origin.y -= 3.0;
 		
-		CGContextRef ctx = UIGraphicsGetCurrentContext();
 		CGContextSaveGState(ctx);
 		{
 			CGContextSetShadowWithColor(ctx, CGSizeMake(0.0, 1.0), 1.0, [[UIColor colorWithWhite:1.0 alpha:0.6] CGColor]);
@@ -259,22 +258,21 @@
 	if(coinCost != nil)
 	{
 		CGRect coinRect = CGRectMake(CGMaxX(workingRect)-coinDiameter-coinOffset, 10.0, coinDiameter, coinDiameter);
-		UIBezierPath* circle = [UIBezierPath bezierPathWithOvalInRect:coinRect];
-		[[UIColor colorWithRed:0.7 green:0.7 blue:0.2 alpha:1.0] setFill];
-		[circle fill];
 		coinRect.origin.y -= 1.0;
-		circle = [UIBezierPath bezierPathWithOvalInRect:coinRect];
-		[[UIColor colorWithRed:0.9 green:0.9 blue:0.23 alpha:1.0] setFill];
-		[circle fill];
-		
-		CGContextRef ctx = UIGraphicsGetCurrentContext();
+		coinRect.size = [_cell.coin size];
+		CGContextSaveGState(ctx);
+		{
+			CGContextSetShadow(ctx, CGSizeMake(0.0, 2.0), 2.0);
+			[_cell.coin drawAtPoint:coinRect.origin];
+		}
+		CGContextRestoreGState(ctx);
 		CGContextSaveGState(ctx);
 		CGContextSetShadowWithColor(ctx, CGSizeMake(0.0, 1.0), 1.0, [[UIColor colorWithWhite:1.0 alpha:0.6] CGColor]);
 		[[UIColor colorWithWhite:0.4 alpha:1.0] setFill];
-		UIFont* font = [UIFont boldSystemFontOfSize:25.0];
+		UIFont* font = [UIFont boldSystemFontOfSize:20.0];
 		CGSize stringSize = [coinCost sizeWithFont:font];
 		[coinCost drawAtPoint:CGPointMake(coinRect.origin.x+(coinRect.size.width-stringSize.width)/2.0,
-										  coinRect.origin.y + (coinRect.size.height-stringSize.height)/2.0)
+										  coinRect.origin.y + (coinRect.size.height-stringSize.height)/2.0 - 2.0)
 					 withFont:font];
 		CGContextRestoreGState(ctx);
 	}
@@ -287,6 +285,7 @@
 @synthesize properties=_properties;
 @synthesize background=_background;
 @synthesize potion=_potion;
+@synthesize coin=_coin;
 @synthesize tearMask=_tearMask;
 
 - (void)setProperties:(NSDictionary*)newProperties;
@@ -336,6 +335,7 @@
 		self.backgroundColor = [UIColor clearColor];
 		self.selectionStyle = UITableViewCellSelectionStyleNone;
 		self.potion = [UIImage imageNamed:@"Potion"];
+		self.coin = [UIImage imageNamed:@"Coin"];
     }
     return self;
 }
@@ -363,6 +363,7 @@
 	[_cardView release];
 	[_background release];
 	[_potion release];
+	[_coin release];
 	CGImageRelease(_tearMask);
     [super dealloc];
 }
