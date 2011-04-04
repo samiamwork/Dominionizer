@@ -17,12 +17,12 @@ NSString* g_setNames[] = {
 
 + (void)initialize
 {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[0]];
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[1]];
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[2]];
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[3]];
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[4]];
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:g_setNames[5]];
+	NSMutableDictionary* defaults = [NSMutableDictionary dictionary];
+	for(NSInteger i = 0; i < sizeof(g_setNames)/sizeof(g_setNames[0]); ++i)
+	{
+		[defaults setValue:[NSNumber numberWithBool:YES] forKey:g_setNames[i]];
+	}
+	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
