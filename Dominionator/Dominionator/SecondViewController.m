@@ -29,6 +29,7 @@ NSString* g_setNames[] = {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self setTitle:NSLocalizedString(@"Settings", @"Settings view title")];
 	_preferences = [[NSArray alloc] initWithObjects:g_setNames count:sizeof(g_setNames)/sizeof(g_setNames[0])];
 }
 

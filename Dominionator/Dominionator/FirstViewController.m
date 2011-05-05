@@ -30,6 +30,9 @@
 	UIBarButtonItem* shuffleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pickNewCards:)];
 	self.navigationItem.rightBarButtonItem = shuffleButton;
 	[shuffleButton release];
+	UIBarButtonItem* settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(changeSettings:)];
+	self.navigationItem.leftBarButtonItem = settingsButton;
+	[settingsButton release];
 	self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.545 green:0.366 blue:0.232 alpha:1.000];
 }
 
@@ -153,6 +156,25 @@
 						withRowAnimation:UITableViewRowAnimationMiddle];
 	}
 	[[self tableView] endUpdates];
+}
+
+- (void)changeSettings:(id)sender
+{
+	SecondViewController* secondView = [[SecondViewController alloc] initWithNibName:@"SecondView" bundle:[NSBundle mainBundle]];
+	UINavigationController* newNav = [[UINavigationController alloc] initWithRootViewController:secondView];
+	UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissSettings:)];
+	newNav.visibleViewController.navigationItem.rightBarButtonItem = doneButton;
+	[doneButton release];
+	newNav.navigationBar.tintColor = [UIColor colorWithRed:0.545 green:0.366 blue:0.232 alpha:1.000];
+	self.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
+	[self presentModalViewController:newNav animated:YES];
+	[newNav release];
+	[secondView release];
+}
+
+- (void)dismissSettings:(id)sender
+{
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)replaceCardAtIndex:(NSIndexPath*)indexPath
