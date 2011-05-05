@@ -16,10 +16,10 @@
 		3E2601771329E50800DC895B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2601761329E50800DC895B /* main.m */; };
 		3E26017A1329E50800DC895B /* DominionatorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2601791329E50800DC895B /* DominionatorAppDelegate.m */; };
 		3E26017D1329E50800DC895B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E26017B1329E50800DC895B /* MainWindow.xib */; };
-		3E2601801329E50800DC895B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E26017F1329E50800DC895B /* FirstViewController.m */; };
-		3E2601831329E50800DC895B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2601821329E50800DC895B /* SecondViewController.m */; };
-		3E2601861329E50800DC895B /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601841329E50800DC895B /* FirstView.xib */; };
-		3E2601891329E50800DC895B /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601871329E50800DC895B /* SecondView.xib */; };
+		3E2601801329E50800DC895B /* CardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E26017F1329E50800DC895B /* CardsViewController.m */; };
+		3E2601831329E50800DC895B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2601821329E50800DC895B /* SettingsViewController.m */; };
+		3E2601861329E50800DC895B /* CardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601841329E50800DC895B /* CardsView.xib */; };
+		3E2601891329E50800DC895B /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601871329E50800DC895B /* SettingsView.xib */; };
 		3E2601901329E50800DC895B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2601691329E50800DC895B /* UIKit.framework */; };
 		3E2601911329E50800DC895B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E26016B1329E50800DC895B /* Foundation.framework */; };
 		3E2601921329E50800DC895B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E26016D1329E50800DC895B /* CoreGraphics.framework */; };
@@ -89,12 +89,12 @@
 		3E2601781329E50800DC895B /* DominionatorAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominionatorAppDelegate.h; sourceTree = "<group>"; };
 		3E2601791329E50800DC895B /* DominionatorAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DominionatorAppDelegate.m; sourceTree = "<group>"; };
 		3E26017C1329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		3E26017E1329E50800DC895B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		3E26017F1329E50800DC895B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		3E2601811329E50800DC895B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		3E2601821329E50800DC895B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		3E2601851329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		3E2601881329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		3E26017E1329E50800DC895B /* CardsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardsViewController.h; sourceTree = "<group>"; };
+		3E26017F1329E50800DC895B /* CardsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsViewController.m; sourceTree = "<group>"; };
+		3E2601811329E50800DC895B /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3E2601821329E50800DC895B /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		3E2601851329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CardsView.xib; sourceTree = "<group>"; };
+		3E2601881329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsView.xib; sourceTree = "<group>"; };
 		3E26018F1329E50800DC895B /* DominionatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DominionatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2601971329E50800DC895B /* DominionatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DominionatorTests-Info.plist"; sourceTree = "<group>"; };
 		3E2601991329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -202,12 +202,12 @@
 				3E2601781329E50800DC895B /* DominionatorAppDelegate.h */,
 				3E2601791329E50800DC895B /* DominionatorAppDelegate.m */,
 				3E26017B1329E50800DC895B /* MainWindow.xib */,
-				3E26017E1329E50800DC895B /* FirstViewController.h */,
-				3E26017F1329E50800DC895B /* FirstViewController.m */,
-				3E2601811329E50800DC895B /* SecondViewController.h */,
-				3E2601821329E50800DC895B /* SecondViewController.m */,
-				3E2601841329E50800DC895B /* FirstView.xib */,
-				3E2601871329E50800DC895B /* SecondView.xib */,
+				3E26017E1329E50800DC895B /* CardsViewController.h */,
+				3E26017F1329E50800DC895B /* CardsViewController.m */,
+				3E2601811329E50800DC895B /* SettingsViewController.h */,
+				3E2601821329E50800DC895B /* SettingsViewController.m */,
+				3E2601841329E50800DC895B /* CardsView.xib */,
+				3E2601871329E50800DC895B /* SettingsView.xib */,
 				3E2601701329E50800DC895B /* Supporting Files */,
 				3E050709132C101A008378A5 /* CardCell.h */,
 				3E05070A132C101A008378A5 /* CardCell.m */,
@@ -362,8 +362,8 @@
 			files = (
 				3E2601741329E50800DC895B /* InfoPlist.strings in Resources */,
 				3E26017D1329E50800DC895B /* MainWindow.xib in Resources */,
-				3E2601861329E50800DC895B /* FirstView.xib in Resources */,
-				3E2601891329E50800DC895B /* SecondView.xib in Resources */,
+				3E2601861329E50800DC895B /* CardsView.xib in Resources */,
+				3E2601891329E50800DC895B /* SettingsView.xib in Resources */,
 				3E0506FB1329FBCB008378A5 /* cardlist.plist in Resources */,
 				3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */,
 				3E7AAEC013354DA7009AD73B /* paperstrip_gray1.png in Resources */,
@@ -435,8 +435,8 @@
 			files = (
 				3E2601771329E50800DC895B /* main.m in Sources */,
 				3E26017A1329E50800DC895B /* DominionatorAppDelegate.m in Sources */,
-				3E2601801329E50800DC895B /* FirstViewController.m in Sources */,
-				3E2601831329E50800DC895B /* SecondViewController.m in Sources */,
+				3E2601801329E50800DC895B /* CardsViewController.m in Sources */,
+				3E2601831329E50800DC895B /* SettingsViewController.m in Sources */,
 				3E05070B132C101A008378A5 /* CardCell.m in Sources */,
 				3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */,
 				3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */,
@@ -479,20 +479,20 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		3E2601841329E50800DC895B /* FirstView.xib */ = {
+		3E2601841329E50800DC895B /* CardsView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3E2601851329E50800DC895B /* en */,
 			);
-			name = FirstView.xib;
+			name = CardsView.xib;
 			sourceTree = "<group>";
 		};
-		3E2601871329E50800DC895B /* SecondView.xib */ = {
+		3E2601871329E50800DC895B /* SettingsView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3E2601881329E50800DC895B /* en */,
 			);
-			name = SecondView.xib;
+			name = SettingsView.xib;
 			sourceTree = "<group>";
 		};
 		3E2601981329E50800DC895B /* InfoPlist.strings */ = {

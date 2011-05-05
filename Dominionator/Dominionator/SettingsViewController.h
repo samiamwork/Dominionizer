@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  SettingsViewController.h
 //  Dominionator
 //
 //  Created by Nur Monson on 3/10/11.
@@ -10,7 +10,7 @@
 
 extern NSString* g_setNames[];
 
-@interface SecondViewController : UITableViewController {
+@interface SettingsViewController : UITableViewController {
     NSArray* _preferences;
 }
 

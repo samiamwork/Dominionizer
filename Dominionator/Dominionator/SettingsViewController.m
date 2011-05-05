@@ -1,19 +1,19 @@
 //
-//  SecondViewController.m
+//  SettingsViewController.m
 //  Dominionator
 //
 //  Created by Nur Monson on 3/10/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SettingsViewController.h"
 #import "ButtonCell.h"
 
 NSString* g_setNames[] = {
 	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Promo",
 };
 
-@implementation SecondViewController
+@implementation SettingsViewController
 
 + (void)initialize
 {

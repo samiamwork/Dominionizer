@@ -1,17 +1,17 @@
 //
-//  FirstViewController.m
+//  CardsViewController.m
 //  Dominionator
 //
 //  Created by Nur Monson on 3/10/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "CardsViewController.h"
 #import "CardCell.h"
 #import "CardDetailViewController.h"
-#import "SecondViewController.h"
+#import "SettingsViewController.h"
 
-@implementation FirstViewController
+@implementation CardsViewController
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -160,8 +160,8 @@
 
 - (void)changeSettings:(id)sender
 {
-	SecondViewController* secondView = [[SecondViewController alloc] initWithNibName:@"SecondView" bundle:[NSBundle mainBundle]];
-	UINavigationController* newNav = [[UINavigationController alloc] initWithRootViewController:secondView];
+	SettingsViewController* settingsView = [[SettingsViewController alloc] initWithNibName:@"SecondView" bundle:[NSBundle mainBundle]];
+	UINavigationController* newNav = [[UINavigationController alloc] initWithRootViewController:settingsView];
 	UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissSettings:)];
 	newNav.visibleViewController.navigationItem.rightBarButtonItem = doneButton;
 	[doneButton release];
@@ -169,7 +169,7 @@
 	self.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:newNav animated:YES];
 	[newNav release];
-	[secondView release];
+	[settingsView release];
 }
 
 - (void)dismissSettings:(id)sender

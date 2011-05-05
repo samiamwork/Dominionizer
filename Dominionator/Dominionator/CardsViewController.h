@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  CardsViewController.h
 //  Dominionator
 //
 //  Created by Nur Monson on 3/10/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FirstViewController : UITableViewController {
+@interface CardsViewController : UITableViewController {
 	NSMutableArray* _cards;
 	NSMutableDictionary* _cardPicks;
 	NSMutableArray* _setNames;
