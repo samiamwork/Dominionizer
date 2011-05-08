@@ -163,7 +163,7 @@
 
 - (void)changeSettings:(id)sender
 {
-	SettingsViewController* settingsView = [[SettingsViewController alloc] initWithNibName:@"SecondView" bundle:[NSBundle mainBundle]];
+	SettingsViewController* settingsView = [[SettingsViewController alloc] initWithNibName:@"SettingsView" bundle:[NSBundle mainBundle]];
 	UINavigationController* newNav = [[UINavigationController alloc] initWithRootViewController:settingsView];
 	UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissSettings:)];
 	newNav.visibleViewController.navigationItem.rightBarButtonItem = doneButton;
