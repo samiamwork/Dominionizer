@@ -250,7 +250,7 @@ Each other player draws a card.
 		<key>rules</key>
 		<string>+2 Actions&lt;br /&gt;
 +1 Buy&lt;br /&gt;
-+&lt;span class="coin_small"&gt;2&lt;/span&gt;.
++&lt;span class="coin_small"&gt;2&lt;/span&gt;
 </string>
 		<key>set</key>
 		<string>Base</string>
