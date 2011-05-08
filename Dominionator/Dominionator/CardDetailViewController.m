@@ -52,6 +52,7 @@
 	[self.cardRulesLabel loadHTMLString:[htmlString stringByReplacingOccurrencesOfString:@"@@" withString:[_properties valueForKey:@"rules"]] baseURL:[[NSBundle mainBundle] bundleURL]];
 	self.cardRulesLabel.opaque = NO;
 	self.cardRulesLabel.backgroundColor = [UIColor clearColor];
+	[self.cardRulesLabel setUserInteractionEnabled:NO];
 	self.cardTypeLabel.text = [_properties valueForKey:@"type"];
 	self.cardSetIconView.image = [UIImage imageNamed:[_properties valueForKey:@"set"]];
 }
