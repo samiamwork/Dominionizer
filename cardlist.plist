@@ -34,7 +34,8 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+2 Cards, When another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.
+		<string>+2 Cards&lt;br /&gt;
+When another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -181,7 +182,7 @@ Each other player discards down to 3 cards in his hand.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+3 Cards.
+		<string>+3 Cards
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -194,7 +195,9 @@ Each other player discards down to 3 cards in his hand.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, Each player (including you) reveals the top card of his deck and either discards it or puts it back, your chouce.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+Each player (including you) reveals the top card of his deck and either discards it or puts it back, your chouce.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -319,7 +322,8 @@ Each other player draws a card.
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Cards, Each other player gains a Curse card.
+		<string>+2 Cards&lt;br /&gt;
+Each other player gains a Curse card.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -345,7 +349,8 @@ Each other player draws a card.
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+3 Card, Put a card from your hand on top of your deck.
+		<string>+3 Card&lt;br /&gt;
+Put a card from your hand on top of your deck.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -404,7 +409,8 @@ Each other player draws a card.
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+2 Card, Each player passes a card in their hand to the player on their left. You may trash a card from your hand.
+		<string>+2 Card&lt;br /&gt;
+Each player passes a card in their hand to the player on their left. You may trash a card from your hand.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -458,7 +464,9 @@ Each other player trashes the top card of his deck and gains a card with the sam
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, Name a card, then reveal the top card of your deck. If it is the named card, put it in your hand.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+Name a card, then reveal the top card of your deck. If it is the named card, put it in your hand.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -500,7 +508,9 @@ All cards (including cards in players' hands) cost &lt;span class="coin_small"&g
 		<string>$4</string>
 		<key>rules</key>
 		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
-If you've played 3 or more Actions this turn (counting this): +1 Card, +1 Action.
+If you've played 3 or more Actions this turn (counting this):&lt;br /&gt;
++1 Card&lt;br /&gt;
++1 Action
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -541,7 +551,9 @@ Victory card, +1 Card.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card, +2 Actions. You may trash this card immediately. If you do, +&lt;span class="coin_small"&gt;2&lt;/span&gt;.
+		<string>+1 Card&lt;br /&gt;
++2 Actions&lt;br /&gt;
+You may trash this card immediately. If you do, +&lt;span class="coin_small"&gt;2&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -607,7 +619,8 @@ Choose one: +&lt;span class="coin_small"&gt;2&lt;/span&gt;; or discard your hand
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+3 Card, Each other player chooses one: he discards 2 cards; or he gains a Curse card, putting it in his hand.
+		<string>+3 Card&lt;br /&gt;
+Each other player chooses one: he discards 2 cards; or he gains a Curse card, putting it in his hand.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -646,7 +659,9 @@ Choose one: +&lt;span class="coin_small"&gt;2&lt;/span&gt;; or discard your hand
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, Trash a card from your hand. Gain a card costing exactly &lt;span class="coin_small"&gt;1&lt;/span&gt; more than it.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+Trash a card from your hand. Gain a card costing exactly &lt;span class="coin_small"&gt;1&lt;/span&gt; more than it.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -745,7 +760,9 @@ You may look at the cards on your mat at any time; return them to your deck at t
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, Look at the bottom card of your deck. You may put it on top.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+Look at the bottom card of your deck. You may put it on top.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -1034,7 +1051,9 @@ When you discard this from play, if you didn't buy a Victory card this turn, you
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Now and at the start of your next turn: +2 Cards, +1 Buy.
+		<string>Now and at the start of your next turn:&lt;br /&gt;
++2 Cards&lt;br /&gt;
++1 Buy.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -1440,7 +1459,7 @@ While this is in play, when you gain a card, you may put that card on top of you
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Cards &lt;br /&gt;
+		<string>+2 Cards&lt;br /&gt;
 Discard any number of cards. +&lt;span class="coin_small"&gt;1&lt;/span&gt; per card discarded. &lt;br /&gt;
 Each other player may discard 2 cards. If he does, he draws a card.
 </string>

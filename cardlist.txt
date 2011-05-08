@@ -1,6 +1,6 @@
 Cellar	Base	Action	$2	+1 Action, Discard any number of cards. +1 Card per card discarded.
 Chapel	Base	Action	$2	Trash up to 4 cards from your hand.
-Moat	Base	Action - Reaction	$2	+2 Cards, When another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.
+Moat	Base	Action - Reaction	$2	+2 Cards\nWhen another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.
 Chancellor	Base	Action	$3	+2<$>\nYou may immediately put your deck into your discard pile.
 Village	Base	Action	$3	+1 Card\n+2 Actions
 Woodcutter	Base	Action	$3	+1 Buy\n+2<$>
@@ -11,8 +11,8 @@ Gardens	Base	Victory	$4	Variable, Worth 1<VP> for every 10 cards in your deck (r
 Militia	Base	Action - Attack	$4	+2<$>\nEach other player discards down to 3 cards in his hand.
 Moneylender	Base	Action	$4	Trash a Copper from your hand. If you do, +3<$>.
 Remodel	Base	Action	$4	Trash a card from your hand. Gain a card costing up to 2<$> more than the trashed card.
-Smithy	Base	Action	$4	+3 Cards.
-Spy	Base	Action - Attack	$4	+1 Card, +1 Action, Each player (including you) reveals the top card of his deck and either discards it or puts it back, your chouce.
+Smithy	Base	Action	$4	+3 Cards
+Spy	Base	Action - Attack	$4	+1 Card\n+1 Action\nEach player (including you) reveals the top card of his deck and either discards it or puts it back, your chouce.
 Thief	Base	Action - Attack	$4	Each other player reveals the top 2 cards of his deck. If they revealed any Treasure cards, they trash one of them that you choose. You may gain any or all of these trashed cards. They discard the other revealed cards.
 Throne Room	Base	Action	$4	Choose an Action card in your hand. Play it twice.
 Council Room	Base	Action	$5	+4 Cards\n+1 Buy\nEach other player draws a card.
@@ -21,38 +21,38 @@ Laboratory	Base	Action	$5	+2 Cards\n+1 Action
 Library	Base	Action	$5	Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way, as you draw them; discard the set aside cards after you finish drawing.
 Market	Base	Action	$5	+1 Card\n+1 Action\n+1 Buy\n+1<$>
 Mine	Base	Action	$5	Trash a Treasure card from your hand. Gain a Treasure card costing up to 3<$> more; put it into your hand.
-Witch	Base	Action - Attack	$5	+2 Cards, Each other player gains a Curse card.
+Witch	Base	Action - Attack	$5	+2 Cards\nEach other player gains a Curse card.
 Adventurer	Base	Action	$6	Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.
-Courtyard	Intrigue	Action	$2	+3 Card, Put a card from your hand on top of your deck.
+Courtyard	Intrigue	Action	$2	+3 Card\nPut a card from your hand on top of your deck.
 Pawn	Intrigue	Action	$2	Choose two:\n+1 Card\n+1 Action\n+1 Buy\n+1<$>\n(The choices must be different.).
 Secret Chamber	Intrigue	Action - Reaction	$2	Discard any number of cards. +1<$> per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
 Great Hall	Intrigue	Action - Victory	$3	+1 Card\n+1 Action________1<^VP>.
-Masquerade	Intrigue	Action	$3	+2 Card, Each player passes a card in their hand to the player on their left. You may trash a card from your hand.
+Masquerade	Intrigue	Action	$3	+2 Card\nEach player passes a card in their hand to the player on their left. You may trash a card from your hand.
 Shanty Town	Intrigue	Action	$3	+2 Actions, Reveal your hand. If you have no Action cards in hand, +2 Cards.
 Steward	Intrigue	Action	$3	Choose one:\n+2 Cards; or +2<$>; or trash 2 cards from your hand.
 Swindler	Intrigue	Action - Attack	$3	+2<$>\nEach other player trashes the top card of his deck and gains a card with the same cost that you choose.
-Wishing Well	Intrigue	Action	$3	+1 Card, +1 Action, Name a card, then reveal the top card of your deck. If it is the named card, put it in your hand.
+Wishing Well	Intrigue	Action	$3	+1 Card\n+1 Action\nName a card, then reveal the top card of your deck. If it is the named card, put it in your hand.
 Baron	Intrigue	Action	$4	+1 Buy, You may discard an Estate card. If you do, +4<$>. Otherwise, gain an Estate card.
 Bridge	Intrigue	Action	$4	+1 Buy\n+1<$>\nAll cards (including cards in players' hands) cost 1<$> less this turn, but not less than 0<$>.
-Conspirator	Intrigue	Action	$4	+2<$>\nIf you've played 3 or more Actions this turn (counting this): +1 Card, +1 Action.
+Conspirator	Intrigue	Action	$4	+2<$>\nIf you've played 3 or more Actions this turn (counting this):\n+1 Card\n+1 Action
 Coppersmith	Intrigue	Action	$4	Copper produces an extra 1<$> this turn.
 Ironworks	Intrigue	Action	$4	Gain a card costing up to 4<$>. If it is an... Action card, +1 Action.\nTreasure card, +1<$>.\nVictory card, +1 Card.
-Mining Village	Intrigue	Action	$4	+1 Card, +2 Actions. You may trash this card immediately. If you do, +2<$>.
+Mining Village	Intrigue	Action	$4	+1 Card\n+2 Actions\nYou may trash this card immediately. If you do, +2<$>.
 Scout	Intrigue	Action	$4	+1 Action. Reveal the top 4 cards of your deck. Put the revealed Victory cards into your hand. Put the other cards on top of your deck in any order.
 Duke	Intrigue	Victory	$5	Worth 1<VP> per Duchy you have.
 Minion	Intrigue	Action - Attack	$5	+1 Action\nChoose one: +2<$>; or discard your hand, +4 Cards, and each other player with at least 5 cards in hand discards his hand and draws 4 cards.
 Saboteur	Intrigue	Action - Attack	$5	Each other player reveals cards from the top of his deck until revealing one costing 3<$> or more. He trashes that card and may gain a card costing at most 2<$> less than it. He discards the other revealed cards.
-Torturer	Intrigue	Action - Attack	$5	+3 Card, Each other player chooses one: he discards 2 cards; or he gains a Curse card, putting it in his hand.
+Torturer	Intrigue	Action - Attack	$5	+3 Card\nEach other player chooses one: he discards 2 cards; or he gains a Curse card, putting it in his hand.
 Trading Post	Intrigue	Action	$5	Trash 2 cards from your hand. If you do, gain a silver card; put it into your hand.
 Tribute	Intrigue	Action	$5	The player to your left reveals then discards the top 2 cards of his deck. For each differently named card revealed, if it is an... Action Card, +2 Actions; Treasure Card, +2<$>; Victory Card, +2 Cards.
-Upgrade	Intrigue	Action	$5	+1 Card, +1 Action, Trash a card from your hand. Gain a card costing exactly 1<$> more than it.
+Upgrade	Intrigue	Action	$5	+1 Card\n+1 Action\nTrash a card from your hand. Gain a card costing exactly 1<$> more than it.
 Harem	Intrigue	Treasure - Victory	$6	2<^$> 2<^VP>.
 Nobles	Intrigue	Action - Victory	$6	Choose one: +3 Cards, or +2 Actions.________2<^VP>
 Embargo	Seaside	Action	$2	+2<$>\nTrash this card. Put an Embargo token on top of a Supply pile. - When a player buys a card, he gains a Curse card per Embargo token on that pile.
 Haven	Seaside	Action - Duration	$2	+1 Card\n+1 Action\nSet aside a card from your hand face down. At the start of your next turn, put it into your hand.
 Lighthouse	Seaside	Action - Duration	$2	+1 Action, Now and at the start of your next turn: +1<$>.________While this is in play, when another player plays an Attack card, it doesn't affect you.
 Native Village	Seaside	Action	$2	+2 Actions\nChoose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.\n\nYou may look at the cards on your mat at any time; return them to your deck at the end of the game.
-Pearl Diver	Seaside	Action	$2	+1 Card, +1 Action, Look at the bottom card of your deck. You may put it on top.
+Pearl Diver	Seaside	Action	$2	+1 Card\n+1 Action\nLook at the bottom card of your deck. You may put it on top.
 Ambassador	Seaside	Action	$3	Reveal a card from your hand. Return up to 2 copies of it from your hand to the Supply. Then each other player gains a copy of it.
 Fishing Village	Seaside	Action - Duration	$3	+2 Actions\n+1<$>\nAt the start of your next turn: +1 Action, +1<$>.
 Lookout	Seaside	Action	$3	+1 Action, Look at the top 3 cards of your deck. Trash one of them. Discard one of them. Put the other one on top of your deck.
@@ -73,7 +73,7 @@ Merchant Ship	Seaside	Action - Duration	$5	Now and at the start of your next tur
 Outpost	Seaside	Action - Duration	$5	You only draw 3 cards (instead of 5) in this turn's Clean-up phase. Take an extra turn after this one. This can't cause you to take more than two consecutive turns.
 Tactician	Seaside	Action - Duration	$5	Discard your hand. If you discarded any cards this way, then at the start of your next turn, +5 Cards, +1 Buy, and +1 Action.
 Treasury	Seaside	Action	$5	+1 Card\n+1 Action\n+1<$>\nWhen you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck.
-Wharf	Seaside	Action - Duration	$5	Now and at the start of your next turn: +2 Cards, +1 Buy.
+Wharf	Seaside	Action - Duration	$5	Now and at the start of your next turn:\n+2 Cards\n+1 Buy.
 Transmute	Alchemy	Action	$0 1P	Trash a card from your hand.\nIf it is an...\nAction card, gain a Duchy\nTreasure card, gain a Transmute\nVictory card, gain a Gold
 Vineyard	Alchemy	Victory	$0 1P	Worth 1<VP> for every 3 Action cards in your deck (rounded down).
 Apothecary	Alchemy	Action	$2 1P	+1 Card\n+1 Action\nReveal the top 4 cards of your deck. Put the revealed Coppers and Potions into your hand. Put the other cards back on top in any order.
@@ -101,7 +101,7 @@ Mint	Prosperity	Action	$5	You may reveal a Treasure card from your hand. Gain a 
 Mountebank	Prosperity	Action - Attack	$5	+2<$>\nEach other player may discard a Curse. If he doesn't, he gains a Curse and a Copper.
 Rabble	Prosperity	Action - Attack	$5	+3 Cards\nEach other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.
 Royal Seal	Prosperity	Treasure	$5	2<^$>________While this is in play, when you gain a card, you may put that card on top of your deck.
-Vault	Prosperity	Action	$5	+2 Cards \nDiscard any number of cards. +1<$> per card discarded. \nEach other player may discard 2 cards. If he does, he draws a card.
+Vault	Prosperity	Action	$5	+2 Cards\nDiscard any number of cards. +1<$> per card discarded. \nEach other player may discard 2 cards. If he does, he draws a card.
 Venture	Prosperity	Treasure	$5	1<^$>\nWhen you play this, reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure.
 Goons	Prosperity	Action - Attack	$6	+1 Buy\n+2<$>\nEach other player discards down to 3 cards in hand.________While this is in play, when you buy a card, +1<VP>.
 Grand Market	Prosperity	Action	$6	+1 Card\n+1 Action\n+1 Buy\n+2<$>________You can't buy this if you have any Copper in play.
