@@ -700,7 +700,9 @@ Trash this card. Put an Embargo token on top of a Supply pile. - When a player b
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, Set aside a card from your hand face down. At the start of your next turn, put it into your hand.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+Set aside a card from your hand face down. At the start of your next turn, put it into your hand.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -810,7 +812,9 @@ At the start of your next turn: +1 Action, +&lt;span class="coin_small"&gt;1&lt;
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+3 Card, +1 Action, Discard 3 cards.
+		<string>+3 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+Discard 3 cards.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -823,7 +827,8 @@ At the start of your next turn: +1 Action, +&lt;span class="coin_small"&gt;1&lt;
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action&lt;br /&gt;
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
 At the start of your next turn, +1 Card.
 </string>
 		<key>set</key>
@@ -892,7 +897,8 @@ Look at the top 5 cards of your deck. Either discard all of them, or put them ba
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Buy, Trash a card from your hand. +&lt;span class="coin_small"&gt;&amp;nbsp;&lt;/span&gt; equal to its cost.
+		<string>+1 Buy&lt;br /&gt;
+Trash a card from your hand. +&lt;span class="coin_small"&gt;&amp;nbsp;&lt;/span&gt; equal to its cost.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -959,7 +965,8 @@ Look at the top 5 cards of your deck. Either discard all of them, or put them ba
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Card, Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand.
+		<string>+2 Card&lt;br /&gt;
+Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
