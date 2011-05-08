@@ -381,7 +381,9 @@ Put a card from your hand on top of your deck.
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>Discard any number of cards. +&lt;span class="coin_small"&gt;1&lt;/span&gt; per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
+		<string>Discard any number of cards.&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt; per card discarded.&lt;hr /&gt;
+When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -536,7 +538,10 @@ If you've played 3 or more Actions this turn (counting this):&lt;br /&gt;
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Gain a card costing up to &lt;span class="coin_small"&gt;4&lt;/span&gt;. If it is an... Action card, +1 Action.&lt;br /&gt;
+		<string>Gain a card costing up to &lt;span class="coin_small"&gt;4&lt;/span&gt;.&lt;br /&gt;
+&lt;br /&gt;
+If it is an...&lt;br /&gt;
+Action card, +1 Action.&lt;br /&gt;
 Treasure card, +&lt;span class="coin_small"&gt;1&lt;/span&gt;.&lt;br /&gt;
 Victory card, +1 Card.
 </string>

@@ -25,7 +25,7 @@ Witch	Base	Action - Attack	$5	+2 Cards\nEach other player gains a Curse card.
 Adventurer	Base	Action	$6	Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.
 Courtyard	Intrigue	Action	$2	+3 Card\nPut a card from your hand on top of your deck.
 Pawn	Intrigue	Action	$2	Choose two:\n+1 Card\n+1 Action\n+1 Buy\n+1<$>\n(The choices must be different.).
-Secret Chamber	Intrigue	Action - Reaction	$2	Discard any number of cards. +1<$> per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
+Secret Chamber	Intrigue	Action - Reaction	$2	Discard any number of cards.\n+1<$> per card discarded.________When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
 Great Hall	Intrigue	Action - Victory	$3	+1 Card\n+1 Action________1<^VP>.
 Masquerade	Intrigue	Action	$3	+2 Card\nEach player passes a card in their hand to the player on their left. You may trash a card from your hand.
 Shanty Town	Intrigue	Action	$3	+2 Actions, Reveal your hand. If you have no Action cards in hand, +2 Cards.
@@ -36,7 +36,7 @@ Baron	Intrigue	Action	$4	+1 Buy, You may discard an Estate card. If you do, +4<$
 Bridge	Intrigue	Action	$4	+1 Buy\n+1<$>\nAll cards (including cards in players' hands) cost 1<$> less this turn, but not less than 0<$>.
 Conspirator	Intrigue	Action	$4	+2<$>\nIf you've played 3 or more Actions this turn (counting this):\n+1 Card\n+1 Action
 Coppersmith	Intrigue	Action	$4	Copper produces an extra 1<$> this turn.
-Ironworks	Intrigue	Action	$4	Gain a card costing up to 4<$>. If it is an... Action card, +1 Action.\nTreasure card, +1<$>.\nVictory card, +1 Card.
+Ironworks	Intrigue	Action	$4	Gain a card costing up to 4<$>.\n\nIf it is an...\nAction card, +1 Action.\nTreasure card, +1<$>.\nVictory card, +1 Card.
 Mining Village	Intrigue	Action	$4	+1 Card\n+2 Actions\nYou may trash this card immediately. If you do, +2<$>.
 Scout	Intrigue	Action	$4	+1 Action. Reveal the top 4 cards of your deck. Put the revealed Victory cards into your hand. Put the other cards on top of your deck in any order.
 Duke	Intrigue	Victory	$5	Worth 1<VP> per Duchy you have.
