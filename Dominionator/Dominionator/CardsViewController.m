@@ -8,7 +8,6 @@
 
 #import "CardsViewController.h"
 #import "CardCell.h"
-#import "CardDetailViewController.h"
 #import "SettingsViewController.h"
 
 @implementation CardsViewController
@@ -34,6 +33,10 @@
 	self.navigationItem.leftBarButtonItem = settingsButton;
 	[settingsButton release];
 	self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.545 green:0.366 blue:0.232 alpha:1.000];
+
+	// Allocate cached settings controller
+	_detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle]];
+	[_detailViewController view];
 }
 
 - (NSSet*)allowedSets
@@ -278,6 +281,7 @@
 	[_setNames release];
 	[_setOfCardsPicked release];
 	[_setHeaders release];
+	[_detailViewController release];
     [super dealloc];
 }
 
@@ -326,9 +330,8 @@
 	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
 	NSArray* setArray = [_cardPicks valueForKey:setName];
 	NSDictionary* aCard = [setArray objectAtIndex:[indexPath row]];
-	CardDetailViewController* detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle] properties:aCard];
-	[self.navigationController pushViewController:detailViewController animated:YES];
-	[detailViewController release];
+	[_detailViewController setProperties:aCard];
+	[self.navigationController pushViewController:_detailViewController animated:YES];
 }
 
 #pragma mark Table view delegate

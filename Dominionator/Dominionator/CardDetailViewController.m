@@ -16,18 +16,18 @@
 @synthesize cardRulesLabel=_cardRulesLabel;
 @synthesize cardSetIconView=_cardSetIconView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil properties:(NSDictionary*)properties
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-		_properties = [properties retain];
+    if (self)
+	{
     }
     return self;
 }
 
 - (void)dealloc
 {
+	[_htmlString release];
 	[_properties release];
     [super dealloc];
 }
@@ -47,12 +47,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-	self.cardNameLabel.text = [_properties valueForKey:@"card"];
-	NSString* htmlString = [NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"cardrules" withExtension:@"html"] encoding:NSUTF8StringEncoding error:NULL];
-	[self.cardRulesLabel loadHTMLString:[htmlString stringByReplacingOccurrencesOfString:@"@@" withString:[_properties valueForKey:@"rules"]] baseURL:[[NSBundle mainBundle] bundleURL]];
+	_htmlString = [[NSString alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"cardrules" withExtension:@"html"] encoding:NSUTF8StringEncoding error:NULL];
 	self.cardRulesLabel.opaque = NO;
 	self.cardRulesLabel.backgroundColor = [UIColor clearColor];
 	[self.cardRulesLabel setUserInteractionEnabled:NO];
+}
+
+- (void)setProperties:(NSDictionary*)newProperties;
+{
+	if(newProperties == _properties)
+	{
+		return;
+	}
+	[_properties release];
+	_properties = [newProperties retain];
+
+	NSString* specificHTML = [_htmlString stringByReplacingOccurrencesOfString:@"@@" withString:[_properties valueForKey:@"rules"]];
+	[self.cardRulesLabel loadHTMLString:specificHTML baseURL:[[NSBundle mainBundle] bundleURL]];
+	self.cardNameLabel.text = [_properties valueForKey:@"card"];
 	self.cardTypeLabel.text = [_properties valueForKey:@"type"];
 	self.cardSetIconView.image = [UIImage imageNamed:[_properties valueForKey:@"set"]];
 }

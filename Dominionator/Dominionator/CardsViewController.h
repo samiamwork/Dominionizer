@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardDetailViewController.h"
 
 
 @interface CardsViewController : UITableViewController {
@@ -15,6 +16,7 @@
 	NSMutableArray* _setNames;
 	NSMutableSet* _setOfCardsPicked;
 	NSMutableArray* _setHeaders;
+	CardDetailViewController* _detailViewController;
 }
 
 - (IBAction)pickNewCards:(id)sender;
