@@ -47,7 +47,8 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+2 Coins, You may immediately put your deck into your discard pile.
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+You may immediately put your deck into your discard pile.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -60,7 +61,8 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+1 Card, +2 Actions.
+		<string>+1 Card&lt;br /&gt;
++2 Actions
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -73,7 +75,8 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+1 Buy, +2 Coins.
+		<string>+1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;2&lt;/span&gt;
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -86,7 +89,7 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>Gain a card costing up to 4 Coins.
+		<string>Gain a card costing up to &lt;span class="coin_small"&gt;4&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -112,7 +115,7 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Trash this card. Gain a card costing up to 5 Coins.
+		<string>Trash this card. Gain a card costing up to &lt;span class="coin_small"&gt;5&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -125,7 +128,7 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Variable, Worth 1 Victory for every 10 cards in your deck (rounded down).
+		<string>Variable, Worth &lt;span class="vp_small"&gt;1&lt;/span&gt; for every 10 cards in your deck (rounded down).
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -138,7 +141,8 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+2 Coins, Each other player discards down to 3 cards in his hand.
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Each other player discards down to 3 cards in his hand.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -151,7 +155,7 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Trash a Copper from your hand. If you do, +3 Coins.
+		<string>Trash a Copper from your hand. If you do, +&lt;span class="coin_small"&gt;3&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -164,7 +168,7 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Trash a card from your hand. Gain a card costing up to 2 Coins more than the trashed card.
+		<string>Trash a card from your hand. Gain a card costing up to &lt;span class="coin_small"&gt;2&lt;/span&gt; more than the trashed card.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -229,7 +233,9 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+4 Cards, +1 Buy, Each other player draws a card.
+		<string>+4 Cards&lt;br /&gt;
++1 Buy&lt;br /&gt;
+Each other player draws a card.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -242,7 +248,9 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Actions, +1 Buy, +2 Coins.
+		<string>+2 Actions&lt;br /&gt;
++1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;2&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -255,7 +263,8 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Cards, +1 Action.
+		<string>+2 Cards&lt;br /&gt;
++1 Action
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -281,7 +290,10 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, +1 Buy, +1 Coin.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
++1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -294,7 +306,7 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 Coins more; put it into your hand.
+		<string>Trash a Treasure card from your hand. Gain a Treasure card costing up to &lt;span class="coin_small"&gt;3&lt;/span&gt; more; put it into your hand.
 </string>
 		<key>set</key>
 		<string>Base</string>
@@ -346,7 +358,12 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>Choose two: +1 Card, +1 Action, +1 Buy, +1 Coin. (The choices must be different.).
+		<string>Choose two:&lt;br /&gt;
++1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
++1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
+(The choices must be different.).
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -359,7 +376,7 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>Discard any number of cards. +1 Coin per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
+		<string>Discard any number of cards. +&lt;span class="coin_small"&gt;1&lt;/span&gt; per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -372,7 +389,9 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>1 Victory, +1 Card, +1 Action.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;hr /&gt;
+&lt;p class="vp_big"&gt;1&lt;/p&gt;.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -411,7 +430,8 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>Choose one: +2 Cards; or +2 Coins; or trash 2 cards from your hand.
+		<string>Choose one:&lt;br /&gt;
++2 Cards; or +&lt;span class="coin_small"&gt;2&lt;/span&gt;; or trash 2 cards from your hand.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -424,7 +444,8 @@
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+2 Coins, Each other player trashes the top card of his deck and gains a card with the same cost that you choose.
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Each other player trashes the top card of his deck and gains a card with the same cost that you choose.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -450,7 +471,7 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Buy, You may discard an Estate card. If you do, +4 Coins. Otherwise, gain an Estate card.
+		<string>+1 Buy, You may discard an Estate card. If you do, +&lt;span class="coin_small"&gt;4&lt;/span&gt;. Otherwise, gain an Estate card.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -463,7 +484,9 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Buy, +1 Coin. All cards (including cards in players' hands) cost 1 Coin less this turn, but not less than 0 Coins.
+		<string>+1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
+All cards (including cards in players' hands) cost &lt;span class="coin_small"&gt;1&lt;/span&gt; less this turn, but not less than &lt;span class="coin_small"&gt;0&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -476,7 +499,8 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+2 Coins. If you've played 3 or more Actions this turn (counting this): +1 Card, +1 Action.
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+If you've played 3 or more Actions this turn (counting this): +1 Card, +1 Action.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -489,7 +513,7 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Copper produces an extra 1 Coin this turn.
+		<string>Copper produces an extra &lt;span class="coin_small"&gt;1&lt;/span&gt; this turn.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -502,7 +526,9 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Gain a card costing up to 4 Coins. If it is an... Action card, +1 Action. Treasure card, +1 Coin. Victory card, +1 Card.
+		<string>Gain a card costing up to &lt;span class="coin_small"&gt;4&lt;/span&gt;. If it is an... Action card, +1 Action.&lt;br /&gt;
+Treasure card, +&lt;span class="coin_small"&gt;1&lt;/span&gt;.&lt;br /&gt;
+Victory card, +1 Card.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -515,7 +541,7 @@
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card, +2 Actions. You may trash this card immediately. If you do, +2 Coins.
+		<string>+1 Card, +2 Actions. You may trash this card immediately. If you do, +&lt;span class="coin_small"&gt;2&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -541,7 +567,7 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 1 Victory per Duchy you have.
+		<string>Worth &lt;span class="vp_small"&gt;1&lt;/span&gt; per Duchy you have.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -554,7 +580,8 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Action, Choose one: +2 Coins; or discard your hand, +4 Cards, and each other player with at least 5 cards in hand discards his hand and draws 4 cards.
+		<string>+1 Action&lt;br /&gt;
+Choose one: +&lt;span class="coin_small"&gt;2&lt;/span&gt;; or discard your hand, +4 Cards, and each other player with at least 5 cards in hand discards his hand and draws 4 cards.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -567,7 +594,7 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Each other player reveals cards from the top of his deck until revealing one costing 3 Coins or more. He trashes that card and may gain a card costing at most 2 Coins less than it. He discards the other revealed cards.
+		<string>Each other player reveals cards from the top of his deck until revealing one costing &lt;span class="coin_small"&gt;3&lt;/span&gt; or more. He trashes that card and may gain a card costing at most &lt;span class="coin_small"&gt;2&lt;/span&gt; less than it. He discards the other revealed cards.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -606,7 +633,7 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>The player to your left reveals then discards the top 2 cards of his deck. For each differently named card revealed, if it is an... Action Card, +2 Actions; Treasure Card, +2 Coins; Victory Card, +2 Cards.
+		<string>The player to your left reveals then discards the top 2 cards of his deck. For each differently named card revealed, if it is an... Action Card, +2 Actions; Treasure Card, +&lt;span class="coin_small"&gt;2&lt;/span&gt;; Victory Card, +2 Cards.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -619,7 +646,7 @@
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, Trash a card from your hand. Gain a card costing exactly 1 Coin more than it.
+		<string>+1 Card, +1 Action, Trash a card from your hand. Gain a card costing exactly &lt;span class="coin_small"&gt;1&lt;/span&gt; more than it.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -632,7 +659,7 @@
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>2 Coins, 2 Victory.
+		<string>&lt;p class="coin_big"&gt;2&lt;/p&gt; &lt;p class="vp_big"&gt;2&lt;/p&gt;.
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -645,7 +672,8 @@
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>2 Victory, Choose one: +3 Cards, or +2 Actions.
+		<string>Choose one: +3 Cards, or +2 Actions.&lt;hr /&gt;
+&lt;p class="vp_big"&gt;2&lt;/p&gt;
 </string>
 		<key>set</key>
 		<string>Intrigue</string>
@@ -658,7 +686,8 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+2 Coins, Trash this card. Put an Embargo token on top of a Supply pile. - When a player buys a card, he gains a Curse card per Embargo token on that pile.
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Trash this card. Put an Embargo token on top of a Supply pile. - When a player buys a card, he gains a Curse card per Embargo token on that pile.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -684,7 +713,8 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+1 Action, Now and at the start of your next turn: +1 Coin. - While this is in play, when another player plays an Attack card, it doesn't affect you.
+		<string>+1 Action, Now and at the start of your next turn: +&lt;span class="coin_small"&gt;1&lt;/span&gt;.&lt;hr /&gt;
+While this is in play, when another player plays an Attack card, it doesn't affect you.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -697,8 +727,9 @@
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+2 Actions, Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.
-
+		<string>+2 Actions&lt;br /&gt;
+Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.&lt;br /&gt;
+&lt;br /&gt;
 You may look at the cards on your mat at any time; return them to your deck at the end of the game.
 </string>
 		<key>set</key>
@@ -738,7 +769,9 @@ You may look at the cards on your mat at any time; return them to your deck at t
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+2 Actions, +1 Coin, At the start of your next turn: +1 Action, +1 Coin.
+		<string>+2 Actions&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
+At the start of your next turn: +1 Action, +&lt;span class="coin_small"&gt;1&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -764,7 +797,7 @@ You may look at the cards on your mat at any time; return them to your deck at t
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>Gain a copy of a card costing up to 6 Coins that the player to your right gained on his last turn.
+		<string>Gain a copy of a card costing up to &lt;span class="coin_small"&gt;6&lt;/span&gt; that the player to your right gained on his last turn.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -790,7 +823,7 @@ You may look at the cards on your mat at any time; return them to your deck at t
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action
+		<string>+1 Card, +1 Action&lt;br /&gt;
 At the start of your next turn, +1 Card.
 </string>
 		<key>set</key>
@@ -804,7 +837,8 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+2 Coins, Each other player discards a Copper card (or reveals a hand with no Copper).
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Each other player discards a Copper card (or reveals a hand with no Copper).
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -817,9 +851,8 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Set aside this and another card from your hand. Return them to your deck at the end of the game.
---------
-2 VP
+		<string>Set aside this and another card from your hand. Return them to your deck at the end of the game.&lt;hr /&gt;
+&lt;p class="vp_big"&gt;2&lt;/p&gt;
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -832,7 +865,8 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+2 Coins, Look at the top 5 cards of your deck. Either discard all of them, or put them back on top of your deck in any order.
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Look at the top 5 cards of your deck. Either discard all of them, or put them back on top of your deck in any order.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -845,7 +879,7 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you've taken with Pirate Ships this game.
+		<string>Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +&lt;span class="coin_small"&gt;1&lt;/span&gt; per Coin token you've taken with Pirate Ships this game.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -858,7 +892,7 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Buy, Trash a card from your hand. +Coins equal to its cost.
+		<string>+1 Buy, Trash a card from your hand. +&lt;span class="coin_small"&gt;&amp;nbsp;&lt;/span&gt; equal to its cost.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -897,7 +931,9 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Card, +2 Actions, +1 Coin.
+		<string>+1 Card&lt;br /&gt;
++2 Actions&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -936,7 +972,7 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Now and at the start of your next turn: +2 Coins.
+		<string>Now and at the start of your next turn: +&lt;span class="coin_small"&gt;2&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -975,7 +1011,10 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Card, +1 Action, +1 Coin, When you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
+When you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck.
 </string>
 		<key>set</key>
 		<string>Seaside</string>
@@ -1001,10 +1040,10 @@ At the start of your next turn, +1 Card.
 		<key>cost</key>
 		<string>$0 1P</string>
 		<key>rules</key>
-		<string>Trash a card from your hand.
-If it is an...
-Action card, gain a Duchy
-Treasure card, gain a Transmute
+		<string>Trash a card from your hand.&lt;br /&gt;
+If it is an...&lt;br /&gt;
+Action card, gain a Duchy&lt;br /&gt;
+Treasure card, gain a Transmute&lt;br /&gt;
 Victory card, gain a Gold
 </string>
 		<key>set</key>
@@ -1018,7 +1057,7 @@ Victory card, gain a Gold
 		<key>cost</key>
 		<string>$0 1P</string>
 		<key>rules</key>
-		<string>Worth 1 Victory for every 3 Action cards in your deck (rounded down).
+		<string>Worth &lt;span class="vp_small"&gt;1&lt;/span&gt; for every 3 Action cards in your deck (rounded down).
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1031,8 +1070,8 @@ Victory card, gain a Gold
 		<key>cost</key>
 		<string>$2 1P</string>
 		<key>rules</key>
-		<string>+1 Card
-+1 Action
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
 Reveal the top 4 cards of your deck. Put the revealed Coppers and Potions into your hand. Put the other cards back on top in any order.
 </string>
 		<key>set</key>
@@ -1046,8 +1085,8 @@ Reveal the top 4 cards of your deck. Put the revealed Coppers and Potions into y
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+1 Buy
-+1 Coin
+		<string>+1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
 When you discard this from play, you may put one of your Treasures from play on top of your deck.
 </string>
 		<key>set</key>
@@ -1061,8 +1100,8 @@ When you discard this from play, you may put one of your Treasures from play on 
 		<key>cost</key>
 		<string>$2 1P</string>
 		<key>rules</key>
-		<string>+1 Action
-Each player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then reveal cards from the top of your deck until revealing one that isn't an Action.
+		<string>+1 Action&lt;br /&gt;
+Each player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then reveal cards from the top of your deck until revealing one that isn't an Action.&lt;br /&gt;
 Put all of your revealed cards into your hand.
 </string>
 		<key>set</key>
@@ -1076,8 +1115,8 @@ Put all of your revealed cards into your hand.
 		<key>cost</key>
 		<string>$2 1P</string>
 		<key>rules</key>
-		<string>+2 Actions
-You may gain an Action card costing up to 5 Coins.
+		<string>+2 Actions&lt;br /&gt;
+You may gain an Action card costing up to &lt;span class="coin_small"&gt;5&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1090,8 +1129,8 @@ You may gain an Action card costing up to 5 Coins.
 		<key>cost</key>
 		<string>$3 1P</string>
 		<key>rules</key>
-		<string>+2 Cards
-+1 Action
+		<string>+2 Cards&lt;br /&gt;
++1 Action&lt;br /&gt;
 When you discard this from play, you may put this on top of your deck if you have a Potion in play.
 </string>
 		<key>set</key>
@@ -1105,8 +1144,8 @@ When you discard this from play, you may put this on top of your deck if you hav
 		<key>cost</key>
 		<string>$3 1P</string>
 		<key>rules</key>
-		<string>+1 Card
-+1 Action
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
 Each other player gains a curse.
 </string>
 		<key>set</key>
@@ -1120,8 +1159,8 @@ Each other player gains a curse.
 		<key>cost</key>
 		<string>$3 1P</string>
 		<key>rules</key>
-		<string>When you play this, count your deck and discard pile.
-Worth 1 Coin per 5 cards total between them (rounded down).
+		<string>When you play this, count your deck and discard pile.&lt;br /&gt;
+Worth &lt;span class="coin_small"&gt;1&lt;/span&gt; per 5 cards total between them (rounded down).
 </string>
 		<key>set</key>
 		<string>Alchemy</string>
@@ -1134,7 +1173,7 @@ Worth 1 Coin per 5 cards total between them (rounded down).
 		<key>cost</key>
 		<string>$4 1P</string>
 		<key>rules</key>
-		<string>Reveal cards from your deck until you reveal 2 Action cards other than Golem Cards.
+		<string>Reveal cards from your deck until you reveal 2 Action cards other than Golem Cards.&lt;br /&gt;
 Discard the other cards, then play the Action cards in either order.
 </string>
 		<key>set</key>
@@ -1148,9 +1187,9 @@ Discard the other cards, then play the Action cards in either order.
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Action
-Trash a card from your hand.
-+1 Card per Coin it costs.
+		<string>+1 Action&lt;br /&gt;
+Trash a card from your hand.&lt;br /&gt;
++1 Card per &lt;span class="coin_small"&gt;&amp;nbsp;&lt;/span&gt; it costs.&lt;br /&gt;
 +2 Cards if it has Potion in its cost.
 </string>
 		<key>set</key>
@@ -1164,7 +1203,7 @@ Trash a card from your hand.
 		<key>cost</key>
 		<string>$6 1P</string>
 		<key>rules</key>
-		<string>The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him.
+		<string>The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him.&lt;br /&gt;
 Any cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at end of turn.
 </string>
 		<key>set</key>
@@ -1178,7 +1217,7 @@ Any cards he would gain on that turn, you gain instead; any cards of his that ar
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.
+		<string>&lt;p class="coin_big"&gt;1&lt;/p&gt;&lt;br /&gt;
 When you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.
 </string>
 		<key>set</key>
@@ -1192,10 +1231,9 @@ When you play this, reveal cards from your deck until you reveal a Treasure. Dis
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+1 Buy
-+$1 per token on the Trade Route mat.
-Trash a card from your hand.
-----------
+		<string>+1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt; per token on the Trade Route mat.&lt;br /&gt;
+Trash a card from your hand.&lt;hr /&gt;
 Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move the token to the Trade Route mat.
 </string>
 		<key>set</key>
@@ -1209,8 +1247,7 @@ Setup: Put a token on each Victory card Supply pile. When a card is gained from 
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>Draw until you have 6 cards in hand.
-----------
+		<string>Draw until you have 6 cards in hand.&lt;hr /&gt;
 When you gain a card, you may reveal this from your hand. If you do, either trash that card, or put it on top of your deck.
 </string>
 		<key>set</key>
@@ -1224,9 +1261,9 @@ When you gain a card, you may reveal this from your hand. If you do, either tras
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+$1
-+1 &lt;VP&gt;
-Trash a card from your hand. +&lt;VP&gt; equal to half its cost in coins, rounded down.
+		<string>+&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
++&lt;span class="vp_small"&gt;1&lt;/span&gt;&lt;br /&gt;
+Trash a card from your hand. +&lt;span class="vp_small"&gt;&amp;nbsp;&lt;/span&gt; equal to half its cost in coins, rounded down.&lt;br /&gt;
 Each other player may trash a card from his hand.
 </string>
 		<key>set</key>
@@ -1240,7 +1277,8 @@ Each other player may trash a card from his hand.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+$2; +1 &lt;VP&gt;
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
++&lt;span class="vp_small"&gt;1&lt;/span&gt;
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1253,9 +1291,8 @@ Each other player may trash a card from his hand.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.
-----------
-While this is in play, Action cards cost $2 less, but not less than $0.
+		<string>&lt;p class="coin_big"&gt;1&lt;/p&gt;&lt;hr /&gt;
+While this is in play, Action cards cost &lt;span class="coin_small"&gt;2&lt;/span&gt; less, but not less than &lt;span class="coin_small"&gt;0&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1268,9 +1305,8 @@ While this is in play, Action cards cost $2 less, but not less than $0.
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.
-----------
-While this is in play, when you buy a card costing $4 or less that is not a Victory card, gain a copy of it.
+		<string>&lt;p class="coin_big"&gt;1&lt;/p&gt;&lt;hr /&gt;
+While this is in play, when you buy a card costing &lt;span class="coin_small"&gt;4&lt;/span&gt; or less that is not a Victory card, gain a copy of it.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1283,8 +1319,8 @@ While this is in play, when you buy a card costing $4 or less that is not a Vict
 		<key>cost</key>
 		<string>$4</string>
 		<key>rules</key>
-		<string>+1 Card
-+2 Actions
+		<string>+1 Card&lt;br /&gt;
++2 Actions&lt;br /&gt;
 +1 Buy
 </string>
 		<key>set</key>
@@ -1298,9 +1334,9 @@ While this is in play, when you buy a card costing $4 or less that is not a Vict
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+1 Card
-+2 Actions
-If there are one or more empty Supply piles, +1 Card. If there are two or more, +$1 and +1 Buy.
+		<string>+1 Card&lt;br /&gt;
++2 Actions&lt;br /&gt;
+If there are one or more empty Supply piles, +1 Card. If there are two or more, +&lt;span class="coin_small"&gt;1&lt;/span&gt; and +1 Buy.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1313,8 +1349,8 @@ If there are one or more empty Supply piles, +1 Card. If there are two or more, 
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 3 Coins.
-+1 Buy
+		<string>&lt;p class="coin_big"&gt;3&lt;/p&gt;&lt;br /&gt;
++1 Buy&lt;br /&gt;
 When you play this, the player to your left names a card. You can't buy that card this turn.
 </string>
 		<key>set</key>
@@ -1341,8 +1377,7 @@ When you play this, the player to your left names a card. You can't buy that car
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>You may reveal a Treasure card from your hand. Gain a copy of it.
-----------
+		<string>You may reveal a Treasure card from your hand. Gain a copy of it.&lt;hr /&gt;
 When you buy this, trash all Treasures you have in play.
 </string>
 		<key>set</key>
@@ -1356,7 +1391,7 @@ When you buy this, trash all Treasures you have in play.
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Coins
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
 Each other player may discard a Curse. If he doesn't, he gains a Curse and a Copper.
 </string>
 		<key>set</key>
@@ -1370,7 +1405,7 @@ Each other player may discard a Curse. If he doesn't, he gains a Curse and a Cop
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+3 Cards
+		<string>+3 Cards&lt;br /&gt;
 Each other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.
 </string>
 		<key>set</key>
@@ -1384,8 +1419,7 @@ Each other player reveals the top 3 cards of his deck, discards the revealed Act
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 2 Coins.
-----------
+		<string>&lt;p class="coin_big"&gt;2&lt;/p&gt;&lt;hr /&gt;
 While this is in play, when you gain a card, you may put that card on top of your deck.
 </string>
 		<key>set</key>
@@ -1399,8 +1433,8 @@ While this is in play, when you gain a card, you may put that card on top of you
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>+2 Cards 
-Discard any number of cards. +$1 per card discarded. 
+		<string>+2 Cards &lt;br /&gt;
+Discard any number of cards. +&lt;span class="coin_small"&gt;1&lt;/span&gt; per card discarded. &lt;br /&gt;
 Each other player may discard 2 cards. If he does, he draws a card.
 </string>
 		<key>set</key>
@@ -1414,7 +1448,7 @@ Each other player may discard 2 cards. If he does, he draws a card.
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 1 Coin.
+		<string>&lt;p class="coin_big"&gt;1&lt;/p&gt;&lt;br /&gt;
 When you play this, reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure.
 </string>
 		<key>set</key>
@@ -1428,11 +1462,10 @@ When you play this, reveal cards from your deck until you reveal a Treasure. Dis
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>+1 Buy
-+$2
-Each other player discards down to 3 cards in hand.
-----------
-While this is in play, when you buy a card, +1 &lt;VP&gt;.
+		<string>+1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Each other player discards down to 3 cards in hand.&lt;hr /&gt;
+While this is in play, when you buy a card, +&lt;span class="vp_small"&gt;1&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1445,11 +1478,10 @@ While this is in play, when you buy a card, +1 &lt;VP&gt;.
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>+1 Card
-+1 Action
-+1 Buy
-+$2
-----------
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
++1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;hr /&gt;
 You can't buy this if you have any Copper in play.
 </string>
 		<key>set</key>
@@ -1463,8 +1495,7 @@ You can't buy this if you have any Copper in play.
 		<key>cost</key>
 		<string>$6</string>
 		<key>rules</key>
-		<string>Worth 2 Coins.
-----------
+		<string>&lt;p class="coin_big"&gt;2&lt;/p&gt;&lt;hr /&gt;
 While this is in play, when you buy a Victory card, gain a Gold.
 </string>
 		<key>set</key>
@@ -1478,8 +1509,8 @@ While this is in play, when you buy a Victory card, gain a Gold.
 		<key>cost</key>
 		<string>$7</string>
 		<key>rules</key>
-		<string>Worth ? Coins.
-When you play this, it`s worth $1 per Treasure card you have in play (counting this).
+		<string>&lt;p class="coin_big"&gt;?&lt;/p&gt;&lt;br /&gt;
+When you play this, it`s worth &lt;span class="coin_small"&gt;1&lt;/span&gt; per Treasure card you have in play (counting this).
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1492,7 +1523,7 @@ When you play this, it`s worth $1 per Treasure card you have in play (counting t
 		<key>cost</key>
 		<string>$7</string>
 		<key>rules</key>
-		<string>Trash a card from your hand. Gain a card costing up to $3 more than the trashed card.
+		<string>Trash a card from your hand. Gain a card costing up to &lt;span class="coin_small"&gt;3&lt;/span&gt; more than the trashed card.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1531,9 +1562,10 @@ When you play this, it`s worth $1 per Treasure card you have in play (counting t
 		<key>cost</key>
 		<string>$8</string>
 		<key>rules</key>
-		<string>+1 Card; +1 Action; +2 Coin
-----------
-During your Buy phase, this costs $2 less per Action card you have in play, but not less than $0.
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
++&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;hr /&gt;
+During your Buy phase, this costs &lt;span class="coin_small"&gt;2&lt;/span&gt; less per Action card you have in play, but not less than &lt;span class="coin_small"&gt;0&lt;/span&gt;.
 </string>
 		<key>set</key>
 		<string>Prosperity</string>
@@ -1546,7 +1578,8 @@ During your Buy phase, this costs $2 less per Action card you have in play, but 
 		<key>cost</key>
 		<string>$3</string>
 		<key>rules</key>
-		<string>+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. 
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. &lt;br /&gt;
 (Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.).
 </string>
 		<key>set</key>
@@ -1573,7 +1606,7 @@ During your Buy phase, this costs $2 less per Action card you have in play, but 
 		<key>cost</key>
 		<string>$5</string>
 		<key>rules</key>
-		<string>Worth 2 Coins. When you shuffle, you may put this anywhere in your deck.
+		<string>&lt;p class="coin_big"&gt;2&lt;/p&gt;When you shuffle, you may put this anywhere in your deck.
 </string>
 		<key>set</key>
 		<string>Promo</string>

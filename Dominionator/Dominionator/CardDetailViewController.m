@@ -47,9 +47,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-	[self.cardRulesLabel setNumberOfLines:100];
 	self.cardNameLabel.text = [_properties valueForKey:@"card"];
-	self.cardRulesLabel.text = [_properties valueForKey:@"rules"];
+	NSData* htmlData = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"cardrules" withExtension:@"html"]];
+	NSString* htmlString = [NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"cardRules" withExtension:@"html"] encoding:NSUTF8StringEncoding error:NULL];
+	[self.cardRulesLabel loadData:htmlData MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:[[NSBundle mainBundle] bundleURL]];
+	[self.cardRulesLabel loadHTMLString:[htmlString stringByReplacingOccurrencesOfString:@"@@" withString:[_properties valueForKey:@"rules"]] baseURL:[[NSBundle mainBundle] bundleURL]];
+	self.cardRulesLabel.opaque = NO;
+	self.cardRulesLabel.backgroundColor = [UIColor clearColor];
+	//self.cardRulesLabel.
 	self.cardTypeLabel.text = [_properties valueForKey:@"type"];
 	self.cardSetIconView.image = [UIImage imageNamed:[_properties valueForKey:@"set"]];
 }

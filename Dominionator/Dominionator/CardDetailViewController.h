@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *cardNameLabel;
 @property (nonatomic, retain) IBOutlet UILabel *cardTypeLabel;
-@property (nonatomic, retain) IBOutlet UILabel *cardRulesLabel;
+@property (nonatomic, retain) IBOutlet UIWebView *cardRulesLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *cardSetIconView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil properties:(NSDictionary*)properties;

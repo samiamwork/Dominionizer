@@ -58,6 +58,15 @@
 		3E7AAF291336C1A4009AD73B /* Prosperity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAF1F1336C1A4009AD73B /* Prosperity@2x.png */; };
 		3E7AAF2A1336C1A4009AD73B /* Seaside.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAF201336C1A4009AD73B /* Seaside.png */; };
 		3E7AAF2B1336C1A4009AD73B /* Seaside@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAF211336C1A4009AD73B /* Seaside@2x.png */; };
+		3EEE459F13751D6300C1621D /* shield_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE459D13751D6300C1621D /* shield_big.png */; };
+		3EEE45A013751D6300C1621D /* shield_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE459E13751D6300C1621D /* shield_big@2x.png */; };
+		3EEE45CB1375D51600C1621D /* cardrules.html in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45CA1375D51600C1621D /* cardrules.html */; };
+		3EEE45CF1375F75800C1621D /* coin_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45CD1375F75800C1621D /* coin_big.png */; };
+		3EEE45D01375F75800C1621D /* coin_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45CE1375F75800C1621D /* coin_big@2x.png */; };
+		3EEE45D31376145C00C1621D /* shield_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45D11376145C00C1621D /* shield_small.png */; };
+		3EEE45D41376145C00C1621D /* shield_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45D21376145C00C1621D /* shield_small@2x.png */; };
+		3EEE45D713761B1600C1621D /* coin_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45D513761B1600C1621D /* coin_small.png */; };
+		3EEE45D813761B1600C1621D /* coin_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45D613761B1600C1621D /* coin_small@2x.png */; };
 		3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */; };
 		3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */; };
 		3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B61132D583300AEE21A /* CardDetailView.m */; };
@@ -133,6 +142,15 @@
 		3E7AAF1F1336C1A4009AD73B /* Prosperity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prosperity@2x.png"; sourceTree = "<group>"; };
 		3E7AAF201336C1A4009AD73B /* Seaside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seaside.png; sourceTree = "<group>"; };
 		3E7AAF211336C1A4009AD73B /* Seaside@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seaside@2x.png"; sourceTree = "<group>"; };
+		3EEE459D13751D6300C1621D /* shield_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield_big.png; sourceTree = "<group>"; };
+		3EEE459E13751D6300C1621D /* shield_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield_big@2x.png"; sourceTree = "<group>"; };
+		3EEE45CA1375D51600C1621D /* cardrules.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cardrules.html; sourceTree = "<group>"; };
+		3EEE45CD1375F75800C1621D /* coin_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin_big.png; sourceTree = "<group>"; };
+		3EEE45CE1375F75800C1621D /* coin_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_big@2x.png"; sourceTree = "<group>"; };
+		3EEE45D11376145C00C1621D /* shield_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield_small.png; sourceTree = "<group>"; };
+		3EEE45D21376145C00C1621D /* shield_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield_small@2x.png"; sourceTree = "<group>"; };
+		3EEE45D513761B1600C1621D /* coin_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin_small.png; sourceTree = "<group>"; };
+		3EEE45D613761B1600C1621D /* coin_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_small@2x.png"; sourceTree = "<group>"; };
 		3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
 		3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
 		3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
@@ -198,6 +216,7 @@
 		3E26016F1329E50800DC895B /* Dominionator */ = {
 			isa = PBXGroup;
 			children = (
+				3EEE45CA1375D51600C1621D /* cardrules.html */,
 				3E0506FA1329FBCB008378A5 /* cardlist.plist */,
 				3E2601781329E50800DC895B /* DominionatorAppDelegate.h */,
 				3E2601791329E50800DC895B /* DominionatorAppDelegate.m */,
@@ -257,6 +276,14 @@
 		3E7AAED713358717009AD73B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3EEE45D513761B1600C1621D /* coin_small.png */,
+				3EEE45D613761B1600C1621D /* coin_small@2x.png */,
+				3EEE45D11376145C00C1621D /* shield_small.png */,
+				3EEE45D21376145C00C1621D /* shield_small@2x.png */,
+				3EEE45CD1375F75800C1621D /* coin_big.png */,
+				3EEE45CE1375F75800C1621D /* coin_big@2x.png */,
+				3EEE459D13751D6300C1621D /* shield_big.png */,
+				3EEE459E13751D6300C1621D /* shield_big@2x.png */,
 				3E4AF4B91340517600C1B2C1 /* CardsTab.png */,
 				3E4AF4BA1340517600C1B2C1 /* CardsTab@2x.png */,
 				3E4AF4B5134014A700C1B2C1 /* Coin.png */,
@@ -398,6 +425,15 @@
 				3E4AF4B8134014A700C1B2C1 /* Coin@2x.png in Resources */,
 				3E4AF4BB1340517600C1B2C1 /* CardsTab.png in Resources */,
 				3E4AF4BC1340517600C1B2C1 /* CardsTab@2x.png in Resources */,
+				3EEE459F13751D6300C1621D /* shield_big.png in Resources */,
+				3EEE45A013751D6300C1621D /* shield_big@2x.png in Resources */,
+				3EEE45CB1375D51600C1621D /* cardrules.html in Resources */,
+				3EEE45CF1375F75800C1621D /* coin_big.png in Resources */,
+				3EEE45D01375F75800C1621D /* coin_big@2x.png in Resources */,
+				3EEE45D31376145C00C1621D /* shield_small.png in Resources */,
+				3EEE45D41376145C00C1621D /* shield_small@2x.png in Resources */,
+				3EEE45D713761B1600C1621D /* coin_small.png in Resources */,
+				3EEE45D813761B1600C1621D /* coin_small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
