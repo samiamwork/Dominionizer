@@ -1,0 +1,18 @@
+Dominionator
+------------
+A simple Dominion card randomizer for iOS.
+
+TODO:
+-----------
+- Add proper "setup" gear icon of some sort
+- Fix UIWebView loading so you don't see it flicker into place
+- Add icon
+- Add Default.png
+- Add style to section headers
+- Add bolding to card rules
+- Fix broken Alchemy picking rules
+- Make background color darker in cards list and detail view
+- Add dropshadow to card rows
+- Add BlackMarket deck functionality
+
+
