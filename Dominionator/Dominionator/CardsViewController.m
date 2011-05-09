@@ -9,6 +9,7 @@
 #import "CardsViewController.h"
 #import "CardCell.h"
 #import "SettingsViewController.h"
+#import "DominionCard.h"
 
 @implementation CardsViewController
 
@@ -18,7 +19,15 @@
     [super viewDidLoad];
 	[[self tableView] setRowHeight:55.0];
 	NSURL* cardListURL = [[NSBundle mainBundle] URLForResource:@"cardlist" withExtension:@"plist"];
-	_cards = [[NSMutableArray alloc] initWithContentsOfURL:cardListURL];
+	NSArray* rawCards = [NSArray arrayWithContentsOfURL:cardListURL];
+	_cards = [[NSMutableArray alloc] init];
+	for(NSDictionary* aCardDict in rawCards)
+	{
+		DominionCard* newCard = [[DominionCard alloc] initWithDictionary:aCardDict];
+		[_cards addObject:newCard];
+		[newCard release];
+	}
+
 	_cardPicks = [[NSMutableDictionary alloc] init];
 	_setOfCardsPicked = [[NSMutableSet alloc] init];
 	_setHeaders = [[NSMutableArray alloc] init];
@@ -86,17 +95,17 @@
 	BOOL hasAlchemy = NO;
 	NSUInteger alchemyCount = 0;
 	[_setOfCardsPicked removeAllObjects];
-	for(NSDictionary* aCard in _cards)
+	for(DominionCard* aCard in _cards)
 	{
-		NSString* set = [aCard valueForKey:@"set"];
+		NSString* set = aCard.set;
 		// Skip this card if it's not an allowed set
 		// or if it's from the Alchemy set and we don't have enough slots to pick enough Alchemy cards
-		if(![usableSets containsObject:set] || (!hasAlchemy && [set isEqualToString:@"Alchemy"] && (10-[_cardPicks count]) < 4))
+		if(![usableSets containsObject:set] || (!hasAlchemy && [aCard isAlchemy] && (10-[_cardPicks count]) < 4))
 		{
 			continue;
 		}
 		// TODO: I think this should check for potion cost
-		if([set isEqualToString:@"Alchemy"])
+		if([aCard isAlchemy])
 		{
 			alchemyCount++;
 			hasAlchemy = YES;
@@ -117,9 +126,9 @@
 	// Put cards into arrays by set
 	NSMutableDictionary* pickedCardsBySet = [[NSMutableDictionary alloc] init];
 	NSMutableArray* newSetNames = [[NSMutableArray alloc] init];
-	for(NSMutableDictionary* aCard in _setOfCardsPicked)
+	for(DominionCard* aCard in _setOfCardsPicked)
 	{
-		NSString* setName = [aCard valueForKey:@"set"];
+		NSString* setName = aCard.set;
 		NSMutableArray* setArray = [pickedCardsBySet valueForKey:setName];
 		if(setArray == nil)
 		{
@@ -184,22 +193,22 @@
 {
 	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
 	NSMutableArray* oldSetArray = [_cardPicks valueForKey:setName];
-	NSDictionary* theCardToReplace = [oldSetArray objectAtIndex:[indexPath row]];
-	NSDictionary* newCard = nil;
+	DominionCard* theCardToReplace = [oldSetArray objectAtIndex:[indexPath row]];
+	DominionCard* newCard = nil;
 	NSSet* allowedSets = [self allowedSets];
 	NSString* newCardSet = nil;
-	BOOL cardMustBeAlchemy = [[theCardToReplace valueForKey:@"set"] isEqualToString:@"Alchemy"];
+	BOOL cardMustBeAlchemy = [theCardToReplace isAlchemy];
 	do
 	{
 		NSUInteger newIndex = random() % [_cards count];
 		newCard = [_cards objectAtIndex:newIndex];
-		newCardSet = [newCard valueForKey:@"set"];
+		newCardSet = newCard.set;
 	} while(newCard == theCardToReplace
 			|| [_setOfCardsPicked containsObject:newCard]
 			|| ![allowedSets containsObject:newCardSet]
-			|| (cardMustBeAlchemy && ![newCardSet isEqualToString:@"Alchemy"]));
+			|| (cardMustBeAlchemy && ![newCard isAlchemy]));
 
-	NSString* newSetName = [newCard valueForKey:@"set"];
+	NSString* newSetName = newCard.set;
 	if([setName isEqualToString:newSetName])
 	{
 		[oldSetArray replaceObjectAtIndex:[indexPath row] withObject:newCard];
@@ -318,9 +327,8 @@
     // Configure the cell...
 	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
 	NSArray* setArray = [_cardPicks valueForKey:setName];
-	NSDictionary* aCard = [setArray objectAtIndex:[indexPath row]];
-	//[[cell textLabel] setText:[aCard objectForKey:@"card"]];
-	[cell setProperties:aCard];
+	DominionCard* aCard = [setArray objectAtIndex:[indexPath row]];
+	[cell setCard:aCard];
     
     return cell;
 }
@@ -329,8 +337,8 @@
 {
 	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
 	NSArray* setArray = [_cardPicks valueForKey:setName];
-	NSDictionary* aCard = [setArray objectAtIndex:[indexPath row]];
-	[_detailViewController setProperties:aCard];
+	DominionCard* aCard = [setArray objectAtIndex:[indexPath row]];
+	[_detailViewController setCard:aCard];
 	[self.navigationController pushViewController:_detailViewController animated:YES];
 }
 

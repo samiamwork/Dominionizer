@@ -56,8 +56,8 @@
 	CGSize maskSize = CGSizeMake(CGImageGetWidth(mask), CGImageGetHeight(mask));
 	workingRect.size.width -= maskSize.width;
 
-	NSDictionary* properties = [_cell properties];
-	NSString* type = [properties valueForKey:@"type"];
+	DominionCard* card = [_cell card];
+	NSString* type = card.type;
 
 	CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
 	CGGradientRef gradient;
@@ -202,7 +202,7 @@
 
 	// Now that we don't need the mask anymore lets extend our working rect to give us some more space
 	workingRect.size.width += ceil(maskSize.width/2.0);
-	NSString* cost = [properties valueForKey:@"cost"];
+	NSString* cost = card.cost;
 	NSArray* costList = [cost componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 	NSString* coinCost = nil;
 	NSString* potionCost = nil;
@@ -236,7 +236,7 @@
 		[type drawInRect:textRect withFont:typeFont lineBreakMode:UILineBreakModeTailTruncation];
 
 		UIFont* nameFont = [UIFont boldSystemFontOfSize:19.0];
-		NSString* cardName = [properties valueForKey:@"card"];
+		NSString* cardName = card.name;
 		stringSize = [cardName sizeWithFont:nameFont];
 		textRect = CGRectMake(labelXMargin, CGMaxY(workingRect)-stringSize.height-20.0, workingRect.size.width - labelXMargin - labelXMaxMargin, stringSize.height);
 		[cardName drawInRect:textRect withFont:nameFont lineBreakMode:UILineBreakModeTailTruncation];
@@ -284,13 +284,13 @@
 
 @implementation CardCell
 
-@synthesize properties=_properties;
+@synthesize card=_card;
 @synthesize background=_background;
 @synthesize potion=_potion;
 @synthesize coin=_coin;
 @synthesize tearMask=_tearMask;
 
-- (void)setProperties:(NSDictionary*)newProperties;
+- (void)setCard:(DominionCard*)newCard;
 {
 	static NSString* backgroundImages[] = {
 		@"paperstrip_gray1",
@@ -303,12 +303,12 @@
 		@"tear_mask3",
 		@"tear_mask4",
 	};
-	if(newProperties == _properties)
+	if(newCard == _card)
 	{
 		return;
 	}
-	[_properties release];
-	_properties = [newProperties retain];
+	[_card release];
+	_card = [newCard retain];
 	[_cardView setNeedsDisplay];
 	[self setBackground:[UIImage imageNamed:backgroundImages[random()%3]]];
 	UIImage* tearImage = [UIImage imageNamed:tearMaskImages[random()%4]];
@@ -361,7 +361,7 @@
 
 - (void)dealloc
 {
-	[_properties release];
+	[_card release];
 	[_cardView release];
 	[_background release];
 	[_potion release];

@@ -67,6 +67,7 @@
 		3EEE45D41376145C00C1621D /* shield_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45D21376145C00C1621D /* shield_small@2x.png */; };
 		3EEE45D713761B1600C1621D /* coin_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45D513761B1600C1621D /* coin_small.png */; };
 		3EEE45D813761B1600C1621D /* coin_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45D613761B1600C1621D /* coin_small@2x.png */; };
+		3EEE45DB1377AC3300C1621D /* DominionCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEE45DA1377AC3300C1621D /* DominionCard.m */; };
 		3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */; };
 		3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */; };
 		3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B61132D583300AEE21A /* CardDetailView.m */; };
@@ -151,6 +152,8 @@
 		3EEE45D21376145C00C1621D /* shield_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield_small@2x.png"; sourceTree = "<group>"; };
 		3EEE45D513761B1600C1621D /* coin_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin_small.png; sourceTree = "<group>"; };
 		3EEE45D613761B1600C1621D /* coin_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin_small@2x.png"; sourceTree = "<group>"; };
+		3EEE45D91377AC3300C1621D /* DominionCard.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DominionCard.h; sourceTree = "<group>"; };
+		3EEE45DA1377AC3300C1621D /* DominionCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DominionCard.m; sourceTree = "<group>"; };
 		3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
 		3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
 		3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				3EFE8B63132F238A00AEE21A /* ButtonCell.h */,
 				3EFE8B64132F238B00AEE21A /* ButtonCell.m */,
 				3E7AAED713358717009AD73B /* Images */,
+				3EEE45D91377AC3300C1621D /* DominionCard.h */,
+				3EEE45DA1377AC3300C1621D /* DominionCard.m */,
 			);
 			path = Dominionator;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */,
 				3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */,
 				3EFE8B65132F238C00AEE21A /* ButtonCell.m in Sources */,
+				3EEE45DB1377AC3300C1621D /* DominionCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

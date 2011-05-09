@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DominionCard.h"
 
 @interface CardDetailViewController : UIViewController {
-    NSDictionary* _properties;
+    DominionCard* _card;
 	NSString* _htmlString;
 }
 
@@ -20,5 +20,5 @@
 @property (nonatomic, retain) IBOutlet UIImageView *cardSetIconView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
-- (void)setProperties:(NSDictionary*)newProperties;
+- (void)setCard:(DominionCard*)newCard;
 @end

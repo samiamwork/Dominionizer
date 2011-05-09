@@ -28,7 +28,7 @@
 - (void)dealloc
 {
 	[_htmlString release];
-	[_properties release];
+	[_card release];
     [super dealloc];
 }
 
@@ -53,20 +53,20 @@
 	[self.cardRulesLabel setUserInteractionEnabled:NO];
 }
 
-- (void)setProperties:(NSDictionary*)newProperties;
+- (void)setCard:(DominionCard*)newCard
 {
-	if(newProperties == _properties)
+	if(newCard == _card)
 	{
 		return;
 	}
-	[_properties release];
-	_properties = [newProperties retain];
+	[_card release];
+	_card = [newCard retain];
 
-	NSString* specificHTML = [_htmlString stringByReplacingOccurrencesOfString:@"@@" withString:[_properties valueForKey:@"rules"]];
+	NSString* specificHTML = [_htmlString stringByReplacingOccurrencesOfString:@"@@" withString:_card.rules];
 	[self.cardRulesLabel loadHTMLString:specificHTML baseURL:[[NSBundle mainBundle] bundleURL]];
-	self.cardNameLabel.text = [_properties valueForKey:@"card"];
-	self.cardTypeLabel.text = [_properties valueForKey:@"type"];
-	self.cardSetIconView.image = [UIImage imageNamed:[_properties valueForKey:@"set"]];
+	self.cardNameLabel.text = _card.name;
+	self.cardTypeLabel.text = _card.type;
+	self.cardSetIconView.image = [UIImage imageNamed:_card.set];
 }
 
 - (void)viewDidUnload
