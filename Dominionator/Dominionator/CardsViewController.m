@@ -67,14 +67,21 @@
 - (UIView*)newHeaderForSetNamed:(NSString*)setName
 {
 	UITableViewCell* newHeaderView = [[UITableViewCell alloc] init];
+	newHeaderView.opaque = YES;
+
 	newHeaderView.textLabel.text = setName;
+	newHeaderView.textLabel.opaque = NO;
+	newHeaderView.textLabel.backgroundColor = [UIColor clearColor];
+
 	newHeaderView.imageView.image = [UIImage imageNamed:setName];
 	newHeaderView.imageView.alpha = 0.7;
-	newHeaderView.opaque = YES;
+
 	newHeaderView.textLabel.textColor = [UIColor whiteColor];
 	newHeaderView.textLabel.shadowColor = [UIColor blackColor];
 	newHeaderView.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-	newHeaderView.backgroundColor = [UIColor lightGrayColor];
+
+	newHeaderView.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header_gradient"]] autorelease];
+	newHeaderView.selectedBackgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header_gradient"]] autorelease];
 
 	return  [newHeaderView autorelease];
 }
