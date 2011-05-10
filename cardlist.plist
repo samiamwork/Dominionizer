@@ -1069,7 +1069,7 @@ When you discard this from play, if you didn't buy a Victory card this turn, you
 		<key>card</key>
 		<string>Transmute</string>
 		<key>cost</key>
-		<string>$0 1P</string>
+		<string>1P</string>
 		<key>rules</key>
 		<string>Trash a card from your hand.&lt;br /&gt;
 If it is an...&lt;br /&gt;
@@ -1086,7 +1086,7 @@ Victory card, gain a Gold
 		<key>card</key>
 		<string>Vineyard</string>
 		<key>cost</key>
-		<string>$0 1P</string>
+		<string>1P</string>
 		<key>rules</key>
 		<string>Worth &lt;span class="vp_small"&gt;1&lt;/span&gt; for every 3 Action cards in your deck (rounded down).
 </string>

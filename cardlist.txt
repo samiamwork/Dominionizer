@@ -74,8 +74,8 @@ Outpost	Seaside	Action - Duration	$5	You only draw 3 cards (instead of 5) in thi
 Tactician	Seaside	Action - Duration	$5	Discard your hand. If you discarded any cards this way, then at the start of your next turn, +5 Cards, +1 Buy, and +1 Action.
 Treasury	Seaside	Action	$5	+1 Card\n+1 Action\n+1<$>\nWhen you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck.
 Wharf	Seaside	Action - Duration	$5	Now and at the start of your next turn:\n+2 Cards\n+1 Buy.
-Transmute	Alchemy	Action	$0 1P	Trash a card from your hand.\nIf it is an...\nAction card, gain a Duchy\nTreasure card, gain a Transmute\nVictory card, gain a Gold
-Vineyard	Alchemy	Victory	$0 1P	Worth 1<VP> for every 3 Action cards in your deck (rounded down).
+Transmute	Alchemy	Action	1P	Trash a card from your hand.\nIf it is an...\nAction card, gain a Duchy\nTreasure card, gain a Transmute\nVictory card, gain a Gold
+Vineyard	Alchemy	Victory	1P	Worth 1<VP> for every 3 Action cards in your deck (rounded down).
 Apothecary	Alchemy	Action	$2 1P	+1 Card\n+1 Action\nReveal the top 4 cards of your deck. Put the revealed Coppers and Potions into your hand. Put the other cards back on top in any order.
 Herbalist	Alchemy	Action	$2	+1 Buy\n+1<$>\nWhen you discard this from play, you may put one of your Treasures from play on top of your deck.
 Scrying Pool	Alchemy	Action - Attack	$2 1P	+1 Action\nEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then reveal cards from the top of your deck until revealing one that isn't an Action.\nPut all of your revealed cards into your hand.
