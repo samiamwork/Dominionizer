@@ -140,6 +140,12 @@
 		}
 		[setArray addObject:aCard];
 	}
+	for(NSString* aSet in pickedCardsBySet)
+	{
+		[(NSMutableArray*)[pickedCardsBySet valueForKey:aSet] sortUsingComparator:(NSComparator)^(DominionCard* cardOne, DominionCard* cardTwo) {
+			return [cardOne.name caseInsensitiveCompare:cardTwo.name];
+		}];
+	}
 
 	NSUInteger oldSetCount = [_setNames count];
 	NSUInteger newSetCount = [newSetNames count];
