@@ -51,6 +51,10 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="10299009"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+						</object>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -128,7 +132,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUIWebView" id="61229941">
+					<object class="IBUIWebView" id="821686084">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{41, 62}, {242, 338}}</string>
@@ -190,7 +194,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">cardRulesLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="61229941"/>
+						<reference key="destination" ref="821686084"/>
 					</object>
 					<int key="connectionID">15</int>
 				</object>
@@ -213,7 +217,7 @@
 							<reference ref="94595"/>
 							<reference ref="10299009"/>
 							<reference ref="934165182"/>
-							<reference ref="61229941"/>
+							<reference ref="821686084"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -250,7 +254,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="61229941"/>
+						<reference key="object" ref="821686084"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>

@@ -48,7 +48,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
-	[[UIColor whiteColor] setFill];
+	[[UIColor darkGrayColor] setFill];
 	[[UIBezierPath bezierPathWithRect:rect] fill];
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGRect workingRect = [self bounds];

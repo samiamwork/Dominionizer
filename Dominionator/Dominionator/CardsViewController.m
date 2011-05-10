@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	[[self tableView] setRowHeight:55.0];
+	[self tableView].backgroundColor = [UIColor darkGrayColor];
 	NSURL* cardListURL = [[NSBundle mainBundle] URLForResource:@"cardlist" withExtension:@"plist"];
 	NSArray* rawCards = [NSArray arrayWithContentsOfURL:cardListURL];
 	_cards = [[NSMutableArray alloc] init];
