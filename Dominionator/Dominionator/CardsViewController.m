@@ -98,9 +98,10 @@
 	for(DominionCard* aCard in _cards)
 	{
 		NSString* set = aCard.set;
+		NSInteger cardsLeft = 10 - [_setOfCardsPicked count];
 		// Skip this card if it's not an allowed set
-		// or if it's from the Alchemy set and we don't have enough slots to pick enough Alchemy cards
-		if(![usableSets containsObject:set] || (!hasAlchemy && [aCard isAlchemy] && (10-[_cardPicks count]) < 4))
+		// or if it's from Alchemy and there aren't enough slots left to fill the quota
+		if(![usableSets containsObject:set] || (!hasAlchemy && [aCard isAlchemy] && cardsLeft < 4))
 		{
 			continue;
 		}
@@ -111,7 +112,7 @@
 			hasAlchemy = YES;
 		}
 		// Make sure that we pick the alchemy cards we need
-		else if(hasAlchemy && alchemyCount < 4 && (10-[_setOfCardsPicked count]) <= (4-alchemyCount))
+		else if(hasAlchemy && alchemyCount < 4 && cardsLeft <= (4-alchemyCount))
 		{
 			continue;
 		}
