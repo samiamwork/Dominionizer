@@ -39,7 +39,7 @@
 	UIBarButtonItem* shuffleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pickNewCards:)];
 	self.navigationItem.rightBarButtonItem = shuffleButton;
 	[shuffleButton release];
-	UIBarButtonItem* settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(changeSettings:)];
+	UIBarButtonItem* settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear"] style:UIBarButtonItemStylePlain target:self action:@selector(changeSettings:)];
 	self.navigationItem.leftBarButtonItem = settingsButton;
 	[settingsButton release];
 	self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.545 green:0.366 blue:0.232 alpha:1.000];
