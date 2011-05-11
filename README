@@ -4,7 +4,6 @@ A simple Dominion card randomizer for iOS.
 
 TODO:
 -----------
-- Fix HTML for retina support
 - Fix UIWebView loading so you don't see it flicker into place
 - Add icon
 - Add Default.png
