@@ -85,10 +85,28 @@ span.vp_small
 	line-height: 26px;
 	display: inline-block;
 }
-div
+@media only screen and (-webkit-min-device-pixel-ratio: 2)
 {
-	width: 240px;
-	text-align: right;
+	p.vp_big
+	{
+		background-image: url(shield_big@2x.png);
+		background-size: 80px 90px;
+	}
+	p.coin_big
+	{
+		background-image: url(coin_big@2x.png);
+		background-size: 90px 90px;
+	}
+	span.coin_small
+	{
+		background-image: url(coin_small@2x.png);
+		background-size: 36px 36px;
+	}
+	span.vp_small
+	{
+		background-image: url(shield_small@2x.png);
+		background-size: 25px 26px;
+	}
 }
 </style>
 </head>
