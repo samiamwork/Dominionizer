@@ -349,7 +349,7 @@ Each other player gains a Curse card.
 		<key>cost</key>
 		<string>$2</string>
 		<key>rules</key>
-		<string>+3 Card&lt;br /&gt;
+		<string>+3 Cards&lt;br /&gt;
 Put a card from your hand on top of your deck.
 </string>
 		<key>set</key>
@@ -398,7 +398,7 @@ When another player plays an Attack card, you may reveal this from your hand. If
 		<key>rules</key>
 		<string>+1 Card&lt;br /&gt;
 +1 Action&lt;hr /&gt;
-&lt;p class="vp_big"&gt;1&lt;/p&gt;.
+&lt;p class="vp_big"&gt;1&lt;/p&gt;
 </string>
 		<key>set</key>
 		<string>Intrigue</string>

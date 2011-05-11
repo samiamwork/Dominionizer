@@ -23,10 +23,10 @@ Market	Base	Action	$5	+1 Card\n+1 Action\n+1 Buy\n+1<$>
 Mine	Base	Action	$5	Trash a Treasure card from your hand. Gain a Treasure card costing up to 3<$> more; put it into your hand.
 Witch	Base	Action - Attack	$5	+2 Cards\nEach other player gains a Curse card.
 Adventurer	Base	Action	$6	Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.
-Courtyard	Intrigue	Action	$2	+3 Card\nPut a card from your hand on top of your deck.
+Courtyard	Intrigue	Action	$2	+3 Cards\nPut a card from your hand on top of your deck.
 Pawn	Intrigue	Action	$2	Choose two:\n+1 Card\n+1 Action\n+1 Buy\n+1<$>\n(The choices must be different.).
 Secret Chamber	Intrigue	Action - Reaction	$2	Discard any number of cards.\n+1<$> per card discarded.________When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
-Great Hall	Intrigue	Action - Victory	$3	+1 Card\n+1 Action________1<^VP>.
+Great Hall	Intrigue	Action - Victory	$3	+1 Card\n+1 Action________1<^VP>
 Masquerade	Intrigue	Action	$3	+2 Card\nEach player passes a card in their hand to the player on their left. You may trash a card from your hand.
 Shanty Town	Intrigue	Action	$3	+2 Actions, Reveal your hand. If you have no Action cards in hand, +2 Cards.
 Steward	Intrigue	Action	$3	Choose one:\n+2 Cards; or +2<$>; or trash 2 cards from your hand.
