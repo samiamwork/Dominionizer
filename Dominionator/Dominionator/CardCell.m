@@ -44,6 +44,11 @@
 	CGContextDrawLinearGradient(ctx, whiteGloss, CGPointMake(0.0, CGMinY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)+2.0), 0);
 	CGContextDrawLinearGradient(ctx, blackGloss, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMaxY(workingRect)-2.0), 0);
 
+	if(_cell.selected)
+	{
+		CGContextSetRGBFillColor(ctx, 0.4, 0.35, 0.9, 0.4);
+		CGContextFillRect(ctx, workingRect);
+	}
 }
 
 - (void)drawRect:(CGRect)rect
@@ -335,7 +340,7 @@
 		self.opaque = YES;
 		[self.contentView addSubview:_cardView];
 		self.backgroundColor = [UIColor clearColor];
-		self.selectionStyle = UITableViewCellSelectionStyleNone;
+		self.selectionStyle = UITableViewCellSelectionStyleBlue;
 		self.potion = [UIImage imageNamed:@"Potion"];
 		self.coin = [UIImage imageNamed:@"Coin"];
     }
