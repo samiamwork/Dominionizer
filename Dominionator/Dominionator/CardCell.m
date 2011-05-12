@@ -150,8 +150,8 @@
 	else if([type isEqualToString:@"Action - Victory"])
 	{
 		CGFloat colors[] = {
-			0.35, 0.57, 0.73, 1.0,
-			0.44, 0.66, 0.82, 1.0, // Action
+			0.80, 0.78, 0.67, 1.0,
+			0.91, 0.89, 0.78, 1.0, // Action
 			0.55, 0.83, 0.39, 1.0, // Victory
 			0.60, 0.88, 0.44, 1.0
 		};
