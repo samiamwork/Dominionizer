@@ -16,15 +16,17 @@
 @interface CardView : UIView {
 @private
     CardCell* _cell;
+	BOOL _selected;
 }
 @end
 
 @implementation CardView
-- (id)initWithFrame:(CGRect)frame cell:(CardCell*)cell
+- (id)initWithFrame:(CGRect)frame cell:(CardCell*)cell selected:(BOOL)selected
 {
 	if((self = [super initWithFrame:frame]))
 	{
 		_cell = cell;
+		_selected = selected;
 		self.opaque = YES;
 	}
 	return self;
@@ -44,7 +46,7 @@
 	CGContextDrawLinearGradient(ctx, whiteGloss, CGPointMake(0.0, CGMinY(workingRect)), CGPointMake(0.0, CGMinY(workingRect)+2.0), 0);
 	CGContextDrawLinearGradient(ctx, blackGloss, CGPointMake(0.0, CGMaxY(workingRect)), CGPointMake(0.0, CGMaxY(workingRect)-2.0), 0);
 
-	if(_cell.selected)
+	if(_selected)
 	{
 		CGContextSetRGBFillColor(ctx, 0.4, 0.35, 0.9, 0.4);
 		CGContextFillRect(ctx, workingRect);
@@ -334,7 +336,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-		_cardView = [[CardView alloc] initWithFrame:[[self contentView] bounds] cell:self];
+		_cardView = [[CardView alloc] initWithFrame:[[self contentView] bounds] cell:self selected:NO];
 		[_cardView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 		[_cardView setContentMode:UIViewContentModeRedraw];
 		self.opaque = YES;
@@ -361,7 +363,22 @@
 {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+	CardView* selectedView = [[CardView alloc] initWithFrame:[[self contentView] bounds] cell:self selected:selected];
+	// Fade out if we're deselecting
+	if(!selected)
+	{
+		selectedView.alpha = 0.0;
+
+		[UIView animateWithDuration:0.5 animations:^{
+			_cardView.alpha = 0.0;
+			selectedView.alpha = 1.0;
+		} completion: ^(BOOL finished){
+			[_cardView removeFromSuperview];
+			[_cardView release];
+			_cardView = selectedView;
+		}];
+	}
+	[self.contentView addSubview:selectedView];
 }
 
 - (void)dealloc
