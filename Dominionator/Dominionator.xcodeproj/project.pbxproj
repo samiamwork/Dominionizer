@@ -75,7 +75,6 @@
 		3EEE45EA137A5AFC00C1621D /* dominionator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45E9137A5AFC00C1621D /* dominionator@2x.png */; };
 		3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */; };
 		3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */; };
-		3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B61132D583300AEE21A /* CardDetailView.m */; };
 		3EFE8B65132F238C00AEE21A /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B64132F238B00AEE21A /* ButtonCell.m */; };
 /* End PBXBuildFile section */
 
@@ -167,8 +166,6 @@
 		3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
 		3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
 		3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
-		3EFE8B60132D583300AEE21A /* CardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailView.h; sourceTree = "<group>"; };
-		3EFE8B61132D583300AEE21A /* CardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailView.m; sourceTree = "<group>"; };
 		3EFE8B63132F238A00AEE21A /* ButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCell.h; sourceTree = "<group>"; };
 		3EFE8B64132F238B00AEE21A /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,8 +236,6 @@
 				3E05070A132C101A008378A5 /* CardCell.m */,
 				3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */,
 				3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */,
-				3EFE8B60132D583300AEE21A /* CardDetailView.h */,
-				3EFE8B61132D583300AEE21A /* CardDetailView.m */,
 				3E2601811329E50800DC895B /* SettingsViewController.h */,
 				3E2601821329E50800DC895B /* SettingsViewController.m */,
 				3EFE8B63132F238A00AEE21A /* ButtonCell.h */,
@@ -508,7 +503,6 @@
 				3E2601831329E50800DC895B /* SettingsViewController.m in Sources */,
 				3E05070B132C101A008378A5 /* CardCell.m in Sources */,
 				3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */,
-				3EFE8B62132D583300AEE21A /* CardDetailView.m in Sources */,
 				3EFE8B65132F238C00AEE21A /* ButtonCell.m in Sources */,
 				3EEE45DB1377AC3300C1621D /* DominionCard.m in Sources */,
 			);
