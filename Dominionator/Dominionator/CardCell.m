@@ -18,9 +18,12 @@
     CardCell* _cell;
 	BOOL _selected;
 }
+
+@property (assign, readonly) BOOL selected;
 @end
 
 @implementation CardView
+@synthesize selected=_selected;
 - (id)initWithFrame:(CGRect)frame cell:(CardCell*)cell selected:(BOOL)selected
 {
 	if((self = [super initWithFrame:frame]))
@@ -362,6 +365,10 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+	if(selected == _cardView.selected)
+	{
+		return;
+	}
 
 	CardView* selectedView = [[CardView alloc] initWithFrame:[[self contentView] bounds] cell:self selected:selected];
 	// Fade out if we're deselecting
@@ -377,8 +384,15 @@
 			[_cardView release];
 			_cardView = selectedView;
 		}];
+		[self.contentView addSubview:selectedView];
 	}
-	[self.contentView addSubview:selectedView];
+	else
+	{
+		[self.contentView addSubview:selectedView];
+		[_cardView removeFromSuperview];
+		[_cardView release];
+		_cardView = selectedView;
+	}
 }
 
 - (void)dealloc

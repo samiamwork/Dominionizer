@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "DominionCard.h"
 
+@class CardView;
 
 @interface CardCell : UITableViewCell {
-    UIView* _cardView;
+    CardView* _cardView;
 	DominionCard* _card;
 	UIImage* _background;
 	UIImage* _potion;
