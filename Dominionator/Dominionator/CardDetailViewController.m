@@ -72,8 +72,13 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.cardNameLabel   = nil;
+	self.cardTypeLabel   = nil;
+	self.cardRulesLabel  = nil;
+	self.cardSetIconView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
