@@ -48,7 +48,7 @@ Tribute	Intrigue	Action	$5	The player to your left reveals then discards the top
 Upgrade	Intrigue	Action	$5	+1 Card\n+1 Action\nTrash a card from your hand. Gain a card costing exactly 1<$> more than it.
 Harem	Intrigue	Treasure - Victory	$6	2<^$> 2<^VP>.
 Nobles	Intrigue	Action - Victory	$6	Choose one: +3 Cards, or +2 Actions.________2<^VP>
-Embargo	Seaside	Action	$2	+2<$>\nTrash this card. Put an Embargo token on top of a Supply pile. - When a player buys a card, he gains a Curse card per Embargo token on that pile.
+Embargo	Seaside	Action	$2	+2<$>\nTrash this card. Put an Embargo token on top of a Supply pile.________When a player buys a card, he gains a Curse card per Embargo token on that pile.
 Haven	Seaside	Action - Duration	$2	+1 Card\n+1 Action\nSet aside a card from your hand face down. At the start of your next turn, put it into your hand.
 Lighthouse	Seaside	Action - Duration	$2	+1 Action, Now and at the start of your next turn: +1<$>.________While this is in play, when another player plays an Attack card, it doesn't affect you.
 Native Village	Seaside	Action	$2	+2 Actions\nChoose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.\n\nYou may look at the cards on your mat at any time; return them to your deck at the end of the game.
