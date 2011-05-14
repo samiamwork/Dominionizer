@@ -31,6 +31,20 @@ NSString* g_setNames[] = {
     [super viewDidLoad];
 	[self setTitle:NSLocalizedString(@"Settings", @"Settings view title")];
 	_preferences = [[NSArray alloc] initWithObjects:g_setNames count:sizeof(g_setNames)/sizeof(g_setNames[0])];
+
+	UILabel* versionFooter = [[UILabel alloc] init];
+	versionFooter.font            = [UIFont systemFontOfSize:12.0];
+	versionFooter.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	versionFooter.textAlignment   = UITextAlignmentCenter;
+	versionFooter.textColor       = [UIColor colorWithRed:0.298 green:0.337 blue:0.424 alpha:1.0];
+	versionFooter.shadowColor     = [UIColor whiteColor];
+	versionFooter.shadowOffset    = CGSizeMake(0.0, 1.0);
+	versionFooter.lineBreakMode   = UILineBreakModeWordWrap;
+	versionFooter.numberOfLines   = 2;
+	versionFooter.text            = @"Version ID\n0000000000000000000000000000000000000000";
+	[versionFooter sizeToFit];
+	self.tableView.tableFooterView = versionFooter;
+	[versionFooter release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
