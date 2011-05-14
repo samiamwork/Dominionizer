@@ -384,10 +384,14 @@
 			[_cardView release];
 			_cardView = selectedView;
 		}];
+		[selectedView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+		[selectedView setContentMode:UIViewContentModeRedraw];
 		[self.contentView addSubview:selectedView];
 	}
 	else
 	{
+		[selectedView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+		[selectedView setContentMode:UIViewContentModeRedraw];
 		[self.contentView addSubview:selectedView];
 		[_cardView removeFromSuperview];
 		[_cardView release];
