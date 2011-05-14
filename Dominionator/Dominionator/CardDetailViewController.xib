@@ -98,7 +98,7 @@
 						<string key="NSFrame">{{41, 20}, {259, 34}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="302239683"/>
 						<reference key="IBUIBackgroundColor" ref="101893651"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -132,12 +132,13 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUIWebView" id="821686084">
+					<object class="IBUIWebView" id="302239683">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{41, 62}, {242, 338}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="94595"/>
 						<reference key="IBUIBackgroundColor" ref="101893651"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -194,7 +195,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">cardRulesLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="821686084"/>
+						<reference key="destination" ref="302239683"/>
 					</object>
 					<int key="connectionID">15</int>
 				</object>
@@ -217,7 +218,7 @@
 							<reference ref="94595"/>
 							<reference ref="10299009"/>
 							<reference ref="934165182"/>
-							<reference ref="821686084"/>
+							<reference ref="302239683"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -254,7 +255,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="821686084"/>
+						<reference key="object" ref="302239683"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -265,7 +266,6 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
-					<string>1.CustomClassName</string>
 					<string>1.IBEditorWindowLastContentRect</string>
 					<string>1.IBPluginDependency</string>
 					<string>11.IBPluginDependency</string>
@@ -278,7 +278,6 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>CardDetailViewController</string>
 					<string>UIResponder</string>
-					<string>CardDetailView</string>
 					<string>{{556, 412}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -305,14 +304,6 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="IBPartialClassDescription">
-					<string key="className">CardDetailView</string>
-					<string key="superclassName">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CardDetailView.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CardDetailViewController</string>
 					<string key="superclassName">UIViewController</string>
