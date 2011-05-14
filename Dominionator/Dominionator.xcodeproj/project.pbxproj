@@ -73,6 +73,7 @@
 		3EEE45E2137A2F1D00C1621D /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45E0137A2F1D00C1621D /* gear@2x.png */; };
 		3EEE45E8137A5AEF00C1621D /* dominionator.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45E7137A5AEF00C1621D /* dominionator.png */; };
 		3EEE45EA137A5AFC00C1621D /* dominionator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45E9137A5AFC00C1621D /* dominionator@2x.png */; };
+		3EEE45F5137E4D6300C1621D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE45F3137E4D6300C1621D /* Localizable.strings */; };
 		3EFE8B5E132CBB8300AEE21A /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */; };
 		3EFE8B5F132CBB8300AEE21A /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */; };
 		3EFE8B65132F238C00AEE21A /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE8B64132F238B00AEE21A /* ButtonCell.m */; };
@@ -163,6 +164,7 @@
 		3EEE45E0137A2F1D00C1621D /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
 		3EEE45E7137A5AEF00C1621D /* dominionator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dominionator.png; sourceTree = "<group>"; };
 		3EEE45E9137A5AFC00C1621D /* dominionator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dominionator@2x.png"; sourceTree = "<group>"; };
+		3EEE45F4137E4D6300C1621D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3EFE8B5B132CBB8200AEE21A /* CardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
 		3EFE8B5C132CBB8200AEE21A /* CardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
 		3EFE8B5D132CBB8300AEE21A /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		3E2601701329E50800DC895B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3EEE45F3137E4D6300C1621D /* Localizable.strings */,
 				3E2601711329E50800DC895B /* Dominionator-Info.plist */,
 				3E2601721329E50800DC895B /* InfoPlist.strings */,
 				3E2601751329E50800DC895B /* Dominionator-Prefix.pch */,
@@ -462,6 +465,7 @@
 				3EEE45E2137A2F1D00C1621D /* gear@2x.png in Resources */,
 				3EEE45E8137A5AEF00C1621D /* dominionator.png in Resources */,
 				3EEE45EA137A5AFC00C1621D /* dominionator@2x.png in Resources */,
+				3EEE45F5137E4D6300C1621D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +569,14 @@
 				3E2601991329E50800DC895B /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3EEE45F3137E4D6300C1621D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EEE45F4137E4D6300C1621D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
