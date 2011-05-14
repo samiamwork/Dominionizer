@@ -78,8 +78,8 @@
 	newHeaderView.imageView.alpha = 0.7;
 
 	newHeaderView.textLabel.textColor = [UIColor whiteColor];
-	newHeaderView.textLabel.shadowColor = [UIColor blackColor];
-	newHeaderView.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+	newHeaderView.textLabel.shadowColor = [UIColor colorWithWhite:0.35 alpha:1.0];
+	newHeaderView.textLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 
 	newHeaderView.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header_gradient"]] autorelease];
 	newHeaderView.selectedBackgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header_gradient"]] autorelease];
