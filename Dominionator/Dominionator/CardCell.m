@@ -63,7 +63,8 @@
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGRect workingRect = [self bounds];
 	CGImageRef mask = _cell.tearMask;
-	CGSize maskSize = CGSizeMake(CGImageGetWidth(mask), CGImageGetHeight(mask));
+	CGAffineTransform transform = CGContextGetCTM(ctx);
+	CGSize maskSize = CGSizeMake(CGImageGetWidth(mask)/fabsf(transform.a), CGImageGetHeight(mask)/fabsf(transform.d));
 	workingRect.size.width -= maskSize.width;
 
 	DominionCard* card = [_cell card];
