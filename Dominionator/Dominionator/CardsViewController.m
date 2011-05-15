@@ -212,9 +212,16 @@
 	DominionCard* newCard = nil;
 	NSSet* allowedSets = [self allowedSets];
 	NSString* newCardSet = nil;
+	unsigned thirtyTwoBits = (1U<<31)-1;
+	unsigned maxRandomValue = (thirtyTwoBits / [_cards count]) * [_cards count];
 	BOOL cardMustBeAlchemy = [theCardToReplace isAlchemy];
 	do
 	{
+		NSUInteger randomValue = random();
+		while(randomValue > maxRandomValue)
+		{
+			randomValue = random();
+		}
 		NSUInteger newIndex = random() % [_cards count];
 		newCard = [_cards objectAtIndex:newIndex];
 		newCardSet = newCard.set;
