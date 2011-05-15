@@ -5,6 +5,10 @@ A simple Dominion card randomizer for iOS with a focus on looking nice
 
 Paper scans from: http://www.ex-posed.com/resources/scans/paper/paper.html
 
+Source is BSD licensed. I'm not sure what to do about artwork but for
+now, since it's just me, that it's Creative Commons Attribution licensed
+(CC BY).
+
 TODO:
 -----------
 - Fix UIWebView loading so you don't see it flicker into place
