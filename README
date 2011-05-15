@@ -5,9 +5,9 @@ A simple Dominion card randomizer for iOS.
 TODO:
 -----------
 - Fix UIWebView loading so you don't see it flicker into place
-- Add Default.png
 - Add bolding to card rules
 - Add BlackMarket deck functionality
 - Set git commit ID on build. Currently disabled until
   Xcode is fixed.
+- Use white at tear edges instead of partial transparency.
 
