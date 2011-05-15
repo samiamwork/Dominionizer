@@ -42,6 +42,20 @@
 
 #pragma mark - View lifecycle
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[self.cardRulesLabel loadHTMLString:@"" baseURL:[[NSBundle mainBundle] bundleURL]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	NSString* specificHTML = [_htmlString stringByReplacingOccurrencesOfString:@"@@" withString:_card.rules];
+	[self.cardRulesLabel loadHTMLString:specificHTML baseURL:[[NSBundle mainBundle] bundleURL]];
+	self.cardNameLabel.text = _card.name;
+	self.cardTypeLabel.text = _card.type;
+	self.cardSetIconView.image = [UIImage imageNamed:_card.set];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -61,12 +75,6 @@
 	}
 	[_card release];
 	_card = [newCard retain];
-
-	NSString* specificHTML = [_htmlString stringByReplacingOccurrencesOfString:@"@@" withString:_card.rules];
-	[self.cardRulesLabel loadHTMLString:specificHTML baseURL:[[NSBundle mainBundle] bundleURL]];
-	self.cardNameLabel.text = _card.name;
-	self.cardTypeLabel.text = _card.type;
-	self.cardSetIconView.image = [UIImage imageNamed:_card.set];
 }
 
 - (void)viewDidUnload
