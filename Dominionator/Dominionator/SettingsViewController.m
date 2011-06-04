@@ -13,17 +13,9 @@ NSString* g_setNames[] = {
 	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Promo",
 };
 
-@implementation SettingsViewController
+NSUInteger g_setCount = sizeof(g_setNames)/sizeof(g_setNames[0]);
 
-+ (void)initialize
-{
-	NSMutableDictionary* defaults = [NSMutableDictionary dictionary];
-	for(NSInteger i = 0; i < sizeof(g_setNames)/sizeof(g_setNames[0]); ++i)
-	{
-		[defaults setValue:[NSNumber numberWithBool:YES] forKey:g_setNames[i]];
-	}
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-}
+@implementation SettingsViewController
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad

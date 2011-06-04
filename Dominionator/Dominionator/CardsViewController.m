@@ -27,6 +27,16 @@ unsigned randomValueInRange(unsigned range)
 
 @implementation CardsViewController
 
++ (void)initialize
+{
+	NSMutableDictionary* defaults = [NSMutableDictionary dictionary];
+	for(NSInteger i = 0; i < g_setCount; ++i)
+	{
+		[defaults setValue:[NSNumber numberWithBool:YES] forKey:g_setNames[i]];
+	}
+	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -67,7 +77,7 @@ unsigned randomValueInRange(unsigned range)
 {
 	// Make a set containing allowed card sets that we're allowed to pull from
 	NSMutableSet* usableSets = [NSMutableSet set];
-	for(NSInteger i = 0; i < 7; ++i)
+	for(NSInteger i = 0; i < g_setCount; ++i)
 	{
 		NSString* setName = g_setNames[i];
 		if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
