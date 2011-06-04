@@ -11,11 +11,11 @@
 
 
 @interface CardsViewController : UITableViewController {
-	NSMutableArray* _cards;
-	NSMutableDictionary* _cardPicks;
-	NSMutableArray* _setNames;
-	NSMutableSet* _setOfCardsPicked;
-	NSMutableArray* _setHeaders;
+	NSMutableArray*           _cards;
+	NSMutableDictionary*      _cardPicks;
+	NSMutableArray*           _setNames;
+	NSMutableSet*             _setOfCardsPicked;
+	NSMutableArray*           _setHeaders;
 	CardDetailViewController* _detailViewController;
 }
 
