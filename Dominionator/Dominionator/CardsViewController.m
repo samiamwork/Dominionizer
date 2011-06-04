@@ -116,8 +116,10 @@ unsigned randomValueInRange(unsigned range)
 	BOOL hasAlchemy = NO;
 	NSUInteger alchemyCount = 0;
 	[_setOfCardsPicked removeAllObjects];
+	_nextCardToPick = 0;
 	for(DominionCard* aCard in _cards)
 	{
+		_nextCardToPick++;
 		NSString* set = aCard.set;
 		NSInteger cardsLeft = 10 - [_setOfCardsPicked count];
 		// Skip this card if it's not an allowed set
@@ -228,9 +230,12 @@ unsigned randomValueInRange(unsigned range)
 	BOOL cardMustBeAlchemy = [theCardToReplace isAlchemy];
 	do
 	{
-		NSUInteger newIndex = randomValueInRange([_cards count]);
-		newCard = [_cards objectAtIndex:newIndex];
+		newCard = [_cards objectAtIndex:_nextCardToPick++];
 		newCardSet = newCard.set;
+		if(_nextCardToPick >= [_cards count])
+		{
+			_nextCardToPick = 0;
+		}
 	} while(newCard == theCardToReplace
 			|| [_setOfCardsPicked containsObject:newCard]
 			|| ![allowedSets containsObject:newCardSet]

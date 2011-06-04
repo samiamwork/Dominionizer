@@ -17,6 +17,8 @@
 	NSMutableSet*             _setOfCardsPicked;
 	NSMutableArray*           _setHeaders;
 	CardDetailViewController* _detailViewController;
+	// The index of the next card to pick from the shuffled deck (monotonically increasing)
+	unsigned                  _nextCardToPick;
 }
 
 - (IBAction)pickNewCards:(id)sender;
