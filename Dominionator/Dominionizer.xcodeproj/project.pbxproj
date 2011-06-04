@@ -95,13 +95,13 @@
 		3E0506FA1329FBCB008378A5 /* cardlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = cardlist.plist; path = ../../cardlist.plist; sourceTree = "<group>"; };
 		3E050709132C101A008378A5 /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCell.h; sourceTree = "<group>"; };
 		3E05070A132C101A008378A5 /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
-		3E2601651329E50800DC895B /* Dominionator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dominionator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2601651329E50800DC895B /* Dominionizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dominionizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2601691329E50800DC895B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3E26016B1329E50800DC895B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3E26016D1329E50800DC895B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3E2601711329E50800DC895B /* Dominionator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dominionator-Info.plist"; sourceTree = "<group>"; };
+		3E2601711329E50800DC895B /* Dominionizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dominionizer-Info.plist"; sourceTree = "<group>"; };
 		3E2601731329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E2601751329E50800DC895B /* Dominionator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dominionator-Prefix.pch"; sourceTree = "<group>"; };
+		3E2601751329E50800DC895B /* Dominionizer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dominionizer-Prefix.pch"; sourceTree = "<group>"; };
 		3E2601761329E50800DC895B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E2601781329E50800DC895B /* DominionatorAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominionatorAppDelegate.h; sourceTree = "<group>"; };
 		3E2601791329E50800DC895B /* DominionatorAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DominionatorAppDelegate.m; sourceTree = "<group>"; };
@@ -112,10 +112,10 @@
 		3E2601821329E50800DC895B /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3E2601851329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CardsView.xib; sourceTree = "<group>"; };
 		3E2601881329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsView.xib; sourceTree = "<group>"; };
-		3E26018F1329E50800DC895B /* DominionatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DominionatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E2601971329E50800DC895B /* DominionatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DominionatorTests-Info.plist"; sourceTree = "<group>"; };
+		3E26018F1329E50800DC895B /* DominionizerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DominionizerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2601971329E50800DC895B /* DominionizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DominionizerTests-Info.plist"; sourceTree = "<group>"; };
 		3E2601991329E50800DC895B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E26019B1329E50800DC895B /* DominionatorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DominionatorTests-Prefix.pch"; sourceTree = "<group>"; };
+		3E26019B1329E50800DC895B /* DominionizerTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DominionizerTests-Prefix.pch"; sourceTree = "<group>"; };
 		3E26019C1329E50800DC895B /* DominionatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominionatorTests.h; sourceTree = "<group>"; };
 		3E26019E1329E50800DC895B /* DominionatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DominionatorTests.m; sourceTree = "<group>"; };
 		3E4AF4B0133FFA4100C1B2C1 /* Potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potion.png; sourceTree = "<group>"; };
@@ -217,8 +217,8 @@
 		3E2601661329E50800DC895B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E2601651329E50800DC895B /* Dominionator.app */,
-				3E26018F1329E50800DC895B /* DominionatorTests.octest */,
+				3E2601651329E50800DC895B /* Dominionizer.app */,
+				3E26018F1329E50800DC895B /* DominionizerTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,9 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				3EEE45F3137E4D6300C1621D /* Localizable.strings */,
-				3E2601711329E50800DC895B /* Dominionator-Info.plist */,
+				3E2601711329E50800DC895B /* Dominionizer-Info.plist */,
 				3E2601721329E50800DC895B /* InfoPlist.strings */,
-				3E2601751329E50800DC895B /* Dominionator-Prefix.pch */,
+				3E2601751329E50800DC895B /* Dominionizer-Prefix.pch */,
 				3E2601761329E50800DC895B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -281,9 +281,9 @@
 		3E2601961329E50800DC895B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3E2601971329E50800DC895B /* DominionatorTests-Info.plist */,
+				3E2601971329E50800DC895B /* DominionizerTests-Info.plist */,
 				3E2601981329E50800DC895B /* InfoPlist.strings */,
-				3E26019B1329E50800DC895B /* DominionatorTests-Prefix.pch */,
+				3E26019B1329E50800DC895B /* DominionizerTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -355,9 +355,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3E2601641329E50800DC895B /* Dominionator */ = {
+		3E2601641329E50800DC895B /* Dominionizer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E2601A21329E50800DC895B /* Build configuration list for PBXNativeTarget "Dominionator" */;
+			buildConfigurationList = 3E2601A21329E50800DC895B /* Build configuration list for PBXNativeTarget "Dominionizer" */;
 			buildPhases = (
 				3E2601611329E50800DC895B /* Sources */,
 				3E2601621329E50800DC895B /* Frameworks */,
@@ -367,14 +367,14 @@
 			);
 			dependencies = (
 			);
-			name = Dominionator;
+			name = Dominionizer;
 			productName = Dominionator;
-			productReference = 3E2601651329E50800DC895B /* Dominionator.app */;
+			productReference = 3E2601651329E50800DC895B /* Dominionizer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3E26018E1329E50800DC895B /* DominionatorTests */ = {
+		3E26018E1329E50800DC895B /* DominionizerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E2601A51329E50800DC895B /* Build configuration list for PBXNativeTarget "DominionatorTests" */;
+			buildConfigurationList = 3E2601A51329E50800DC895B /* Build configuration list for PBXNativeTarget "DominionizerTests" */;
 			buildPhases = (
 				3E26018A1329E50800DC895B /* Sources */,
 				3E26018B1329E50800DC895B /* Frameworks */,
@@ -386,9 +386,9 @@
 			dependencies = (
 				3E2601941329E50800DC895B /* PBXTargetDependency */,
 			);
-			name = DominionatorTests;
+			name = DominionizerTests;
 			productName = DominionatorTests;
-			productReference = 3E26018F1329E50800DC895B /* DominionatorTests.octest */;
+			productReference = 3E26018F1329E50800DC895B /* DominionizerTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -396,7 +396,7 @@
 /* Begin PBXProject section */
 		3E26015C1329E50800DC895B /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 3E26015F1329E50800DC895B /* Build configuration list for PBXProject "Dominionator" */;
+			buildConfigurationList = 3E26015F1329E50800DC895B /* Build configuration list for PBXProject "Dominionizer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -408,8 +408,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3E2601641329E50800DC895B /* Dominionator */,
-				3E26018E1329E50800DC895B /* DominionatorTests */,
+				3E2601641329E50800DC895B /* Dominionizer */,
+				3E26018E1329E50800DC895B /* DominionizerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -533,7 +533,7 @@
 /* Begin PBXTargetDependency section */
 		3E2601941329E50800DC895B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3E2601641329E50800DC895B /* Dominionator */;
+			target = 3E2601641329E50800DC895B /* Dominionizer */;
 			targetProxy = 3E2601931329E50800DC895B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -629,9 +629,9 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dominionator/Dominionator-Prefix.pch";
-				INFOPLIST_FILE = "Dominionator/Dominionator-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Dominionator/Dominionizer-Prefix.pch";
+				INFOPLIST_FILE = "Dominionator/Dominionizer-Info.plist";
+				PRODUCT_NAME = Dominionizer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -642,9 +642,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dominionator/Dominionator-Prefix.pch";
-				INFOPLIST_FILE = "Dominionator/Dominionator-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Dominionator/Dominionizer-Prefix.pch";
+				INFOPLIST_FILE = "Dominionator/Dominionizer-Info.plist";
+				PRODUCT_NAME = Dominionizer;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -660,13 +660,13 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DominionatorTests/DominionatorTests-Prefix.pch";
-				INFOPLIST_FILE = "DominionatorTests/DominionatorTests-Info.plist";
+				GCC_PREFIX_HEADER = "DominionatorTests/DominionizerTests-Prefix.pch";
+				INFOPLIST_FILE = "DominionatorTests/DominionizerTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DominionizerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -682,13 +682,13 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DominionatorTests/DominionatorTests-Prefix.pch";
-				INFOPLIST_FILE = "DominionatorTests/DominionatorTests-Info.plist";
+				GCC_PREFIX_HEADER = "DominionatorTests/DominionizerTests-Prefix.pch";
+				INFOPLIST_FILE = "DominionatorTests/DominionizerTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DominionizerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -697,7 +697,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E26015F1329E50800DC895B /* Build configuration list for PBXProject "Dominionator" */ = {
+		3E26015F1329E50800DC895B /* Build configuration list for PBXProject "Dominionizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E2601A01329E50800DC895B /* Debug */,
@@ -706,7 +706,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E2601A21329E50800DC895B /* Build configuration list for PBXNativeTarget "Dominionator" */ = {
+		3E2601A21329E50800DC895B /* Build configuration list for PBXNativeTarget "Dominionizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E2601A31329E50800DC895B /* Debug */,
@@ -715,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E2601A51329E50800DC895B /* Build configuration list for PBXNativeTarget "DominionatorTests" */ = {
+		3E2601A51329E50800DC895B /* Build configuration list for PBXNativeTarget "DominionizerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E2601A61329E50800DC895B /* Debug */,
