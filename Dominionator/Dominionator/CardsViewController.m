@@ -11,6 +11,20 @@
 #import "SettingsViewController.h"
 #import "DominionCard.h"
 
+// random value in range without modulus bias
+
+unsigned randomValueInRange(unsigned range)
+{
+	unsigned thirtyTwoBits = (1U<<31)-1;
+	unsigned maxRandomValue = (thirtyTwoBits / range) * range;
+	NSUInteger randomValue = random();
+	while(randomValue > maxRandomValue)
+	{
+		randomValue = random();
+	}
+	return randomValue % range;
+}
+
 @implementation CardsViewController
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -92,8 +106,7 @@
 	// Shuffle
 	for(NSInteger i = 0; i < [_cards count]; ++i)
 	{
-		// TODO: fix modulous bias
-		NSUInteger j = random() % [_cards count];
+		NSUInteger j = randomValueInRange([_cards count]);
 		[_cards exchangeObjectAtIndex:i withObjectAtIndex:j];
 	}
 	// Pick Ten
@@ -212,17 +225,10 @@
 	DominionCard* newCard = nil;
 	NSSet* allowedSets = [self allowedSets];
 	NSString* newCardSet = nil;
-	unsigned thirtyTwoBits = (1U<<31)-1;
-	unsigned maxRandomValue = (thirtyTwoBits / [_cards count]) * [_cards count];
 	BOOL cardMustBeAlchemy = [theCardToReplace isAlchemy];
 	do
 	{
-		NSUInteger randomValue = random();
-		while(randomValue > maxRandomValue)
-		{
-			randomValue = random();
-		}
-		NSUInteger newIndex = random() % [_cards count];
+		NSUInteger newIndex = randomValueInRange([_cards count]);
 		newCard = [_cards objectAtIndex:newIndex];
 		newCardSet = newCard.set;
 	} while(newCard == theCardToReplace
