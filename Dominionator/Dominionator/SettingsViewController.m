@@ -10,7 +10,7 @@
 #import "ButtonCell.h"
 
 NSString* g_setNames[] = {
-	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Promo",
+	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Cornucopia", @"Promo",
 };
 
 NSUInteger g_setCount = sizeof(g_setNames)/sizeof(g_setNames[0]);

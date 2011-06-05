@@ -1645,5 +1645,208 @@ Reveal the top 3 cards of the Black Market deck. You may buy one of them immedia
 		<key>type</key>
 		<string>Treasure</string>
 	</dict>
+	<dict>
+		<key>card</key>
+		<string>Hamlet</string>
+		<key>cost</key>
+		<string>$2</string>
+		<key>rules</key>
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+&lt;br /&gt;
+You may discard a card; If you do +1 Action.&lt;br /&gt;
+&lt;br /&gt;
+You may discard a card; If you do +1 Buy
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Fortune Teller</string>
+		<key>cost</key>
+		<string>$3</string>
+		<key>rules</key>
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+Each other player reveals cards from the top of his deck until he reveals a Victory of Curse card. He puts it on top and discards the other revealed cards.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action - Attack</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Menagerie</string>
+		<key>cost</key>
+		<string>$3</string>
+		<key>rules</key>
+		<string>+1 Action&lt;br /&gt;
+&lt;br /&gt;
+Reveal your hand.&lt;br /&gt;
+If there are no duplicate cards in it, +3 Cards.&lt;br /&gt;
+Otherwise, +1 Card.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Farming Village</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>+2 Actions&lt;br /&gt;
+&lt;br /&gt;
+Reveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Horse Traders</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>+1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;3&lt;/span&gt;&lt;br /&gt;
+Discard 2 Cards&lt;br /&gt;
+&lt;hr /&gt;
+When another player plays an Attack card, you may set this aside from your hand. If you do, then at the start of your next turn, +1 Card and return this to your hand.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action - Reaction</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Remake</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>Do this twice: Trash a card from your hand then gain a card costing exactly &lt;span class="coin_small"&gt;1&lt;/span&gt; more than the trashed card.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Tournament</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>+1 Action&lt;br /&gt;
+&lt;br /&gt;
+Each player may reveal a Province from his hand.&lt;br /&gt;
+If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck.&lt;br /&gt;
+If no-one else does,&lt;br /&gt;
++1 Card +&lt;span class="coin_small"&gt;1&lt;/span&gt;.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Young Witch</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>+2 Cards&lt;br /&gt;
+&lt;br /&gt;
+Discard 2 cards. Each other player may reveal a Bane card from his hand.&lt;br /&gt;
+If he doesn't, he gains a Curse.&lt;br /&gt;
+&lt;hr /&gt;
+Setup: Add an extra Kingdom card pile costing &lt;span class="coin_small"&gt;2&lt;/span&gt; or &lt;span class="coin_small"&gt;3&lt;/span&gt; to the Supply. Cards from that pile are Bane cards.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action - Attack</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Harvest</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>Reveal the top 4 cards of your deck, then discard them. +&lt;span class="coin_small"&gt;1&lt;/span&gt; per differently named card revealed.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Horn of Plenty</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>&lt;p class="coin_big"&gt;0&lt;/p&gt;&lt;br /&gt;
+When you play this, gain a card costing up to &lt;span class="coin_small"&gt;1&lt;/span&gt; per differently named card you have in play, counting this.&lt;br /&gt;
+If it's a Victory card, trash this.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Treasure</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Hunting Party</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+&lt;br /&gt;
+Reveal your hand. Reveal cards from your deck until you reveal a card that isn't in a duplicate of one in your hand and discard the rest.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Jester</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+&lt;br /&gt;
+Each other player discards the top card of his deck. If it is a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice.
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Action - Attack</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Fairgrounds</string>
+		<key>cost</key>
+		<string>$6</string>
+		<key>rules</key>
+		<string>Worth &lt;span class="vp_small"&gt;2&lt;/span&gt; for every 5 differently named cards in your deck (rounded down)
+</string>
+		<key>set</key>
+		<string>Cornucopia</string>
+		<key>type</key>
+		<string>Victory</string>
+	</dict>
 </array>
 </plist>

@@ -114,3 +114,16 @@ Peddler	Prosperity	Action	$8	+1 Card\n+1 Action\n+2<$>________During your Buy ph
 Black Market	Promo	Action	$3	+2<$>\nReveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. \n(Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.).
 Envoy	Promo	Action	$4	Reveal the top 5 cards of your deck. The player to your left chooses one for you to discard. Draw the rest.
 Stash	Promo	Treasure	$5	2<^$>When you shuffle, you may put this anywhere in your deck.
+Hamlet	Cornucopia	Action	$2	+1 Card\n+1 Action\n\nYou may discard a card; If you do +1 Action.\n\nYou may discard a card; If you do +1 Buy
+Fortune Teller	Cornucopia	Action - Attack	$3	+2<$>\n\nEach other player reveals cards from the top of his deck until he reveals a Victory of Curse card. He puts it on top and discards the other revealed cards.
+Menagerie	Cornucopia	Action	$3	+1 Action\n\nReveal your hand.\nIf there are no duplicate cards in it, +3 Cards.\nOtherwise, +1 Card.
+Farming Village	Cornucopia	Action	$4	+2 Actions\n\nReveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards.
+Horse Traders	Cornucopia	Action - Reaction	$4	+1 Buy\n+3<$>\nDiscard 2 Cards\n________When another player plays an Attack card, you may set this aside from your hand. If you do, then at the start of your next turn, +1 Card and return this to your hand.
+Remake	Cornucopia	Action	$4	Do this twice: Trash a card from your hand then gain a card costing exactly 1<$> more than the trashed card.
+Tournament	Cornucopia	Action	$4	+1 Action\n\nEach player may reveal a Province from his hand.\nIf you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck.\nIf no-one else does,\n+1 Card +1<$>.
+Young Witch	Cornucopia	Action - Attack	$4	+2 Cards\n\nDiscard 2 cards. Each other player may reveal a Bane card from his hand.\nIf he doesn't, he gains a Curse.\n________Setup: Add an extra Kingdom card pile costing 2<$> or 3<$> to the Supply. Cards from that pile are Bane cards.
+Harvest	Cornucopia	Action	$5	Reveal the top 4 cards of your deck, then discard them. +1<$> per differently named card revealed.
+Horn of Plenty	Cornucopia	Treasure	$5	0<^$>\nWhen you play this, gain a card costing up to 1<$> per differently named card you have in play, counting this.\nIf it's a Victory card, trash this.
+Hunting Party	Cornucopia	Action	$5	+1 Card\n+1 Action\n\nReveal your hand. Reveal cards from your deck until you reveal a card that isn't in a duplicate of one in your hand and discard the rest.
+Jester	Cornucopia	Action - Attack	$5	+2<$>\n\nEach other player discards the top card of his deck. If it is a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice.
+Fairgrounds	Cornucopia	Victory	$6	Worth 2<VP> for every 5 differently named cards in your deck (rounded down)

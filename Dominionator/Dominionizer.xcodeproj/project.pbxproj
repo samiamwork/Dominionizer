@@ -26,6 +26,8 @@
 		3E26019A1329E50800DC895B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E2601981329E50800DC895B /* InfoPlist.strings */; };
 		3E26019D1329E50800DC895B /* DominionatorTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 3E26019C1329E50800DC895B /* DominionatorTests.h */; };
 		3E26019F1329E50800DC895B /* DominionatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E26019E1329E50800DC895B /* DominionatorTests.m */; };
+		3E44BF90139B08F1009025D4 /* Cornucopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E44BF8E139B08F1009025D4 /* Cornucopia.png */; };
+		3E44BF91139B08F1009025D4 /* Cornucopia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E44BF8F139B08F1009025D4 /* Cornucopia@2x.png */; };
 		3E4AF4B2133FFA4100C1B2C1 /* Potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4AF4B0133FFA4100C1B2C1 /* Potion.png */; };
 		3E4AF4B3133FFA4100C1B2C1 /* Potion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4AF4B1133FFA4100C1B2C1 /* Potion@2x.png */; };
 		3E4AF4B7134014A700C1B2C1 /* Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4AF4B5134014A700C1B2C1 /* Coin.png */; };
@@ -116,6 +118,8 @@
 		3E26019B1329E50800DC895B /* DominionizerTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DominionizerTests-Prefix.pch"; sourceTree = "<group>"; };
 		3E26019C1329E50800DC895B /* DominionatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominionatorTests.h; sourceTree = "<group>"; };
 		3E26019E1329E50800DC895B /* DominionatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DominionatorTests.m; sourceTree = "<group>"; };
+		3E44BF8E139B08F1009025D4 /* Cornucopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cornucopia.png; sourceTree = "<group>"; };
+		3E44BF8F139B08F1009025D4 /* Cornucopia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cornucopia@2x.png"; sourceTree = "<group>"; };
 		3E4AF4B0133FFA4100C1B2C1 /* Potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Potion.png; sourceTree = "<group>"; };
 		3E4AF4B1133FFA4100C1B2C1 /* Potion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Potion@2x.png"; sourceTree = "<group>"; };
 		3E4AF4B5134014A700C1B2C1 /* Coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coin.png; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 		3E7AAED713358717009AD73B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E44BF8E139B08F1009025D4 /* Cornucopia.png */,
+				3E44BF8F139B08F1009025D4 /* Cornucopia@2x.png */,
 				3EEE45DF137A2F1C00C1621D /* gear.png */,
 				3EEE45E0137A2F1D00C1621D /* gear@2x.png */,
 				3EEE45DD1378F2B200C1621D /* header_gradient.png */,
@@ -466,6 +472,8 @@
 				3EEE45F5137E4D6300C1621D /* Localizable.strings in Resources */,
 				3ED3B00C137F35D200A11A7F /* Default.png in Resources */,
 				3ED3B00F137F35ED00A11A7F /* Default@2x.png in Resources */,
+				3E44BF90139B08F1009025D4 /* Cornucopia.png in Resources */,
+				3E44BF91139B08F1009025D4 /* Cornucopia@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
