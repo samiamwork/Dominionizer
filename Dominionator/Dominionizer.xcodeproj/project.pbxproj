@@ -631,6 +631,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dominionator/Dominionizer-Prefix.pch";
 				INFOPLIST_FILE = "Dominionator/Dominionizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Dominionizer;
 				WRAPPER_EXTENSION = app;
 			};
@@ -644,6 +645,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dominionator/Dominionizer-Prefix.pch";
 				INFOPLIST_FILE = "Dominionator/Dominionizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Dominionizer;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

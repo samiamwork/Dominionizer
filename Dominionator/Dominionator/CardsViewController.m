@@ -156,6 +156,16 @@ unsigned randomValueInRange(unsigned range)
 		}
 	}
 
+	// Workaround for tableview bug where section headers stay around after
+	// reloading sections with animation
+	if(kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_4_2)
+	{
+		for(UIView* aView in _setHeaders)
+		{
+			[aView removeFromSuperview];
+		}
+	}
+
 	[_setHeaders removeAllObjects];
 	// Put cards into arrays by set
 	NSMutableDictionary* pickedCardsBySet = [[NSMutableDictionary alloc] init];
