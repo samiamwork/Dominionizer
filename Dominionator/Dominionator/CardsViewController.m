@@ -363,11 +363,6 @@ unsigned randomValueInRange(unsigned range)
     return [setArray count];
 }
 
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-	return [_setNames objectAtIndex:section];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CardCell";
