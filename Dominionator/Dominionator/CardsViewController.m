@@ -34,6 +34,8 @@ unsigned randomValueInRange(unsigned range)
 	{
 		[defaults setValue:[NSNumber numberWithBool:YES] forKey:g_setNames[i]];
 	}
+	[defaults setValue:[NSNumber numberWithInt:3] forKey:kPreferenceNameSetCount];
+	[defaults setValue:[NSNumber numberWithBool:NO] forKey:kPreferenceNameSetPickingEnable];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
@@ -77,12 +79,45 @@ unsigned randomValueInRange(unsigned range)
 {
 	// Make a set containing allowed card sets that we're allowed to pull from
 	NSMutableSet* usableSets = [NSMutableSet set];
-	for(NSInteger i = 0; i < g_setCount; ++i)
+	if([[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceNameSetPickingEnable])
 	{
-		NSString* setName = g_setNames[i];
-		if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
+		NSMutableArray* sets = [NSMutableArray array];
+		for(NSInteger i = 0; i < g_setCount; i++)
 		{
-			[usableSets addObject:setName];
+			[sets addObject:g_setNames[i]];
+		}
+		// Shuffle sets
+		for(NSInteger i = 0; i < [sets count]; i++)
+		{
+			[sets exchangeObjectAtIndex:i withObjectAtIndex:randomValueInRange([sets count])];
+		}
+		// pick sets
+		NSInteger pickingSetCount = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceNameSetCount];
+		while(pickingSetCount == 0)
+		{
+			// Pick a random number of sets
+			pickingSetCount = randomValueInRange(g_setCount);
+		}
+		NSInteger setIndex = 0;
+		while([usableSets count] < pickingSetCount && setIndex < g_setCount)
+		{
+			NSString* aSet = [sets objectAtIndex:setIndex];
+			if([[NSUserDefaults standardUserDefaults] boolForKey:aSet])
+			{
+				[usableSets addObject:aSet];
+			}
+			setIndex++;
+		}
+	}
+	else
+	{
+		for(NSInteger i = 0; i < g_setCount; ++i)
+		{
+			NSString* setName = g_setNames[i];
+			if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
+			{
+				[usableSets addObject:setName];
+			}
 		}
 	}
 

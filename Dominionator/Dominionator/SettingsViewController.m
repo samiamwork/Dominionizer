@@ -8,12 +8,21 @@
 
 #import "SettingsViewController.h"
 #import "ButtonCell.h"
+#import "SliderCell.h"
 
 NSString* g_setNames[] = {
 	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Cornucopia", @"Promo",
 };
 
 NSUInteger g_setCount = sizeof(g_setNames)/sizeof(g_setNames[0]);
+NSString* kPreferenceNameSetPickingEnable = @"SetPickingEnable";
+NSString* kPreferenceNameSetCount = @"SetPickingCount";
+
+enum
+{
+	kSectionSets = 0,
+	kSectionSetPicking = 1,
+} SectionIndices;
 
 @implementation SettingsViewController
 
@@ -77,21 +86,46 @@ NSUInteger g_setCount = sizeof(g_setNames)/sizeof(g_setNames[0]);
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	return @"Sets";
+	if(section == kSectionSets)
+	{
+		return @"Sets";
+	}
+	else
+	{
+		return @"Card Picking Method";
+	}
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+	if(section == kSectionSetPicking)
+	{
+		return @"Enabling this will cause random sets to be chosen first and then cards from those sets, rather than random cards from all enabled sets.";
+	}
+
+	return nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [_preferences count];
+	if(section == kSectionSets)
+	{
+		// Return the number of rows in the section.
+		return [_preferences count];
+	}
+	else if(section == kSectionSetPicking)
+	{
+		return 2;
+	}
+	return 0;
 }
 
-- (void)switchWasToggled:(UISwitch*)theSwitch
+- (void)setSwitchWasToggled:(UISwitch*)theSwitch
 {
 	NSInteger row = [theSwitch tag];
 	[[NSUserDefaults standardUserDefaults] setBool:[theSwitch isOn] forKey:[_preferences objectAtIndex:row]];
@@ -116,24 +150,109 @@ NSUInteger g_setCount = sizeof(g_setNames)/sizeof(g_setNames[0]);
 	}
 }
 
+- (void)updateSetPickingCountLabel:(SliderCell*)cell
+{
+	NSInteger setPickingCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"SetPickingCount"];
+	if(setPickingCount == 0)
+	{
+		cell.textLabel.text = @"Pick Random Sets";
+	}
+	else
+	{
+		cell.textLabel.text = [NSString stringWithFormat:@"Pick %d Sets", setPickingCount];
+	}
+}
+
+- (void)setPickingSwitchWasToggled:(UISwitch*)theSwitch
+{
+	[[NSUserDefaults standardUserDefaults] setBool:[theSwitch isOn] forKey:kPreferenceNameSetPickingEnable];
+	SliderCell* setPickingCountCell = (SliderCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
+	if([theSwitch isOn])
+	{
+		//Enable the count cell
+		setPickingCountCell.textLabel.enabled = YES;
+		setPickingCountCell.slider.enabled = YES;
+	}
+	else
+	{
+		setPickingCountCell.textLabel.enabled = NO;
+		setPickingCountCell.slider.enabled = NO;
+	}
+}
+
+- (void)setCountWasChanged:(UISlider*)theSlider
+{
+	[[NSUserDefaults standardUserDefaults] setFloat:theSlider.value forKey:kPreferenceNameSetCount];
+	[self updateSetPickingCountLabel:(SliderCell*)theSlider.superview.superview];
+}
+
+- (ButtonCell*)getButtonCell:(UITableView*)tableView
+{
+	static NSString *buttonCellIdentifier = @"ButtonCell";
+	ButtonCell *cell = (ButtonCell*)[tableView dequeueReusableCellWithIdentifier:buttonCellIdentifier];
+	if (cell == nil) {
+		cell = [[[ButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:buttonCellIdentifier] autorelease];
+	}
+	return cell;
+}
+
+- (SliderCell*)getSliderCell:(UITableView*)tableView
+{
+	static NSString *sliderCellIdentifier = @"SliderCell";
+	SliderCell *cell = (SliderCell*)[tableView dequeueReusableCellWithIdentifier:sliderCellIdentifier];
+	if (cell == nil) {
+		cell = [[[SliderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sliderCellIdentifier] autorelease];
+	}
+	return cell;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"PreferenceCell";
+	if([indexPath section] == kSectionSets)
+	{
+		ButtonCell *cell = [self getButtonCell:tableView];
 
-    ButtonCell *cell = (ButtonCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[ButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+		// Configure the cell...
+		NSString* aPref = [_preferences objectAtIndex:[indexPath row]];
+		//[[cell textLabel] setText:[aCard objectForKey:@"card"]];
+		cell.textLabel.text = aPref;
+		cell.button.on = [[NSUserDefaults standardUserDefaults] boolForKey:aPref];
+		cell.button.tag = [indexPath row];
+		[cell.button addTarget:self action:@selector(setSwitchWasToggled:) forControlEvents:UIControlEventValueChanged];
 
-    // Configure the cell...
-	NSString* aPref = [_preferences objectAtIndex:[indexPath row]];
-	//[[cell textLabel] setText:[aCard objectForKey:@"card"]];
-	cell.textLabel.text = aPref;
-	cell.button.on = [[NSUserDefaults standardUserDefaults] boolForKey:aPref];
-	cell.button.tag = [indexPath row];
-	[cell.button addTarget:self action:@selector(switchWasToggled:) forControlEvents:UIControlEventValueChanged];
+		return cell;
+	}
+	else if([indexPath section] == kSectionSetPicking)
+	{
+		if([indexPath row] == 0)
+		{
+			ButtonCell *cell = [self getButtonCell:tableView];
 
-    return cell;
+			// Configure the cell...
+			cell.textLabel.text = @"Pick By Set";
+			cell.button.on = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceNameSetPickingEnable];
+			[cell.button addTarget:self action:@selector(setPickingSwitchWasToggled:) forControlEvents:UIControlEventValueChanged];
+
+			return cell;
+		}
+		else if([indexPath row] == 1)
+		{
+			SliderCell *cell = [self getSliderCell:tableView];
+
+			// Configure the cell...
+			cell.slider.minimumValue = 0;
+			cell.slider.maximumValue = g_setCount;
+			cell.slider.value = [[NSUserDefaults standardUserDefaults] floatForKey:kPreferenceNameSetCount];
+			cell.slider.enabled = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceNameSetPickingEnable];
+			cell.textLabel.enabled = cell.slider.enabled;
+			[self updateSetPickingCountLabel:cell];
+
+			[cell.slider addTarget:self action:@selector(setCountWasChanged:) forControlEvents:UIControlEventValueChanged];
+
+			return cell;
+		}
+	}
+	return nil;
 }
 /*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -10,6 +10,9 @@
 
 extern NSString* g_setNames[];
 extern NSUInteger g_setCount;
+extern NSString* kPreferenceNameSetPickingEnable;
+extern NSString* kPreferenceNameSetCount;
+
 
 @interface SettingsViewController : UITableViewController {
     NSArray* _preferences;
