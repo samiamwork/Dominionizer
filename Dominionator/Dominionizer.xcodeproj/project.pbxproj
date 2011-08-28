@@ -367,6 +367,7 @@
 				3E2601611329E50800DC895B /* Sources */,
 				3E2601621329E50800DC895B /* Frameworks */,
 				3E2601631329E50800DC895B /* Resources */,
+				3EF399A11409FBB400BC8B53 /* Set Commit ID */,
 			);
 			buildRules = (
 			);
@@ -506,6 +507,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		3EF399A11409FBB400BC8B53 /* Set Commit ID */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Commit ID";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(WRAPPER_NAME)/*.lproj/Localizable.strings",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash -x";
+			shellScript = "# Set the Version ID to the Git commit ID\nCOMMIT_ID=`git rev-parse HEAD`\n\n# Add a \"+\" on the end if there are uncommitted changes\ngit diff-index --quiet HEAD\nif [ $? -ne 0 ]; then\n    COMMIT_ID=$COMMIT_ID\"+\"\nfi\nSTRINGS_FILES=$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/*.lproj/Localizable.strings\necho $STRINGS_FILES\nplutil -convert xml1 $STRINGS_FILES\nsed -i '' '/[ \\t]*<string>Version ID/,/.*<\\/string>/ s/^.*<\\/string>/'\"$COMMIT_ID\"'<\\/string>/' $STRINGS_FILES\nplutil -convert binary1 $STRINGS_FILES";
 		};
 /* End PBXShellScriptBuildPhase section */
 

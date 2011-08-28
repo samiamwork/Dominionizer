@@ -33,8 +33,6 @@ enum
 	[self setTitle:NSLocalizedString(@"Settings", @"Settings view title")];
 	_preferences = [[NSArray alloc] initWithObjects:g_setNames count:sizeof(g_setNames)/sizeof(g_setNames[0])];
 
-	// Disabled until "Run Script" actions work again. Environment variables are broken
-	if(0)
 	{
 		UILabel* versionFooter = [[UILabel alloc] init];
 		versionFooter.font            = [UIFont systemFontOfSize:12.0];
