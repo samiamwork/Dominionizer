@@ -58,6 +58,7 @@
 		3E7AAF291336C1A4009AD73B /* Prosperity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAF1F1336C1A4009AD73B /* Prosperity@2x.png */; };
 		3E7AAF2A1336C1A4009AD73B /* Seaside.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAF201336C1A4009AD73B /* Seaside.png */; };
 		3E7AAF2B1336C1A4009AD73B /* Seaside@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AAF211336C1A4009AD73B /* Seaside@2x.png */; };
+		3E7E4824141538A10029A672 /* CardPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E4823141538A10029A672 /* CardPicker.m */; };
 		3ED3B00C137F35D200A11A7F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED3B00B137F35D200A11A7F /* Default.png */; };
 		3ED3B00F137F35ED00A11A7F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED3B00E137F35ED00A11A7F /* Default@2x.png */; };
 		3EEE459F13751D6300C1621D /* shield_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEE459D13751D6300C1621D /* shield_big.png */; };
@@ -151,6 +152,8 @@
 		3E7AAF1F1336C1A4009AD73B /* Prosperity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prosperity@2x.png"; sourceTree = "<group>"; };
 		3E7AAF201336C1A4009AD73B /* Seaside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seaside.png; sourceTree = "<group>"; };
 		3E7AAF211336C1A4009AD73B /* Seaside@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Seaside@2x.png"; sourceTree = "<group>"; };
+		3E7E4822141538A10029A672 /* CardPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardPicker.h; sourceTree = "<group>"; };
+		3E7E4823141538A10029A672 /* CardPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardPicker.m; sourceTree = "<group>"; };
 		3ED3B00B137F35D200A11A7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3ED3B00E137F35ED00A11A7F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3EEE459D13751D6300C1621D /* shield_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield_big.png; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 				3EF3999A1409C61100BC8B53 /* SliderCell.m */,
 				3EEE45D91377AC3300C1621D /* DominionCard.h */,
 				3EEE45DA1377AC3300C1621D /* DominionCard.m */,
+				3E7E4822141538A10029A672 /* CardPicker.h */,
+				3E7E4823141538A10029A672 /* CardPicker.m */,
 				3EEE45DC1377B72E00C1621D /* Resources */,
 				3E2601701329E50800DC895B /* Supporting Files */,
 			);
@@ -539,6 +544,7 @@
 				3EFE8B65132F238C00AEE21A /* ButtonCell.m in Sources */,
 				3EEE45DB1377AC3300C1621D /* DominionCard.m in Sources */,
 				3EF3999B1409C61100BC8B53 /* SliderCell.m in Sources */,
+				3E7E4824141538A10029A672 /* CardPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

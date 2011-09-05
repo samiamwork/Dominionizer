@@ -8,18 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CardDetailViewController.h"
+#import "CardPicker.h"
 
 
 @interface CardsViewController : UITableViewController {
-	NSMutableArray*           _cards;
-	NSMutableDictionary*      _cardPicks;
-	NSMutableArray*           _setNames;
-	NSMutableSet*             _setOfCardsPicked;
-	NSMutableSet*             _allowedSets;
+	CardPicker*               _cardPicker;
 	NSMutableArray*           _setHeaders;
 	CardDetailViewController* _detailViewController;
-	// The index of the next card to pick from the shuffled deck (monotonically increasing)
-	unsigned                  _nextCardToPick;
 }
 
 - (IBAction)pickNewCards:(id)sender;

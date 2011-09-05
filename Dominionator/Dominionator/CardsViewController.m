@@ -11,19 +11,6 @@
 #import "SettingsViewController.h"
 #import "DominionCard.h"
 
-// random value in range without modulus bias
-
-unsigned randomValueInRange(unsigned range)
-{
-	unsigned thirtyTwoBits = (1U<<31)-1;
-	unsigned maxRandomValue = (thirtyTwoBits / range) * range;
-	NSUInteger randomValue = random();
-	while(randomValue > maxRandomValue)
-	{
-		randomValue = random();
-	}
-	return randomValue % range;
-}
 
 @implementation CardsViewController
 
@@ -42,25 +29,13 @@ unsigned randomValueInRange(unsigned range)
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	_allowedSets = [[NSMutableSet alloc] init];
+	[super viewDidLoad];
+
 	[[self tableView] setRowHeight:55.0];
 	[self tableView].backgroundColor = [UIColor darkGrayColor];
-	NSURL* cardListURL = [[NSBundle mainBundle] URLForResource:@"cardlist" withExtension:@"plist"];
-	NSArray* rawCards = [NSArray arrayWithContentsOfURL:cardListURL];
-	_cards = [[NSMutableArray alloc] init];
-	for(NSDictionary* aCardDict in rawCards)
-	{
-		DominionCard* newCard = [[DominionCard alloc] initWithDictionary:aCardDict];
-		[_cards addObject:newCard];
-		[newCard release];
-	}
 
-	_cardPicks = [[NSMutableDictionary alloc] init];
-	_setOfCardsPicked = [[NSMutableSet alloc] init];
 	_setHeaders = [[NSMutableArray alloc] init];
-	srandomdev();
-	[self pickNewCards:nil];
+	_cardPicker = [[CardPicker alloc] init];
 
 	[self setTitle:NSLocalizedString(@"Cards", @"Title of Random Cards Navigation bar")];
 	UIBarButtonItem* shuffleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pickNewCards:)];
@@ -74,54 +49,8 @@ unsigned randomValueInRange(unsigned range)
 	// Allocate cached settings controller
 	_detailViewController = [[CardDetailViewController alloc] initWithNibName:@"CardDetailViewController" bundle:[NSBundle mainBundle]];
 	[_detailViewController view];
-}
 
-- (void)pickAllowedSets
-{
-	// Make a set containing allowed card sets that we're allowed to pull from
-	[_allowedSets removeAllObjects];
-	NSMutableSet* usableSets = _allowedSets;
-	if([[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceNameSetPickingEnable])
-	{
-		NSMutableArray* sets = [NSMutableArray array];
-		for(NSInteger i = 0; i < g_setCount; i++)
-		{
-			[sets addObject:g_setNames[i]];
-		}
-		// Shuffle sets
-		for(NSInteger i = 0; i < [sets count]; i++)
-		{
-			[sets exchangeObjectAtIndex:i withObjectAtIndex:randomValueInRange([sets count])];
-		}
-		// pick sets
-		NSInteger pickingSetCount = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceNameSetCount];
-		while(pickingSetCount == 0)
-		{
-			// Pick a random number of sets
-			pickingSetCount = randomValueInRange(g_setCount);
-		}
-		NSInteger setIndex = 0;
-		while([usableSets count] < pickingSetCount && setIndex < g_setCount)
-		{
-			NSString* aSet = [sets objectAtIndex:setIndex];
-			if([[NSUserDefaults standardUserDefaults] boolForKey:aSet])
-			{
-				[usableSets addObject:aSet];
-			}
-			setIndex++;
-		}
-	}
-	else
-	{
-		for(NSInteger i = 0; i < g_setCount; ++i)
-		{
-			NSString* setName = g_setNames[i];
-			if([[NSUserDefaults standardUserDefaults] boolForKey:setName])
-			{
-				[usableSets addObject:setName];
-			}
-		}
-	}
+	[self pickNewCards:nil];
 }
 
 - (UIView*)newHeaderForSetNamed:(NSString*)setName
@@ -148,50 +77,6 @@ unsigned randomValueInRange(unsigned range)
 
 - (IBAction)pickNewCards:(id)sender
 {
-	// Shuffle
-	for(NSInteger i = 0; i < [_cards count]; ++i)
-	{
-		NSUInteger j = randomValueInRange([_cards count]);
-		[_cards exchangeObjectAtIndex:i withObjectAtIndex:j];
-	}
-	// Pick Ten
-
-	[self pickAllowedSets];
-	NSSet* usableSets = _allowedSets;
-
-	BOOL hasAlchemy = NO;
-	NSUInteger alchemyCount = 0;
-	[_setOfCardsPicked removeAllObjects];
-	_nextCardToPick = 0;
-	for(DominionCard* aCard in _cards)
-	{
-		_nextCardToPick++;
-		NSString* set = aCard.set;
-		NSInteger cardsLeft = 10 - [_setOfCardsPicked count];
-		// Skip this card if it's not an allowed set
-		// or if it's from Alchemy and there aren't enough slots left to fill the quota
-		if(![usableSets containsObject:set] || (!hasAlchemy && [aCard isAlchemy] && cardsLeft < 4))
-		{
-			continue;
-		}
-		// TODO: I think this should check for potion cost
-		if([aCard isAlchemy])
-		{
-			alchemyCount++;
-			hasAlchemy = YES;
-		}
-		// Make sure that we pick the alchemy cards we need
-		else if(hasAlchemy && alchemyCount < 4 && cardsLeft <= (4-alchemyCount))
-		{
-			continue;
-		}
-		[_setOfCardsPicked addObject:aCard];
-		if([_setOfCardsPicked count] == 10)
-		{
-			break;
-		}
-	}
-
 	// Workaround for tableview bug where section headers stay around after
 	// reloading sections with animation
 	if(kCFCoreFoundationVersionNumber == kCFCoreFoundationVersionNumber_iOS_4_2)
@@ -203,35 +88,16 @@ unsigned randomValueInRange(unsigned range)
 	}
 
 	[_setHeaders removeAllObjects];
-	// Put cards into arrays by set
-	NSMutableDictionary* pickedCardsBySet = [[NSMutableDictionary alloc] init];
-	NSMutableArray* newSetNames = [[NSMutableArray alloc] init];
-	for(DominionCard* aCard in _setOfCardsPicked)
-	{
-		NSString* setName = aCard.set;
-		NSMutableArray* setArray = [pickedCardsBySet valueForKey:setName];
-		if(setArray == nil)
-		{
-			setArray = [NSMutableArray array];
-			[pickedCardsBySet setValue:setArray forKey:setName];
-			[newSetNames addObject:setName];
-			[_setHeaders addObject:[self newHeaderForSetNamed:setName]];
-		}
-		[setArray addObject:aCard];
-	}
-	for(NSString* aSet in pickedCardsBySet)
-	{
-		[(NSMutableArray*)[pickedCardsBySet valueForKey:aSet] sortUsingComparator:(NSComparator)^(DominionCard* cardOne, DominionCard* cardTwo) {
-			return [cardOne.name caseInsensitiveCompare:cardTwo.name];
-		}];
-	}
 
-	NSUInteger oldSetCount = [_setNames count];
-	NSUInteger newSetCount = [newSetNames count];
-	[_setNames release];
-	_setNames = newSetNames;
-	[_cardPicks release];
-	_cardPicks = pickedCardsBySet;
+	NSUInteger oldSetCount = [_cardPicker pickedSetCount];
+	[_cardPicker pickNewCards];
+	NSUInteger newSetCount = [_cardPicker pickedSetCount];
+
+	NSArray* pickedSets = [_cardPicker pickedSets];
+	for(NSString* setName in pickedSets)
+	{
+		[_setHeaders addObject:[self newHeaderForSetNamed:setName]];
+	}
 
 	[[self tableView] beginUpdates];
 	if(oldSetCount == newSetCount)
@@ -277,71 +143,52 @@ unsigned randomValueInRange(unsigned range)
 
 - (void)replaceCardAtIndex:(NSIndexPath*)indexPath
 {
-	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
-	NSMutableArray* oldSetArray = [_cardPicks valueForKey:setName];
-	DominionCard* theCardToReplace = [oldSetArray objectAtIndex:[indexPath row]];
-	DominionCard* newCard = nil;
-	NSSet* allowedSets = _allowedSets;
-	NSString* newCardSet = nil;
-	BOOL cardMustBeAlchemy = [theCardToReplace isAlchemy];
-	do
-	{
-		newCard = [_cards objectAtIndex:_nextCardToPick++];
-		newCardSet = newCard.set;
-		if(_nextCardToPick >= [_cards count])
-		{
-			_nextCardToPick = 0;
-		}
-	} while(newCard == theCardToReplace
-			|| [_setOfCardsPicked containsObject:newCard]
-			|| ![allowedSets containsObject:newCardSet]
-			|| (cardMustBeAlchemy && ![newCard isAlchemy]));
+	DominionCard* oldCard = [[_cardPicker cardAtIndexPath:indexPath] retain];
+	NSIndexPath* newCardIndexPath = [_cardPicker replaceCardAt:indexPath];
+	DominionCard* newCard = [[_cardPicker cardAtIndexPath:newCardIndexPath] retain];
 
-	NSString* newSetName = newCard.set;
-	if([setName isEqualToString:newSetName])
+	if([oldCard.set isEqualToString:newCard.set])
 	{
-		[oldSetArray replaceObjectAtIndex:[indexPath row] withObject:newCard];
+		// new card is in same set as the old card
+
 		[[self tableView] reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
 	}
 	else
 	{
+		// new card is in different set than old card
+
 		[[self tableView] beginUpdates];
 		// Delete old card
-		if([oldSetArray count] == 1)
+		if(![_cardPicker setPicked:oldCard.set])
 		{
-			[_cardPicks removeObjectForKey:setName];
-			[_setNames removeObjectAtIndex:[indexPath section]];
+			// Old card was last of its set
+
 			[_setHeaders removeObjectAtIndex:[indexPath section]];
 			[[self tableView] deleteSections:[NSIndexSet indexSetWithIndex:[indexPath section]] withRowAnimation:UITableViewRowAnimationMiddle];
 		}
 		else
 		{
-			[oldSetArray removeObjectAtIndex:[indexPath row]];
 			[[self tableView] deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 		}
 
 		// Add new card
-		[_setOfCardsPicked removeObject:theCardToReplace];
-		[_setOfCardsPicked addObject:newCard];
-		NSMutableArray* newSetArray = [_cardPicks valueForKey:newSetName];
-		if(newSetArray == nil)
+		if([_cardPicker countOfPickedCardsFromSet:[newCardIndexPath section]] == 1)
 		{
 			// This is a new set
-			[_setNames addObject:newSetName];
-			[_setHeaders addObject:[self newHeaderForSetNamed:newSetName]];
-			NSMutableArray* newSetArray = [NSMutableArray arrayWithObject:newCard];
-			[_cardPicks setValue:newSetArray forKey:newSetName];
-			[[self tableView] insertSections:[NSIndexSet indexSetWithIndex:[_setNames count]-1] withRowAnimation:UITableViewRowAnimationMiddle];
+
+			[_setHeaders addObject:[self newHeaderForSetNamed:newCard.set]];
+			[[self tableView] insertSections:[NSIndexSet indexSetWithIndex:[newCardIndexPath section]] withRowAnimation:UITableViewRowAnimationMiddle];
 		}
 		else
 		{
-			[newSetArray addObject:newCard];
-			NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:[newSetArray count]-1 inSection:[_setNames indexOfObject:newSetName]];
-			[[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+			[[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:newCardIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];
 		}
 
 		[[self tableView] endUpdates];
 	}
+
+	[oldCard release];
+	[newCard release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -366,18 +213,12 @@ unsigned randomValueInRange(unsigned range)
 
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-
-	[_cards release];
-	[_cardPicks release];
 }
 
 
 - (void)dealloc
 {
-	[_cards release];
-	[_cardPicks release];
-	[_setNames release];
-	[_setOfCardsPicked release];
+	[_cardPicker release];
 	[_setHeaders release];
 	[_detailViewController release];
     [super dealloc];
@@ -388,15 +229,13 @@ unsigned randomValueInRange(unsigned range)
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [_setNames count];
+    return [_cardPicker pickedSetCount];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	NSString* setName = [_setNames objectAtIndex:section];
-	NSArray* setArray = [_cardPicks valueForKey:setName];
     // Return the number of rows in the section.
-    return [setArray count];
+    return [_cardPicker countOfPickedCardsFromSet:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -409,9 +248,7 @@ unsigned randomValueInRange(unsigned range)
     }
     
     // Configure the cell...
-	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
-	NSArray* setArray = [_cardPicks valueForKey:setName];
-	DominionCard* aCard = [setArray objectAtIndex:[indexPath row]];
+	DominionCard* aCard = [_cardPicker cardAtIndexPath:indexPath];
 	[cell setCard:aCard];
     
     return cell;
@@ -419,10 +256,7 @@ unsigned randomValueInRange(unsigned range)
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSString* setName = [_setNames objectAtIndex:[indexPath section]];
-	NSArray* setArray = [_cardPicks valueForKey:setName];
-	DominionCard* aCard = [setArray objectAtIndex:[indexPath row]];
-	[_detailViewController setCard:aCard];
+	[_detailViewController setCard:[_cardPicker cardAtIndexPath:indexPath]];
 	[self.navigationController pushViewController:_detailViewController animated:YES];
 }
 
