@@ -128,8 +128,7 @@ unsigned randomValueInRange(unsigned range)
 	// Pick Ten
 	
 	[self pickAllowedSets];
-	NSSet* usableSets = _allowedSets;
-	
+
 	BOOL hasAlchemy = NO;
 	NSUInteger alchemyCount = 0;
 	[_setOfCardsPicked removeAllObjects];
@@ -141,7 +140,7 @@ unsigned randomValueInRange(unsigned range)
 		NSInteger cardsLeft = 10 - [_setOfCardsPicked count];
 		// Skip this card if it's not an allowed set
 		// or if it's from Alchemy and there aren't enough slots left to fill the quota
-		if(![usableSets containsObject:set] || (!hasAlchemy && [aCard isAlchemy] && cardsLeft < 4))
+		if(![_allowedSets containsObject:set] || (!hasAlchemy && [aCard isAlchemy] && cardsLeft < 4))
 		{
 			continue;
 		}
@@ -192,7 +191,6 @@ unsigned randomValueInRange(unsigned range)
 	NSMutableArray* oldSetArray       = [_cardPicks valueForKey:setName];
 	DominionCard*   theCardToReplace  = [oldSetArray objectAtIndex:[indexPath row]];
 	DominionCard*   newCard           = nil;
-	NSSet*          allowedSets       = _allowedSets;
 	NSString*       newCardSet        = nil;
 	BOOL            cardMustBeAlchemy = [theCardToReplace isAlchemy];
 
@@ -206,7 +204,7 @@ unsigned randomValueInRange(unsigned range)
 		}
 	} while(newCard == theCardToReplace
 			|| [_setOfCardsPicked containsObject:newCard]
-			|| ![allowedSets containsObject:newCardSet]
+			|| ![_allowedSets containsObject:newCardSet]
 			|| (cardMustBeAlchemy && ![newCard isAlchemy]));
 	
 	NSString* newSetName = newCard.set;
