@@ -15,6 +15,7 @@
 	NSMutableDictionary*      _cardPicks;
 	NSMutableArray*           _setNames;
 	NSMutableSet*             _setOfCardsPicked;
+	NSMutableSet*             _allowedSets;
 	NSMutableArray*           _setHeaders;
 	CardDetailViewController* _detailViewController;
 	// The index of the next card to pick from the shuffled deck (monotonically increasing)

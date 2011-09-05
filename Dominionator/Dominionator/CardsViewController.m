@@ -43,6 +43,7 @@ unsigned randomValueInRange(unsigned range)
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	_allowedSets = [[NSMutableSet alloc] init];
 	[[self tableView] setRowHeight:55.0];
 	[self tableView].backgroundColor = [UIColor darkGrayColor];
 	NSURL* cardListURL = [[NSBundle mainBundle] URLForResource:@"cardlist" withExtension:@"plist"];
@@ -75,10 +76,11 @@ unsigned randomValueInRange(unsigned range)
 	[_detailViewController view];
 }
 
-- (NSSet*)allowedSets
+- (void)pickAllowedSets
 {
 	// Make a set containing allowed card sets that we're allowed to pull from
-	NSMutableSet* usableSets = [NSMutableSet set];
+	[_allowedSets removeAllObjects];
+	NSMutableSet* usableSets = _allowedSets;
 	if([[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceNameSetPickingEnable])
 	{
 		NSMutableArray* sets = [NSMutableArray array];
@@ -120,8 +122,6 @@ unsigned randomValueInRange(unsigned range)
 			}
 		}
 	}
-
-	return usableSets;
 }
 
 - (UIView*)newHeaderForSetNamed:(NSString*)setName
@@ -156,7 +156,8 @@ unsigned randomValueInRange(unsigned range)
 	}
 	// Pick Ten
 
-	NSSet* usableSets = [self allowedSets];
+	[self pickAllowedSets];
+	NSSet* usableSets = _allowedSets;
 
 	BOOL hasAlchemy = NO;
 	NSUInteger alchemyCount = 0;
@@ -280,7 +281,7 @@ unsigned randomValueInRange(unsigned range)
 	NSMutableArray* oldSetArray = [_cardPicks valueForKey:setName];
 	DominionCard* theCardToReplace = [oldSetArray objectAtIndex:[indexPath row]];
 	DominionCard* newCard = nil;
-	NSSet* allowedSets = [self allowedSets];
+	NSSet* allowedSets = _allowedSets;
 	NSString* newCardSet = nil;
 	BOOL cardMustBeAlchemy = [theCardToReplace isAlchemy];
 	do
