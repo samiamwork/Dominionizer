@@ -264,7 +264,7 @@ unsigned randomValueInRange(unsigned range)
 	newNav.visibleViewController.navigationItem.rightBarButtonItem = doneButton;
 	[doneButton release];
 	newNav.navigationBar.tintColor = [UIColor colorWithRed:0.545 green:0.366 blue:0.232 alpha:1.000];
-	self.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
+	self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:newNav animated:YES];
 	[newNav release];
 	[settingsView release];
