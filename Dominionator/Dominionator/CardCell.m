@@ -89,9 +89,9 @@
 	else if([type isEqualToString:@"Treasure"])
 	{
 		CGFloat colors[] = {
-			0.79, 0.61, 0.27, 1.0,
-			0.90, 0.72, 0.38, 1.0, // Treasure
-			0.95, 0.77, 0.43, 1.0,
+			0.81, 0.78, 0.29, 1.0,
+			0.90, 0.87, 0.38, 1.0, // Treasure
+			0.95, 0.97, 0.43, 1.0,
 		};
 		CGFloat locations[] = {
 			0.0,
@@ -174,11 +174,50 @@
 		};
 		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 4);
 	}
+	else if([type isEqualToString:@"Victory - Reaction"])
+	{
+		CGFloat colors[] = {
+			0.60, 0.88, 0.44, 1.0,
+			0.55, 0.83, 0.39, 1.0, // Victory
+			0.44, 0.62, 0.82, 1.0, // Reaction
+			0.49, 0.67, 0.87, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.25,
+			0.75,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 4);
+	}
+	else if([type isEqualToString:@"Treasure - Reaction"])
+	{
+		CGFloat colors[] = {
+			0.81, 0.78, 0.29, 1.0,
+			0.90, 0.87, 0.38, 1.0, // Treasure
+			0.44, 0.62, 0.82, 1.0, // Reaction
+			0.49, 0.67, 0.87, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			0.25,
+			0.75,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 4);
+	}
 	else
 	{
-		UIBezierPath* outline = [UIBezierPath bezierPathWithRect:workingRect];
-		[[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0] setFill];
-		[outline fill];
+		// Unknown
+		CGFloat colors[] = {
+			1.0, 0.0, 0.0, 1.0,
+			1.0, 0.0, 0.0, 1.0,
+		};
+		CGFloat locations[] = {
+			0.0,
+			1.0
+		};
+		gradient = CGGradientCreateWithColorComponents(rgbColorSpace, colors, locations, 2);
 	}
 
 	// Gloss lines

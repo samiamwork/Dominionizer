@@ -11,7 +11,7 @@
 #import "SliderCell.h"
 
 NSString* g_setNames[] = {
-	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Cornucopia", @"Promo",
+	@"Base", @"Alchemy", @"Seaside", @"Intrigue", @"Prosperity", @"Cornucopia", @"Hinterlands", @"Promo",
 };
 
 NSUInteger g_setCount = sizeof(g_setNames)/sizeof(g_setNames[0]);

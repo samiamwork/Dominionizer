@@ -1848,5 +1848,403 @@ Each other player discards the top card of his deck. If it is a Victory card he 
 		<key>type</key>
 		<string>Victory</string>
 	</dict>
+	<dict>
+		<key>card</key>
+		<string>Crossroads</string>
+		<key>cost</key>
+		<string>$2</string>
+		<key>rules</key>
+		<string>Reveal your hand.&lt;br /&gt;
++1 Card per Victory card revealed. If this is the first time you played a Crossroads this turn, +3 Actions.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Duchess</string>
+		<key>cost</key>
+		<string>$2</string>
+		<key>rules</key>
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+Each player (including you) looks at the top card of his deck, and discards it or puts it back.&lt;br /&gt;
+&lt;hr /&gt;
+In games using this, when you gain a Duchy, you may gain a Duchess.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Fool's Gold</string>
+		<key>cost</key>
+		<string>$2</string>
+		<key>rules</key>
+		<string>If this is the first time you played a Fool's Gold this turn, this is worth &lt;span class="coin_small"&gt;1&lt;/span&gt;, otherwise it's worth &lt;span class="coin_small"&gt;4&lt;/span&gt;.&lt;br /&gt;
+&lt;hr /&gt;
+When another player gains a Province, you may trash this from your hand. If you do, gain a Gold, putting it on your deck.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Treasure - Reaction</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Develop</string>
+		<key>cost</key>
+		<string>$3</string>
+		<key>rules</key>
+		<string>Trash a card from your hand. Gain a card costing exactly &lt;span class="coin_small"&gt;1&lt;/span&gt; more than it and a card costing exactly &lt;span class="coin_small"&gt;1&lt;/span&gt; less than it, in either order, putting them on top of your deck.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Oasis</string>
+		<key>cost</key>
+		<string>$3</string>
+		<key>rules</key>
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
++&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
+Discard a card.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Oracle</string>
+		<key>cost</key>
+		<string>$3</string>
+		<key>rules</key>
+		<string>Each player (including you) reveals the top 2 cards of his deck, and you choose one: either he discards them, or he puts them back on top in an order he chooses.&lt;br /&gt;
++2 Cards
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action - Attack</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Scheme</string>
+		<key>cost</key>
+		<string>$3</string>
+		<key>rules</key>
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+&lt;br /&gt;
+At the start of Clean-up this turn, you may choose an Action card you have in play. If you discard it from play this turn, put it on your deck.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Tunnel</string>
+		<key>cost</key>
+		<string>$3</string>
+		<key>rules</key>
+		<string>&lt;p class="vp_big"&gt;2&lt;/p&gt;&lt;br /&gt;
+&lt;hr /&gt;
+When you discard this other than during a Clean-up phase, you may reveal it. If you do, gain a Gold.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Victory - Reaction</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Jack of all Trades</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>Gain a Silver.&lt;br /&gt;
+&lt;br /&gt;
+Look at the top card of your deck; discard it or put it back.&lt;br /&gt;
+&lt;br /&gt;
+Draw until you have 5 cards in hand.&lt;br /&gt;
+&lt;br /&gt;
+You may trash a card from your hand that is not a Treasure.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Noble Brigand</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>+&lt;span class="coin_small"&gt;1&lt;/span&gt;&lt;br /&gt;
+When you buy this or play it, each other player reveals the top 2 cards of his deck, trashes a revealed Silver or Gold you choose, and discards the rest. If he didn't reveal a Treasure, he gains a Copper. You gain the trashed cards.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action - Attack</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Nomad Camp</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>+1 Buy&lt;br /&gt;
++&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+&lt;hr /&gt;
+When you gain this, put it on top of your deck.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Silk Road</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>Worth &lt;span class="vp_small"&gt;1&lt;/span&gt; for every 4 Victory cards in your deck (round down).
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Victory</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Spice Merchant</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>You may trash a Treasure from your hand. If you do, choose one:&lt;br /&gt;
++2 Cards and +1 Action;&lt;br /&gt;
+or +&lt;span class="coin_small"&gt;2&lt;/span&gt; and +1 Buy.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Trader</string>
+		<key>cost</key>
+		<string>$4</string>
+		<key>rules</key>
+		<string>Trash a card from your hand. Gain a number of Silvers equal to its cost in coins.&lt;br /&gt;
+&lt;hr /&gt;
+When you would gain a card, you may reveal this from your hand. If you do, instead, gain a silver.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action - Reaction</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Cache</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>&lt;p class="coin_big"&gt;3&lt;/p&gt;&lt;br /&gt;
+&lt;hr /&gt;
+&lt;br /&gt;
+When you gain this, gain two Coppers.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Treasure</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Cartographer</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+Look at the top 4 cards of your deck. Discard any number of them. Put the rest back on top in any order.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Embassy</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+5 Cards&lt;br /&gt;
+Discard 3 cards.&lt;br /&gt;
+&lt;hr /&gt;
+When you gain this, each other player gains a Silver.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Haggler</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+&lt;span class="coin_small"&gt;2&lt;/span&gt;&lt;br /&gt;
+&lt;hr /&gt;
+While this is in play, when you buy a card, gain a card costing less than it that is not a Victory card.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Highway</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+1 Card&lt;br /&gt;
++1 Action&lt;br /&gt;
+&lt;hr /&gt;
+While this is in play, cards cost &lt;span class="coin_small"&gt;1&lt;/span&gt; less, but not less than &lt;span class="coin_small"&gt;0&lt;/span&gt;.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Ill-Gotten-Gains</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>&lt;p class="coin_big"&gt;1&lt;/p&gt;&lt;br /&gt;
+When you play this, you may gain a Copper, putting it into your hand.&lt;br /&gt;
+&lt;hr /&gt;
+When you gain this, each other player gains a Curse.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Treasure</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Inn</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+2 Cards&lt;br /&gt;
++2 Actions&lt;br /&gt;
+Discard 2 cards.&lt;br /&gt;
+&lt;hr /&gt;
+When you gain this, look through your discard pile (including this), reveal any number of Action cards from it, and shuffle them into your deck.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Mandarin</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+&lt;span class="coin_small"&gt;3&lt;/span&gt;&lt;br /&gt;
+Put a card from your hand on top of your deck.&lt;br /&gt;
+&lt;hr /&gt;
+When you gain this, put all Treasures you have in play on top of your deck in any order.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Margrave</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>+3 Cards&lt;br /&gt;
++1 Buy&lt;br /&gt;
+&lt;br /&gt;
+Each other player draws a card, then discards down to 3 cards in hand.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action - Attack</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Stables</string>
+		<key>cost</key>
+		<string>$5</string>
+		<key>rules</key>
+		<string>You may discard a Treasure. If you do, +3 Cards and +1 Action.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Border Village</string>
+		<key>cost</key>
+		<string>$6</string>
+		<key>rules</key>
+		<string>+1 Card&lt;br /&gt;
++2 Actions&lt;br /&gt;
+&lt;hr /&gt;
+When you gain this, gain a card costing less than this.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Action</string>
+	</dict>
+	<dict>
+		<key>card</key>
+		<string>Farmland</string>
+		<key>cost</key>
+		<string>$6</string>
+		<key>rules</key>
+		<string>&lt;p class="vp_big"&gt;2&lt;/p&gt;&lt;br /&gt;
+&lt;hr /&gt;
+When you buy this, trash a card from your hand. Gain a card costing exactly &lt;span class="coin_small"&gt;2&lt;/span&gt; more than the trashed card.
+</string>
+		<key>set</key>
+		<string>Hinterlands</string>
+		<key>type</key>
+		<string>Victory</string>
+	</dict>
 </array>
 </plist>
